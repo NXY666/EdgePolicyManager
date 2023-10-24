@@ -1,0 +1,50 @@
+using System.Collections.Generic;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Navigation;
+using PolicyManager.Pages;
+using PolicyManager.Utils;
+
+namespace PolicyManager;
+
+public sealed partial class WelcomePage
+{
+    private MainPageModel _frameModel;
+    
+    public WelcomePage()
+    {
+        InitializeComponent();
+        
+        Name = ResourceUtil.GetString($"{this.GetType().Name}/Name");
+    }
+    
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
+        if (e.Parameter is not GoPageParameter goPageParameter) return;
+
+        _frameModel = goPageParameter.FrameModel;
+    }
+
+    private void EdgeButton_Click(object sender, RoutedEventArgs e)
+    {
+        _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
+        {
+            {"policyType", "EdgePolicy"}
+        });
+    }
+
+    private void EdgeUpdateButton_Click(object sender, RoutedEventArgs e)
+    {
+        _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
+        {
+            {"policyType", "EdgeUpdatePolicy"}
+        });
+    }
+
+    private void EdgeWebviewButton_Click(object sender, RoutedEventArgs e)
+    {
+        _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
+        {
+            {"policyType", "EdgeWebviewPolicy"}
+        });
+    }
+}

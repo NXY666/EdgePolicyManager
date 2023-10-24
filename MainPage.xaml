@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Page
+    x:Class="PolicyManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:animatedVisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{x:Bind _dataContext}">
+    <Grid
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0"
+            VerticalAlignment="Center"
+            Margin="5"
+            ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Click="ButtonBase_OnClick"
+                Width="40"
+                IsEnabled="{Binding Path=CanGoBack}"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="0">
+                <AnimatedIcon>
+                    <AnimatedIcon.Source>
+                        <animatedVisuals:AnimatedBackVisualSource />
+                    </AnimatedIcon.Source>
+                </AnimatedIcon>
+            </Button>
+            <TextBlock
+                Grid.Column="1"
+                Name="Placeholder"
+                Text="{Binding Path=ActivePageName}"
+                x:FieldModifier="internal"
+                VerticalAlignment="Center" />
+        </Grid>
+        <Frame Grid.Row="1" x:Name="MainFrame" x:FieldModifier="public" />
+    </Grid>
+</Page>

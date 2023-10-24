@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+        <TargetPlatformMinVersion>10.0.22621.0</TargetPlatformMinVersion>
+        <RootNamespace>PolicyManager</RootNamespace>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <Platforms>x64;AnyCPU</Platforms>
+        <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+        <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+        <UseWinUI>true</UseWinUI>
+        <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+        <EnableMsixTooling>true</EnableMsixTooling>
+        <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+        <LangVersion>11</LangVersion>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <SelfContained>true</SelfContained>
+        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode>partial</TrimMode>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove="StaticModels\EdgeUpdatePolicy\en-US\PolicyDetailMap.json" />
+        <None Remove="StaticModels\EdgeUpdatePolicy\en-US\PolicyMenuList.json" />
+        <None Remove="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyDetailMap.json" />
+        <None Remove="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyMenuList.json" />
+        <None Remove="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyDetailMap.json" />
+        <None Remove="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyMenuList.json" />
+        <None Remove="StaticModels\Edge\en-US\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Edge\en-US\PolicyMenuList.json" />
+        <None Remove="StaticModels\Edge\zh-CN\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Edge\zh-CN\PolicyMenuList.json" />
+        <None Remove="StaticModels\Edge\zh-TW\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Edge\zh-TW\PolicyMenuList.json" />
+        <None Remove="StaticModels\Icon\IconMap.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyDetailMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyMenuList.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyDetailMap.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyMenuList.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyDetailMap.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyMenuList.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyDetailMap.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyMenuList.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\Icon\IconMap.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.230907" />
+        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
+        <PackageReference Include="Html2Markdown" Version="5.1.0.703" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+        <Manifest Include="$(ApplicationManifest)" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <!-- 
+      Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+      Tools extension to be activated for this project even if the Windows App SDK Nuget
+      package has not yet been restored.
+    -->
+    <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+        <ProjectCapability Include="Msix" />
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Remove="Pages\PolicyContents\BooleanContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\IntegerContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\StringContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\UnsupportedContent.xaml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="Assets\msedge.ico">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Assets\msedgeupdate.ico">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Assets\msedgewebview2.ico">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <!-- 
+      Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+      Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+      the Windows App SDK Nuget package has not yet been restored.
+    -->
+    <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+        <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+        <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Any CPU'">
+        <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+        <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
+        <ItemGroup>
+            <TrimmableAssembly Include="Microsoft.Windows.SDK.NET" />
+        </ItemGroup>
+    </Target>
+    <Target Name="RemovePublishFoldersWithMuiFiles" AfterTargets="GenerateNuspec;Publish">
+        <ItemGroup>
+            <!-- Create a list of the languages your need to keep.-->
+            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
+            <!-- Create a list of keeping files. -->
+            <KeepingFiles Include="@(KeepingLanguages->'$(PublishDir)%(Identity)\*.mui')" />
+            <!-- Create a list of removing files. -->
+            <RemovingFiles Include="$(PublishDir)*\*.mui" Exclude="@(KeepingFiles)" />
+            <!-- Create a list of removing folders. -->
+            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
+        </ItemGroup>
+        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
+        <RemoveDir Directories="@(RemovingFolders)" />
+    </Target>
+    <Target Name="RemoveBuildFoldersWithMuiFiles" AfterTargets="Build">
+        <ItemGroup>
+            <!-- Create a list of the languages your need to keep.-->
+            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
+            <!-- Create a list of keeping files. -->
+            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
+            <!-- Create a list of removing files. -->
+            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)" />
+            <!-- Create a list of removing folders. -->
+            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
+        </ItemGroup>
+        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
+        <RemoveDir Directories="@(RemovingFolders)" />
+    </Target>
+</Project>

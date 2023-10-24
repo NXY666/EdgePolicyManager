@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PolicyManager (Package)": {
+      "commandName": "Project"
+    },
+    "PolicyManager (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

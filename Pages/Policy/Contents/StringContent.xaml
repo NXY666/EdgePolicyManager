@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<contents:PolicyContent
+    x:Class="PolicyManager.Pages.Policy.Contents.StringContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:contents="using:PolicyManager.Pages.Policy.Contents"
+    DataContext="{x:Bind This}">
+    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+        <TextBox IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}" x:Uid="IntegerContent/NumberBox"
+                   Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}}"
+                   Text="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" MaxLength="100000"/>
+        <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"
+                   Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}, ConverterParameter=Invert}" />
+    </StackPanel>
+</contents:PolicyContent>

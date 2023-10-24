@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Page
+    x:Class="PolicyManager.Pages.PolicyPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <NavigationView SelectionChanged="PolicyNavigationView_SelectionChanged"
+                    IsBackButtonVisible="Collapsed"
+                    IsSettingsVisible="False"
+                    Name="PolicyNavigationView">
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox QueryIcon="Find" x:Uid="PolicyPage/AutoSuggestBox"
+                            Name="AutoSuggestBox"
+                            AutomationProperties.Name="Search"
+                            TextChanged="AutoSuggestBox_OnTextChanged"
+                            QuerySubmitted="AutoSuggestBox_OnQuerySubmitted"
+                            SuggestionChosen="AutoSuggestBox_OnSuggestionChosen" />
+        </NavigationView.AutoSuggestBox>
+        <Frame Name="DetailFrame" />
+    </NavigationView>
+</Page>
