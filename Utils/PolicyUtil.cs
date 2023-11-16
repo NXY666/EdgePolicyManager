@@ -188,9 +188,7 @@ public class PolicyManager : IPolicyManager
                         ? ResourceUtil.GetString("RegistryUtil/ShowValue/EnabledText")
                         : ResourceUtil.GetString("RegistryUtil/ShowValue/DisabledText"),
                     "Integer" => policyValue.ToString(),
-                    "String" => policyValue.ToString() == string.Empty
-                        ? ResourceUtil.GetString("RegistryUtil/ShowValue/UnconfiguredText")
-                        : policyValue.ToString(),
+                    "String" => policyValue.ToString(),
                     _ => ResourceUtil.GetString("RegistryUtil/ShowValue/UnsupportedText")
                 };
 
@@ -237,8 +235,7 @@ public class PolicyManager : IPolicyManager
                     "Boolean" => false,
                     _ => throw new Exception($"Unsupported data type {_policyDetail.DataType}.")
                 });
-            Console.WriteLine(policyValue);
-
+            
             Console.WriteLine($"Set policy level to {value}, value is {policyValue}.");
             switch (value)
             {

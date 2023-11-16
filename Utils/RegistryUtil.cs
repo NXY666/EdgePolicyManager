@@ -32,8 +32,16 @@ public static class RegistryUtil
     private static bool CheckPathSafe(string path)
     {
         path = path.ToUpperInvariant();
-        return path.StartsWith(@"SOFTWARE\POLICIES\MICROSOFT\EDGE") ||
-               path.StartsWith(@"SOFTWARE\POLICIES\MICROSOFT\EDGEUPDATE");
+        if (
+            path.StartsWith(@"SOFTWARE\POLICIES\MICROSOFT\EDGE") ||
+            path.StartsWith(@"SOFTWARE\POLICIES\MICROSOFT\EDGEUPDATE")
+        )
+        {
+            return true;
+        }
+
+        Console.WriteLine("Path is not safe.");
+        return false;
     }
 
     public static RegistryResult GetRegistryValue(string path, string name)
@@ -83,7 +91,6 @@ public static class RegistryUtil
 
         if (!CheckPathSafe(path))
         {
-            Console.WriteLine("Path is not safe.");
             return false;
         }
 
@@ -114,7 +121,6 @@ public static class RegistryUtil
 
         if (!CheckPathSafe(path))
         {
-            Console.WriteLine("Path is not safe.");
             return false;
         }
 

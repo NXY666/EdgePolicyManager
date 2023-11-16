@@ -36,61 +36,61 @@
 
     <ItemGroup>
         <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyDetailMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyMenuList.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyDetailMap.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyMenuList.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyDetailMap.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyMenuList.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyDetailMap.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyMenuList.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\Icon\IconMap.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -99,7 +99,7 @@
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
         <PackageReference Include="Html2Markdown" Version="5.1.0.703" />
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>

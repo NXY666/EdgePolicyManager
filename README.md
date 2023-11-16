@@ -1,6 +1,6 @@
-# Edge Policy Manager
+# Edge Policy Manager - Edge 策略管理器
 
-> Edge 策略管理器 | 净化你的 Edge
+> 净化你的 Edge 。
 
 ![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/412f6aa7-22e4-4eae-8eb7-1440f8ce449d)
 
