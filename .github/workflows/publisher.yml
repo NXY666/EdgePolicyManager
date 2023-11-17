@@ -13,17 +13,16 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v2
 
-      - name: 获取发布时间
-        run: echo "PUBLISH_DATETIME=$(Get-Date -Format 'yyyy.MM.dd.HHmm')" >> $env:GITHUB_ENV
-
-      - name: 获取策略版本
-        run: echo "EDGE_POLICY_VERSION=$(Get-Content ./StaticModels/Policy/SUPPORT_VERSION)" >> $env:GITHUB_ENV
+      - name: 获取发布信息
+        run: |
+          echo "PUBLISH_VERSION=$(Get-Date -Format 'yyyy.MM.dd.HHmm')" >> $env:GITHUB_ENV
+          echo "PUBLISH_DATETIME=$(Get-Date -Format 'yyyy.MM.dd HH:mm:ss')" >> $env:GITHUB_ENV
+          echo "EDGE_POLICY_VERSION=$(Get-Content ./StaticModels/Policy/SUPPORT_VERSION)" >> $env:GITHUB_ENV
 
       - name: 获取提交信息
         run: |
           echo "COMMIT_TITLE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
-          commit_body=$(git log -1 --pretty=format:"%b")
-          commit_body=$(echo "$commit_body" | sed -E 's/^([^ ]{2}) (.+)$/* `\1` \2/')
+          commit_body=$(git log -1 --pretty=format:"%b" | sed -E 's/^([^ ]+) (.+)$/* `\1` \2/')
           {
             echo 'COMMIT_BODY<<EOF'
             echo "$commit_body"
@@ -37,14 +36,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.PUBLISH_DATETIME }}
-          release_name: Release ${{ env.PUBLISH_DATETIME }}
+          tag_name: v${{ env.PUBLISH_VERSION }}
+          release_name: Release ${{ env.PUBLISH_VERSION }}
           body: |
-            > Edge 策略版本：${{ env.EDGE_POLICY_VERSION }}
+            ## 更新日志
             
-            **${{ env.COMMIT_TITLE }}**
+            概述：**${{ env.COMMIT_TITLE }}**
+            
+            <details>
             
             ${{ env.COMMIT_BODY }}
+            
+            </details>
+            
+            <hr>
+            
+            > 发布时间：${{ env.PUBLISH_DATETIME }}
+            
+            > 策略版本：${{ env.EDGE_POLICY_VERSION }}
           draft: false
           prerelease: false
 
@@ -71,7 +80,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./Publish.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_DATETIME }}.zip
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.zip
           asset_content_type: application/zip
 
       - name: 压缩软件包（7z）
@@ -85,5 +94,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./Publish.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_DATETIME }}.7z
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.7z
           asset_content_type: application/7z
