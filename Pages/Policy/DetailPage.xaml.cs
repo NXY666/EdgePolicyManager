@@ -80,7 +80,7 @@ public sealed partial class DetailPage
 
         _dataContext = detailPageModel;
 
-        detailPageModel.PolicyDetailMap = ResourceUtil.GetEmbeddedJson<PolicyDetailMap>($"StaticModels.{detailPageModel.PolicyType}.{{LangCode}}.PolicyDetailMap.json");
+        detailPageModel.PolicyDetailMap = ResourceUtil.GetEmbeddedJson<PolicyDetailMap>($"StaticModels.Policy.{detailPageModel.PolicyType}.{{LangCode}}.PolicyDetailMap.json");
 
         // PolicyPage开始监听SearchPolicyEvent事件
         detailPageModel.SearchPolicyEvent += detailPageModel.SearchPolicyHandler;

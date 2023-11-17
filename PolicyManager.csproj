@@ -10,7 +10,7 @@
         <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
         <UseWinUI>true</UseWinUI>
         <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-        <EnableMsixTooling>true</EnableMsixTooling>
+		<EnableMsixTooling>true</EnableMsixTooling>
         <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
         <LangVersion>11</LangVersion>
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -19,79 +19,31 @@
         <TrimMode>partial</TrimMode>
     </PropertyGroup>
     <ItemGroup>
-        <None Remove="StaticModels\EdgeUpdatePolicy\en-US\PolicyDetailMap.json" />
-        <None Remove="StaticModels\EdgeUpdatePolicy\en-US\PolicyMenuList.json" />
-        <None Remove="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyDetailMap.json" />
-        <None Remove="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyMenuList.json" />
-        <None Remove="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyDetailMap.json" />
-        <None Remove="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyMenuList.json" />
-        <None Remove="StaticModels\Edge\en-US\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Edge\en-US\PolicyMenuList.json" />
-        <None Remove="StaticModels\Edge\zh-CN\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Edge\zh-CN\PolicyMenuList.json" />
-        <None Remove="StaticModels\Edge\zh-TW\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Edge\zh-TW\PolicyMenuList.json" />
-        <None Remove="StaticModels\Icon\IconMap.json" />
+      <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
-
     <ItemGroup>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\en-US\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-CN\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgePolicy\zh-TW\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\en-US\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-CN\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyDetailMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeUpdatePolicy\zh-TW\PolicyMenuList.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyDetailMap.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\en-US\PolicyMenuList.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyDetailMap.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-CN\PolicyMenuList.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyDetailMap.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\EdgeWebviewPolicy\zh-TW\PolicyMenuList.json">
-          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
         <EmbeddedResource Include="StaticModels\Icon\IconMap.json">
             <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
 
     <ItemGroup>
@@ -120,13 +72,13 @@
     </ItemGroup>
     <ItemGroup>
         <Content Update="Assets\msedge.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </Content>
         <Content Update="Assets\msedgeupdate.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </Content>
         <Content Update="Assets\msedgewebview2.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
@@ -138,19 +90,10 @@
     <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
         <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-        <WarningLevel>9999</WarningLevel>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
         <WarningLevel>9999</WarningLevel>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-      <WarningLevel>9999</WarningLevel>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Any CPU'">
-        <WarningLevel>9999</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
         <WarningLevel>9999</WarningLevel>
     </PropertyGroup>
     <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">

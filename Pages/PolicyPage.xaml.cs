@@ -37,8 +37,8 @@ public sealed partial class PolicyPage
         _dataContext = new PolicyPageModel
         {
             PolicyType = policyType,
-            PolicyDetailMap = ResourceUtil.GetEmbeddedJson<PolicyDetailMap>($"StaticModels.{policyType}.{{LangCode}}.PolicyDetailMap.json"),
-            PolicyMenuList = ResourceUtil.GetEmbeddedJson<PolicyMenu>($"StaticModels.{policyType}.{{LangCode}}.PolicyMenuList.json")
+            PolicyDetailMap = ResourceUtil.GetEmbeddedJson<PolicyDetailMap>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyDetailMap.json"),
+            PolicyMenuList = ResourceUtil.GetEmbeddedJson<PolicyMenu>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyMenuList.json")
         };
 
         foreach (

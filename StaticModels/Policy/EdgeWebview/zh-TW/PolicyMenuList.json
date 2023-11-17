@@ -1,0 +1,1 @@
+[{"Identifier":"WebView2LoaderOverrideSettings","Icon":"DeveloperTools","Name":"載入器覆寫設定","Items":["BrowserExecutableFolder","ReleaseChannelPreference"]},{"Identifier":"microsoft_edge_webview2","Icon":"World","Name":"Microsoft Edge WebView2","Items":["ExperimentationAndConfigurationServiceControl","ForcePermissionPolicyUnloadDefaultEnabled","NewPDFReaderWebView2List"]}]

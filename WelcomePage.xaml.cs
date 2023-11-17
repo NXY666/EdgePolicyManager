@@ -28,7 +28,7 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "EdgePolicy"}
+            {"policyType", "Edge"}
         });
     }
 
@@ -36,7 +36,7 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "EdgeUpdatePolicy"}
+            {"policyType", "EdgeUpdate"}
         });
     }
 
@@ -44,7 +44,7 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "EdgeWebviewPolicy"}
+            {"policyType", "EdgeWebview"}
         });
     }
 }
