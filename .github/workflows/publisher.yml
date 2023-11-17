@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "COMMIT_TITLE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
           commit_body=$(git log -1 --pretty=format:"%b")
-          commit_body=$(echo "$commit_body" | sed -E 's/^(.+?) (.+)$/* `\1` \2/')
+          commit_body=$(echo "$commit_body" | sed -E 's/^([^ ]{2}) (.+)$/* `\1` \2/')
           {
             echo 'COMMIT_BODY<<EOF'
             echo "$commit_body"
