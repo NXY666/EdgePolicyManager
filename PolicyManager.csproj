@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
         <TargetPlatformMinVersion>10.0.22621.0</TargetPlatformMinVersion>
         <RootNamespace>PolicyManager</RootNamespace>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <Platforms>x64;AnyCPU</Platforms>
-        <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
-        <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+        <PublishProfile>win-$(Platform).pubxml</PublishProfile>
         <UseWinUI>true</UseWinUI>
         <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
 		<EnableMsixTooling>true</EnableMsixTooling>
         <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
-        <LangVersion>11</LangVersion>
+        <LangVersion>12</LangVersion>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <SelfContained>true</SelfContained>
         <PublishTrimmed>true</PublishTrimmed>

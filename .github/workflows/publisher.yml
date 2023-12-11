@@ -60,18 +60,18 @@ jobs:
       - name: 安装 .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
 
       - name: 恢复 .NET 依赖
         run: dotnet restore
 
       - name: 生成软件包
         run: |
-          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win10-any.pubxml
+          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-any.pubxml
 
       - name: 压缩软件包（zip）
         run: |
-          7z a -tzip -mx=9 Publish.zip ./bin/win10-any/publish/*
+          7z a -tzip -mx=9 Publish.zip ./bin/win-any/publish/*
 
       - name: 上传软件包（zip）
         uses: actions/upload-release-asset@v1
@@ -85,7 +85,7 @@ jobs:
 
       - name: 压缩软件包（7z）
         run: |
-          7z a -t7z -mx=9 Publish.7z ./bin/win10-any/publish/*
+          7z a -t7z -mx=9 Publish.7z ./bin/win-any/publish/*
 
       - name: 上传软件包（7z）
         uses: actions/upload-release-asset@v1
