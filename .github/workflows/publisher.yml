@@ -3,7 +3,7 @@
 on:
   push:
     branches:
-      - master
+      - 2023.12.11
 
 jobs:
   publish:
