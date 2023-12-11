@@ -3,7 +3,7 @@
 on:
   push:
     branches:
-      - master
+      - test
 
 jobs:
   publish:
@@ -54,7 +54,7 @@ jobs:
             > 发布时间：${{ env.PUBLISH_DATETIME }}
             
             > 策略版本：${{ env.EDGE_POLICY_VERSION }}
-          draft: false
+          draft: true
           prerelease: false
 
       - name: 安装 .NET
@@ -73,26 +73,6 @@ jobs:
         run: |
           7z a -tzip -mx=9 Publish.zip ./bin/win-any/publish/*
 
-      - name: 上传软件包（zip）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.zip
-          asset_content_type: application/zip
-
       - name: 压缩软件包（7z）
         run: |
           7z a -t7z -mx=9 Publish.7z ./bin/win-any/publish/*
-
-      - name: 上传软件包（7z）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.7z
-          asset_content_type: application/7z
