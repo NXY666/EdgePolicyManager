@@ -1,0 +1,78 @@
+﻿name: EdgePolicyManager Publisher
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  publish:
+    runs-on: windows-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v2
+
+      - name: 获取发布信息
+        run: |
+          echo "PUBLISH_VERSION=$(Get-Date -Format 'yyyy.MM.dd.HHmm')" >> $env:GITHUB_ENV
+          echo "PUBLISH_DATETIME=$(Get-Date -Format 'yyyy.MM.dd HH:mm:ss')" >> $env:GITHUB_ENV
+          echo "EDGE_POLICY_VERSION=$(Get-Content ./StaticModels/Policy/SUPPORT_VERSION)" >> $env:GITHUB_ENV
+
+      - name: 获取提交信息
+        run: |
+          echo "COMMIT_TITLE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
+          commit_body=$(git log -1 --pretty=format:"%b" | sed -E 's/^([^ ]+) (.+)$/* `\1` \2/')
+          {
+            echo 'COMMIT_BODY<<EOF'
+            echo "$commit_body"
+            echo EOF
+          } >> "$GITHUB_ENV"
+        shell: bash
+
+      - name: 创建 Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.PUBLISH_VERSION }}
+          release_name: Release ${{ env.PUBLISH_VERSION }}
+          body: |
+            ## 更新日志
+            
+            概述：**${{ env.COMMIT_TITLE }}**
+            
+            <details>
+            
+            ${{ env.COMMIT_BODY }}
+            
+            </details>
+            
+            <hr>
+            
+            > 发布时间：${{ env.PUBLISH_DATETIME }}
+            
+            > 策略版本：${{ env.EDGE_POLICY_VERSION }}
+          draft: true
+          prerelease: false
+
+      - name: 安装 .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: 恢复 .NET 依赖
+        run: dotnet restore
+
+      - name: 生成软件包
+        run: |
+          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-any.pubxml
+
+      - name: 压缩软件包（zip）
+        run: |
+          7z a -tzip -mx=9 Publish.zip ./bin/win-any/publish/*
+
+      - name: 压缩软件包（7z）
+        run: |
+          7z a -t7z -mx=9 Publish.7z ./bin/win-any/publish/*
