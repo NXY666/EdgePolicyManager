@@ -16,9 +16,10 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 例如：
 
-* 通过 `EdgeCollectionsEnabled` 策略可禁用 `集锦` 功能。
-* 通过 `ShowPDFDefaultRecommendationsEnabled` 策略可阻止“将 Microsoft Edge 设置为默认 PDF 阅读器”的提示。
-* 通过 `AllowSurfGame` 策略可阻止进入 `冲浪游戏` 。
+* 禁用 `EdgeCollectionsEnabled` 策略可关闭 `集锦` 功能。
+* 禁用 `ShowPDFDefaultRecommendationsEnabled` 策略可阻止弹出“将 Microsoft Edge 设置为默认 PDF 阅读器”的推荐提示。
+* 禁用 `AllowSurfGame` 策略可阻止进入 `冲浪游戏` 。
+* 启用 `DoubleClickCloseTabEnabled` 策略可启用双击关闭标签页功能（仅在中国可用，至少文档是这样写的）。
 
 ## 特性
 * **策略浏览**。支持查看 `Edge` 、 `Edge Update` 、 `Edge Webview2` 所有可用策略的级别、支持版本、是否动态刷新、文档。
