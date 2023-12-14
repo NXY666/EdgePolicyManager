@@ -181,7 +181,7 @@
     <value>Search</value>
     <comment>已同步</comment>
   </data>
-  <data name="PolicyPage.AutoSuggestBox_OnQuerySubmitted.SearchResultName" xml:space="preserve">
+  <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
     <value>Search Result</value>
     <comment>已同步</comment>
   </data>
@@ -227,6 +227,14 @@
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
     <value>Welcome.</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.ConfiguredNavigationItem.Content" xml:space="preserve">
+    <value>Configured</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.GetConfiguredPolicy.ConfiguredPolicyName" xml:space="preserve">
+    <value>Configured Policies</value>
     <comment>已同步</comment>
   </data>
 </root>

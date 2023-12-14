@@ -68,24 +68,17 @@ public interface IPolicyManager
     bool UsingPolicyCustomValue { get; }
 }
 
-public class PolicyManager : IPolicyManager
+public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
 {
-    private readonly PolicyDetail _policyDetail;
-
-    public PolicyManager(PolicyDetail policyDetail)
-    {
-        _policyDetail = policyDetail;
-    }
-
     public RegistryValueKind RegistryValueKind
     {
         get
         {
-            return _policyDetail.Registry.ValueKind switch
+            return policyDetail.Registry.ValueKind switch
             {
                 "REG_DWORD" => RegistryValueKind.DWord,
                 "REG_SZ" => RegistryValueKind.String,
-                _ => throw new Exception($"Unsupported value kind: {_policyDetail.Registry.ValueKind}.")
+                _ => throw new Exception($"Unsupported value kind: {policyDetail.Registry.ValueKind}.")
             };
         }
     }
@@ -96,10 +89,10 @@ public class PolicyManager : IPolicyManager
         {
             return PolicyLevel switch
             {
-                1 when _policyDetail.Registry.CanRecommended => RegistryUtil.GetRegistryValue(
-                    _policyDetail.Registry.RecommendedPath, _policyDetail.Registry.Name).Value,
-                2 when _policyDetail.Registry.CanMandatory => RegistryUtil.GetRegistryValue(
-                    _policyDetail.Registry.MandatoryPath, _policyDetail.Registry.Name).Value,
+                1 when policyDetail.Registry.CanRecommended => RegistryUtil.GetRegistryValue(
+                    policyDetail.Registry.RecommendedPath, policyDetail.Registry.Name).Value,
+                2 when policyDetail.Registry.CanMandatory => RegistryUtil.GetRegistryValue(
+                    policyDetail.Registry.MandatoryPath, policyDetail.Registry.Name).Value,
                 _ => null
             };
         }
@@ -115,49 +108,49 @@ public class PolicyManager : IPolicyManager
                 return PolicyDefaultValue;
             }
 
-            return _policyDetail.DataType switch
+            return policyDetail.DataType switch
             {
                 "Integer" => registryValue,
                 "Boolean" => (int)registryValue == 1,
                 "String" => registryValue,
-                _ => throw new Exception($"Unsupported data type {_policyDetail.DataType}.")
+                _ => throw new Exception($"Unsupported data type {policyDetail.DataType}.")
             };
         }
         set
         {
             Console.WriteLine($"Set policy value to {value}.");
-            switch (_policyDetail.DataType)
+            switch (policyDetail.DataType)
             {
                 case "Integer":
                 case "Boolean":
                 case "String":
                     switch (PolicyLevel)
                     {
-                        case 1 when _policyDetail.Registry.CanRecommended:
+                        case 1 when policyDetail.Registry.CanRecommended:
                             RegistryUtil.SetRegistryValue(
-                                _policyDetail.Registry.RecommendedPath,
-                                _policyDetail.Registry.Name,
+                                policyDetail.Registry.RecommendedPath,
+                                policyDetail.Registry.Name,
                                 RegistryValueKind,
                                 value);
-                            if (_policyDetail.Registry.CanMandatory)
+                            if (policyDetail.Registry.CanMandatory)
                             {
                                 RegistryUtil.DeleteRegistryValue(
-                                    _policyDetail.Registry.MandatoryPath,
-                                    _policyDetail.Registry.Name);
+                                    policyDetail.Registry.MandatoryPath,
+                                    policyDetail.Registry.Name);
                             }
 
                             break;
-                        case 2 when _policyDetail.Registry.CanMandatory:
+                        case 2 when policyDetail.Registry.CanMandatory:
                             RegistryUtil.SetRegistryValue(
-                                _policyDetail.Registry.MandatoryPath,
-                                _policyDetail.Registry.Name,
+                                policyDetail.Registry.MandatoryPath,
+                                policyDetail.Registry.Name,
                                 RegistryValueKind,
                                 value);
-                            if (_policyDetail.Registry.CanRecommended)
+                            if (policyDetail.Registry.CanRecommended)
                             {
                                 RegistryUtil.DeleteRegistryValue(
-                                    _policyDetail.Registry.RecommendedPath,
-                                    _policyDetail.Registry.Name);
+                                    policyDetail.Registry.RecommendedPath,
+                                    policyDetail.Registry.Name);
                             }
 
                             break;
@@ -165,14 +158,14 @@ public class PolicyManager : IPolicyManager
 
                     break;
                 default:
-                    throw new Exception($"Unsupported data type {_policyDetail.DataType}.");
+                    throw new Exception($"Unsupported data type {policyDetail.DataType}.");
             }
         }
     }
 
-    public bool PolicyDataOptionsExists => _policyDetail.DataOptions != null;
+    public bool PolicyDataOptionsExists => policyDetail.DataOptions != null;
 
-    public List<PolicyDataOption> PolicyDataOptions => _policyDetail.DataOptions;
+    public List<PolicyDataOption> PolicyDataOptions => policyDetail.DataOptions;
 
     public string PolicyShowValue
     {
@@ -182,7 +175,7 @@ public class PolicyManager : IPolicyManager
 
             var showValue = !PolicyDefaultValueExists && policyValue == null
                 ? ResourceUtil.GetString("RegistryUtil/ShowValue/UnconfiguredText")
-                : _policyDetail.DataType switch
+                : policyDetail.DataType switch
                 {
                     "Boolean" => (bool)policyValue
                         ? ResourceUtil.GetString("RegistryUtil/ShowValue/EnabledText")
@@ -205,12 +198,12 @@ public class PolicyManager : IPolicyManager
     {
         get
         {
-            if (_policyDetail.Registry.CanMandatory && RegistryUtil.GetRegistryValueExists(_policyDetail.Registry.MandatoryPath, _policyDetail.Registry.Name))
+            if (policyDetail.Registry.CanMandatory && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.MandatoryPath, policyDetail.Registry.Name))
             {
                 return 2;
             }
 
-            if (_policyDetail.Registry.CanRecommended && RegistryUtil.GetRegistryValueExists(_policyDetail.Registry.RecommendedPath, _policyDetail.Registry.Name))
+            if (policyDetail.Registry.CanRecommended && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.RecommendedPath, policyDetail.Registry.Name))
             {
                 return 1;
             }
@@ -228,12 +221,12 @@ public class PolicyManager : IPolicyManager
             // 当前策略值 > 策略默认值 > 类型默认值
             var policyValue = (PolicyValue ?? PolicyDefaultValue) ?? (PolicyDataOptionsExists
                 ? PolicyDataOptions[0].Value
-                : _policyDetail.DataType switch
+                : policyDetail.DataType switch
                 {
                     "String" => "",
                     "Integer" => 0,
                     "Boolean" => false,
-                    _ => throw new Exception($"Unsupported data type {_policyDetail.DataType}.")
+                    _ => throw new Exception($"Unsupported data type {policyDetail.DataType}.")
                 });
             
             Console.WriteLine($"Set policy level to {value}, value is {policyValue}.");
@@ -242,51 +235,51 @@ public class PolicyManager : IPolicyManager
                 case 0:
                     RevertPolicyDefaultValue();
                     break;
-                case 1 when _policyDetail.Registry.CanRecommended:
-                    switch (_policyDetail.DataType)
+                case 1 when policyDetail.Registry.CanRecommended:
+                    switch (policyDetail.DataType)
                     {
                         case "Integer":
                         case "Boolean":
                         case "String":
                             RegistryUtil.SetRegistryValue(
-                                _policyDetail.Registry.RecommendedPath,
-                                _policyDetail.Registry.Name,
+                                policyDetail.Registry.RecommendedPath,
+                                policyDetail.Registry.Name,
                                 RegistryValueKind,
                                 policyValue);
                             break;
                         default:
-                            throw new Exception($"Unsupported data type {_policyDetail.DataType}.");
+                            throw new Exception($"Unsupported data type {policyDetail.DataType}.");
                     }
 
-                    if (_policyDetail.Registry.CanMandatory)
+                    if (policyDetail.Registry.CanMandatory)
                     {
                         RegistryUtil.DeleteRegistryValue(
-                            _policyDetail.Registry.MandatoryPath,
-                            _policyDetail.Registry.Name);
+                            policyDetail.Registry.MandatoryPath,
+                            policyDetail.Registry.Name);
                     }
 
                     break;
-                case 2 when _policyDetail.Registry.CanMandatory:
-                    switch (_policyDetail.DataType)
+                case 2 when policyDetail.Registry.CanMandatory:
+                    switch (policyDetail.DataType)
                     {
                         case "Boolean":
                         case "Integer":
                         case "String":
                             RegistryUtil.SetRegistryValue(
-                                _policyDetail.Registry.MandatoryPath,
-                                _policyDetail.Registry.Name,
+                                policyDetail.Registry.MandatoryPath,
+                                policyDetail.Registry.Name,
                                 RegistryValueKind,
                                 policyValue);
                             break;
                         default:
-                            throw new Exception($"Unsupported data type {_policyDetail.DataType}.");
+                            throw new Exception($"Unsupported data type {policyDetail.DataType}.");
                     }
 
-                    if (_policyDetail.Registry.CanRecommended)
+                    if (policyDetail.Registry.CanRecommended)
                     {
                         RegistryUtil.DeleteRegistryValue(
-                            _policyDetail.Registry.RecommendedPath,
-                            _policyDetail.Registry.Name);
+                            policyDetail.Registry.RecommendedPath,
+                            policyDetail.Registry.Name);
                     }
 
                     break;
@@ -298,18 +291,18 @@ public class PolicyManager : IPolicyManager
 
     public void RevertPolicyDefaultValue()
     {
-        if (_policyDetail.Registry.CanMandatory)
+        if (policyDetail.Registry.CanMandatory)
         {
-            RegistryUtil.DeleteRegistryValue(_policyDetail.Registry.MandatoryPath, _policyDetail.Registry.Name);
+            RegistryUtil.DeleteRegistryValue(policyDetail.Registry.MandatoryPath, policyDetail.Registry.Name);
         }
 
-        if (_policyDetail.Registry.CanRecommended)
+        if (policyDetail.Registry.CanRecommended)
         {
-            RegistryUtil.DeleteRegistryValue(_policyDetail.Registry.RecommendedPath, _policyDetail.Registry.Name);
+            RegistryUtil.DeleteRegistryValue(policyDetail.Registry.RecommendedPath, policyDetail.Registry.Name);
         }
     }
 
-    public object PolicyDefaultValue => _policyDetail.Registry.DefaultValue;
+    public object PolicyDefaultValue => policyDetail.Registry.DefaultValue;
 
     public bool PolicyDefaultValueExists => PolicyDefaultValue != null;
 
@@ -318,26 +311,19 @@ public class PolicyManager : IPolicyManager
     public bool UsingPolicyCustomValue => PolicyLevel != 0;
 }
 
-public sealed class NotifyPolicyManager : INotifyPropertyChanged, IPolicyManager
+public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyPropertyChanged, IPolicyManager
 {
-    private readonly PolicyManager _policyManager;
+    public RegistryValueKind RegistryValueKind => policyManager.RegistryValueKind;
 
-    public NotifyPolicyManager(PolicyManager policyManager)
-    {
-        _policyManager = policyManager;
-    }
-
-    public RegistryValueKind RegistryValueKind => _policyManager.RegistryValueKind;
-
-    public object RegistryValue => _policyManager.RegistryValue;
+    public object RegistryValue => policyManager.RegistryValue;
 
     public object PolicyValue
     {
-        get => _policyManager.PolicyValue;
+        get => policyManager.PolicyValue;
 
         set
         {
-            _policyManager.PolicyValue = value;
+            policyManager.PolicyValue = value;
 
             OnPropertyChanged(nameof(PolicyValue));
             OnPropertyChanged(nameof(RegistryValue));
@@ -345,20 +331,20 @@ public sealed class NotifyPolicyManager : INotifyPropertyChanged, IPolicyManager
         }
     }
 
-    public bool PolicyDataOptionsExists => _policyManager.PolicyDataOptionsExists;
+    public bool PolicyDataOptionsExists => policyManager.PolicyDataOptionsExists;
 
-    public List<PolicyDataOption> PolicyDataOptions => _policyManager.PolicyDataOptions;
+    public List<PolicyDataOption> PolicyDataOptions => policyManager.PolicyDataOptions;
 
-    public object PolicyDefaultValue => _policyManager.PolicyDefaultValue;
+    public object PolicyDefaultValue => policyManager.PolicyDefaultValue;
 
-    public string PolicyShowValue => _policyManager.PolicyShowValue;
+    public string PolicyShowValue => policyManager.PolicyShowValue;
 
     public int PolicyLevel
     {
-        get => _policyManager.PolicyLevel;
+        get => policyManager.PolicyLevel;
         set
         {
-            _policyManager.PolicyLevel = value;
+            policyManager.PolicyLevel = value;
             OnPropertyChanged(nameof(PolicyLevel));
             OnPropertyChanged(nameof(PolicyValue));
             OnPropertyChanged(nameof(PolicyShowValue));
@@ -369,22 +355,22 @@ public sealed class NotifyPolicyManager : INotifyPropertyChanged, IPolicyManager
         }
     }
 
-    public bool PolicyDefaultValueExists => _policyManager.PolicyDefaultValueExists;
+    public bool PolicyDefaultValueExists => policyManager.PolicyDefaultValueExists;
 
-    public bool PolicyValueExists => _policyManager.PolicyValueExists;
+    public bool PolicyValueExists => policyManager.PolicyValueExists;
 
     public void RevertPolicyDefaultValue()
     {
-        _policyManager.RevertPolicyDefaultValue();
+        policyManager.RevertPolicyDefaultValue();
         OnPropertyChanged(nameof(PolicyLevel));
         OnPropertyChanged(nameof(PolicyShowValue));
         OnPropertyChanged(nameof(UsingPolicyDefaultValue));
         OnPropertyChanged(nameof(UsingPolicyCustomValue));
     }
 
-    public bool UsingPolicyDefaultValue => _policyManager.UsingPolicyDefaultValue;
+    public bool UsingPolicyDefaultValue => policyManager.UsingPolicyDefaultValue;
 
-    public bool UsingPolicyCustomValue => _policyManager.UsingPolicyCustomValue;
+    public bool UsingPolicyCustomValue => policyManager.UsingPolicyCustomValue;
 
     public event PropertyChangedEventHandler PropertyChanged;
 

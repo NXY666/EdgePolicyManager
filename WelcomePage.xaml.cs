@@ -9,14 +9,14 @@ namespace PolicyManager;
 public sealed partial class WelcomePage
 {
     private MainPageModel _frameModel;
-    
+
     public WelcomePage()
     {
         InitializeComponent();
-        
+
         Name = ResourceUtil.GetString($"{this.GetType().Name}/Name");
     }
-    
+
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         if (e.Parameter is not GoPageParameter goPageParameter) return;
@@ -28,7 +28,8 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "Edge"}
+            { "policyType", "Edge" },
+            { "policyRegistryPath", @"SOFTWARE\Policies\Microsoft\Edge" }
         });
     }
 
@@ -36,7 +37,8 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "EdgeUpdate"}
+            { "policyType", "EdgeUpdate" },
+            { "policyRegistryPath", @"SOFTWARE\Policies\Microsoft\EdgeUpdate" }
         });
     }
 
@@ -44,7 +46,8 @@ public sealed partial class WelcomePage
     {
         _frameModel.GoPage(typeof(PolicyPage), new Dictionary<string, object>
         {
-            {"policyType", "EdgeWebview"}
+            { "policyType", "EdgeWebview" },
+            { "policyRegistryPath", @"SOFTWARE\Policies\Microsoft\Edge\WebView2" }
         });
     }
 }

@@ -1,30 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Win32;
 
 namespace PolicyManager.Utils;
 
-public class RegistryResult
+public class RegistryResult(string path, string name, RegistryValueKind valueKind = RegistryValueKind.None, object value = null)
 {
-    public string Path { get; }
-    public string Name { get; }
-    public RegistryValueKind ValueKind { get; }
-    public object Value { get; }
-
-    public RegistryResult(string path, string name)
-    {
-        Path = path;
-        Name = name;
-        ValueKind = RegistryValueKind.None;
-    }
-
-    public RegistryResult(string path, string name, RegistryValueKind valueKind, object value)
-    {
-        Path = path;
-        Name = name;
-
-        ValueKind = valueKind;
-        Value = value;
-    }
+    public string Path { get; } = path;
+    public string Name { get; } = name;
+    public RegistryValueKind ValueKind { get; } = valueKind;
+    public object Value { get; } = value;
 }
 
 public static class RegistryUtil
@@ -140,5 +125,37 @@ public static class RegistryUtil
         {
             registryKey.Close();
         }
+    }
+    
+    public static List<RegistryResult> GetRegistryValues(string path)
+    {
+        var registryKey = Registry.LocalMachine.OpenSubKey(path);
+
+        if (registryKey == null) return [];
+
+        var result = new List<RegistryResult>();
+
+        foreach (var name in registryKey.GetValueNames())
+        {
+            RegistryValueKind valueKind;
+            try
+            {
+                valueKind = registryKey.GetValueKind(name);
+            }
+            catch (Exception)
+            {
+                valueKind = RegistryValueKind.None;
+            }
+
+            var value = registryKey.GetValue(name);
+
+            result.Add(value == null
+                ? new RegistryResult(path, name)
+                : new RegistryResult(path, name, valueKind, value));
+        }
+
+        registryKey.Close();
+
+        return result;
     }
 }
