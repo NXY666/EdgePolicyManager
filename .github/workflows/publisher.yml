@@ -67,32 +67,78 @@ jobs:
 
       - name: 生成软件包
         run: |
-          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-any.pubxml
+          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-x64.pubxml
+          dotnet publish -p:Platform=x86 -p:PublishProfile=Properties/PublishProfiles/win-x86.pubxml
+          dotnet publish -p:Platform=arm64 -p:PublishProfile=Properties/PublishProfiles/win-arm64.pubxml
 
       - name: 压缩软件包（zip）
         run: |
-          7z a -tzip -mx=9 Publish.zip ./bin/win-any/publish/*
+          7z a -tzip -mx=9 Publish-x64.zip ./bin/Publish/win-x64/*
+          7z a -tzip -mx=9 Publish-x86.zip ./bin/Publish/win-x86/*
+          7z a -tzip -mx=9 Publish-arm64.zip ./bin/Publish/win-arm64/*
 
-      - name: 上传软件包（zip）
+      - name: 上传软件包（x64-zip）
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./Publish.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.zip
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x64.zip
           asset_content_type: application/zip
-
-      - name: 压缩软件包（7z）
-        run: |
-          7z a -t7z -mx=9 Publish.7z ./bin/win-any/publish/*
-
-      - name: 上传软件包（7z）
+          
+      - name: 上传软件包（x86-zip）
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}.7z
+          asset_path: ./Publish-x86.zip
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x86.zip
+          asset_content_type: application/zip
+          
+      - name: 上传软件包（arm64-zip）
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Publish-arm64.zip
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-arm64.zip
+          asset_content_type: application/zip
+
+      - name: 压缩软件包（7z）
+        run: |
+          7z a -t7z -mx=9 Publish-x64.7z ./bin/Publish/win-x64/*
+          7z a -t7z -mx=9 Publish-x86.7z ./bin/Publish/win-x86/*
+          7z a -t7z -mx=9 Publish-arm64.7z ./bin/Publish/win-arm64/*
+          
+      - name: 上传软件包（x64-7z）
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Publish-x64.7z
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x64.7z
+          asset_content_type: application/7z
+          
+      - name: 上传软件包（x86-7z）
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Publish-x86.7z
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x86.7z
+          asset_content_type: application/7z
+          
+      - name: 上传软件包（arm64-7z）
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Publish-arm64.7z
+          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-arm64.7z
           asset_content_type: application/7z

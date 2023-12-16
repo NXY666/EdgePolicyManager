@@ -5,7 +5,7 @@
         <TargetPlatformMinVersion>10.0.22621.0</TargetPlatformMinVersion>
         <RootNamespace>PolicyManager</RootNamespace>
         <ApplicationManifest>app.manifest</ApplicationManifest>
-        <Platforms>x64;AnyCPU</Platforms>
+        <Platforms>x64;x86;ARM64</Platforms>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <PublishProfile>win-$(Platform).pubxml</PublishProfile>
         <UseWinUI>true</UseWinUI>
@@ -91,6 +91,12 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
         <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+      <WarningLevel>9999</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+      <WarningLevel>9999</WarningLevel>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Any CPU'">
         <WarningLevel>9999</WarningLevel>
