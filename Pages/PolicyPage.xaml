@@ -18,5 +18,8 @@
                             SuggestionChosen="AutoSuggestBox_OnSuggestionChosen" />
         </NavigationView.AutoSuggestBox>
         <Frame Name="DetailFrame" />
+        <NavigationView.FooterMenuItems>
+            <NavigationViewItem x:Uid="PolicyPage/ConfiguredNavigationItem" Icon="Flag" Tag="Configured" />
+        </NavigationView.FooterMenuItems>
     </NavigationView>
 </Page>

@@ -12,16 +12,9 @@ public class GoPageParameter
     public Dictionary<string, object> Parameters { get; init; }
 }
 
-public class MainPageModel : INotifyPropertyChanged
+public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 {
-    private readonly MainPage _mainPage;
-
-    public MainPageModel(MainPage mainPage)
-    {
-        _mainPage = mainPage;
-    }
-
-    public bool CanGoBack => _mainPage.MainFrame.CanGoBack;
+    public bool CanGoBack => mainPage.MainFrame.CanGoBack;
 
     public bool CantGoBack => !CanGoBack;
 
@@ -42,14 +35,14 @@ public class MainPageModel : INotifyPropertyChanged
     {
         if (!CanGoBack) return;
 
-        _mainPage.MainFrame.GoBack();
+        mainPage.MainFrame.GoBack();
 
         OnRouteUpdated();
     }
     
     public void GoPage(Type pageType, Dictionary<string, object> parameters)
     {
-        _mainPage.MainFrame.Navigate(pageType, new GoPageParameter
+        mainPage.MainFrame.Navigate(pageType, new GoPageParameter
         {
             FrameModel = this,
             Parameters = parameters
@@ -65,7 +58,7 @@ public class MainPageModel : INotifyPropertyChanged
 
     private void OnRouteUpdated()
     {
-        ActivePageName = ResourceUtil.GetString($"{_mainPage.MainFrame.Content.GetType().Name}/Name");
+        ActivePageName = ResourceUtil.GetString($"{mainPage.MainFrame.Content.GetType().Name}/Name");
         OnPropertyChanged(nameof(CanGoBack));
         OnPropertyChanged(nameof(CantGoBack));
     }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using CommunityToolkit.WinUI.UI.Controls.TextToolbarSymbols;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using PolicyManager.Models.Policy;
@@ -11,6 +13,8 @@ namespace PolicyManager.Pages;
 public class PolicyPageModel
 {
     public string PolicyType { init; get; }
+
+    public string PolicyRegistryPath { init; get; }
 
     public PolicyDetailMap PolicyDetailMap { init; get; }
 
@@ -37,6 +41,7 @@ public sealed partial class PolicyPage
         _dataContext = new PolicyPageModel
         {
             PolicyType = policyType,
+            PolicyRegistryPath = (string)parameters["policyRegistryPath"],
             PolicyDetailMap = ResourceUtil.GetEmbeddedJson<PolicyDetailMap>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyDetailMap.json"),
             PolicyMenuList = ResourceUtil.GetEmbeddedJson<PolicyMenu>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyMenuList.json")
         };
@@ -84,15 +89,15 @@ public sealed partial class PolicyPage
 
         var policyMenuItem = new PolicyMenuItem
         {
-            Name = ResourceUtil.GetString("PolicyPage/AutoSuggestBox_OnQuerySubmitted/SearchResultName"),
+            Name = ResourceUtil.GetString("PolicyPage/SearchPolicy/SearchResultName"),
             Icon = "Search",
-            Identifier = "searchresult",
-            Items = new List<string>()
+            Identifier = "special:searchresult",
+            Items = []
         };
 
         var splitKeyword = rawKeyword.ToLower().Split(" ");
 
-        List<string> perfectResult = new(), betterResult = new(), normalResult = new(), shitResult = new();
+        List<string> perfectResult = [], betterResult = [], normalResult = [], shitResult = [];
 
         foreach (var key in _dataContext.PolicyDetailMap.Keys)
         {
@@ -154,6 +159,31 @@ public sealed partial class PolicyPage
         DetailNavigate(policyMenuItem);
     }
 
+    private void GetConfiguredPolicy()
+    {
+        var configuredPolicy = new PolicyMenuItem
+        {
+            Name = ResourceUtil.GetString("PolicyPage/GetConfiguredPolicy/ConfiguredPolicyName"),
+            Icon = "Flag",
+            Identifier = "special:configured",
+            Items = []
+        };
+
+        foreach (
+            var policyKey
+            in from key in RegistryUtil.GetRegistryValues(_dataContext.PolicyRegistryPath)
+            select key.Name
+            into policyKey
+            where _dataContext.PolicyDetailMap.ContainsKey(policyKey)
+            select policyKey
+        )
+        {
+            configuredPolicy.Items.Add(policyKey);
+        }
+
+        DetailNavigate(configuredPolicy);
+    }
+
     private void PolicyNavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
         if (args.SelectedItem is not NavigationViewItem selectedItem) return;
@@ -166,6 +196,9 @@ public sealed partial class PolicyPage
                 case "Settings":
                     DetailFrame.Navigate(typeof(SettingsPage));
                     break;
+                case "Configured":
+                    GetConfiguredPolicy();
+                    break;
             }
         }
         else
@@ -176,11 +209,19 @@ public sealed partial class PolicyPage
 
     private void AutoSuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
     {
+        if (args.Reason == AutoSuggestionBoxTextChangeReason.SuggestionChosen) return;
+
+        if (sender.Text == string.Empty)
+        {
+            sender.ItemsSource = new List();
+            return;
+        }
+
         var splitText = sender.Text.ToLower().Split(" ");
 
         var suggestList = (
             from key in _dataContext.PolicyDetailMap.Keys
-            let found = splitText.All(keyword => key.ToLower().Contains(keyword))
+            let found = splitText.All(keyword => key.Contains(keyword, StringComparison.OrdinalIgnoreCase))
             where found
             select _dataContext.PolicyDetailMap[key].Name
         ).ToList();

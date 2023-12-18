@@ -30,8 +30,7 @@
                 Click="ButtonBase_OnClick"
                 Width="40"
                 IsEnabled="{Binding Path=CanGoBack}"
-                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                BorderThickness="0">
+                Style="{StaticResource BackButtonStyle}">
                 <AnimatedIcon>
                     <AnimatedIcon.Source>
                         <animatedVisuals:AnimatedBackVisualSource />
