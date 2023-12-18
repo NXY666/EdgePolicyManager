@@ -237,4 +237,8 @@
     <value>Configured Policies</value>
     <comment>已同步</comment>
   </data>
+  <data name="MainWindow.Title" xml:space="preserve">
+    <value>Edge Policy Manager</value>
+    <comment>已同步</comment>
+  </data>
 </root>
