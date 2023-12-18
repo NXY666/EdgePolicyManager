@@ -1,4 +1,4 @@
-﻿name: EdgePolicyManager Publisher
+﻿name: Publisher
 
 on:
   push:
