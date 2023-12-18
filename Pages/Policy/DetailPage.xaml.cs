@@ -155,8 +155,7 @@ public sealed partial class DetailPage
         else
         {
             // 否则，使用默认浏览器打开链接
-            await Launcher.LaunchUriAsync(
-                new Uri(new Uri("https://learn.microsoft.com/zh-cn/deployedge/microsoft-edge-policies"), e.Link));
+            await Launcher.LaunchUriAsync(new Uri(new Uri("https://learn.microsoft.com/deployedge/microsoft-edge-policies"), e.Link));
         }
     }
 
