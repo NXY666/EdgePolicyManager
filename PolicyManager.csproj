@@ -17,42 +17,46 @@
         <SelfContained>true</SelfContained>
         <PublishTrimmed>true</PublishTrimmed>
         <TrimMode>partial</TrimMode>
+        <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+        <AssemblyName>EdgePolicyManager</AssemblyName>
+        <FileVersion>0.0.0</FileVersion>
+        <AssemblyVersion>0.0.0</AssemblyVersion>
     </PropertyGroup>
     <ItemGroup>
-        <None Remove="StaticModels\Policy\SUPPORT_VERSION"/>
+        <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="StaticModels\Icon\IconMap.json">
             <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </EmbeddedResource>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json"/>
-        <EmbeddedResource Include="StaticModels\Policy\SUPPORT_VERSION"/>
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json" />
+        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json" />
+        <EmbeddedResource Include="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.230907"/>
-        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2"/>
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000"/>
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428"/>
-        <Manifest Include="$(ApplicationManifest)"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.230907" />
+        <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+        <Manifest Include="$(ApplicationManifest)" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <!-- 
@@ -61,13 +65,13 @@
       package has not yet been restored.
     -->
     <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-        <ProjectCapability Include="Msix"/>
+        <ProjectCapability Include="Msix" />
     </ItemGroup>
     <ItemGroup>
-        <Resource Remove="Pages\PolicyContents\BooleanContent.xaml"/>
-        <Resource Remove="Pages\PolicyContents\IntegerContent.xaml"/>
-        <Resource Remove="Pages\PolicyContents\StringContent.xaml"/>
-        <Resource Remove="Pages\PolicyContents\UnsupportedContent.xaml"/>
+        <Resource Remove="Pages\PolicyContents\BooleanContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\IntegerContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\StringContent.xaml" />
+        <Resource Remove="Pages\PolicyContents\UnsupportedContent.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Content Update="Assets\msedge.ico">
@@ -100,35 +104,35 @@
     </PropertyGroup>
     <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
         <ItemGroup>
-            <TrimmableAssembly Include="Microsoft.Windows.SDK.NET"/>
+            <TrimmableAssembly Include="Microsoft.Windows.SDK.NET" />
         </ItemGroup>
     </Target>
     <Target Name="RemovePublishFoldersWithMuiFiles" AfterTargets="GenerateNuspec;Publish">
         <ItemGroup>
             <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;zh-CN;zh-TW"/>
+            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
             <!-- Create a list of keeping files. -->
-            <KeepingFiles Include="@(KeepingLanguages->'$(PublishDir)%(Identity)\*.mui')"/>
+            <KeepingFiles Include="@(KeepingLanguages->'$(PublishDir)%(Identity)\*.mui')" />
             <!-- Create a list of removing files. -->
-            <RemovingFiles Include="$(PublishDir)*\*.mui" Exclude="@(KeepingFiles)"/>
+            <RemovingFiles Include="$(PublishDir)*\*.mui" Exclude="@(KeepingFiles)" />
             <!-- Create a list of removing folders. -->
-            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')"/>
+            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
         </ItemGroup>
         <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
-        <RemoveDir Directories="@(RemovingFolders)"/>
+        <RemoveDir Directories="@(RemovingFolders)" />
     </Target>
     <Target Name="RemoveBuildFoldersWithMuiFiles" AfterTargets="Build">
         <ItemGroup>
             <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;zh-CN;zh-TW"/>
+            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
             <!-- Create a list of keeping files. -->
-            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')"/>
+            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
             <!-- Create a list of removing files. -->
-            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)"/>
+            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)" />
             <!-- Create a list of removing folders. -->
-            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')"/>
+            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
         </ItemGroup>
         <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
-        <RemoveDir Directories="@(RemovingFolders)"/>
+        <RemoveDir Directories="@(RemovingFolders)" />
     </Target>
 </Project>
