@@ -39,7 +39,7 @@ public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 
         OnRouteUpdated();
     }
-    
+
     public void GoPage(Type pageType, Dictionary<string, object> parameters)
     {
         mainPage.MainFrame.Navigate(pageType, new GoPageParameter

@@ -25,7 +25,7 @@ public static class IconUtil
             return DefaultIcon;
         }
     }
-    
+
     public static string GetGlyphByName(string iconName)
     {
         try
@@ -37,7 +37,7 @@ public static class IconUtil
             return DefaultIcon.Glyph;
         }
     }
-    
+
     public static string GetNameByGlyph(string iconGlyph)
     {
         try

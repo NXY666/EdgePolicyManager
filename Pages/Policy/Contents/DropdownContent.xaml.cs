@@ -28,9 +28,9 @@ public sealed partial class DropdownContent
             foreach (var comboBoxItem in comboBoxItems)
             {
                 if (comboBoxItem.Tag is not PolicyDataOption policyDataOption) continue;
-                
+
                 if (Convert.ToString(policyDataOption.Value) != Convert.ToString(policyManager.PolicyValue)) continue;
-                
+
                 ComboBox.SelectedItem = comboBoxItem;
                 break;
             }
@@ -39,11 +39,11 @@ public sealed partial class DropdownContent
         policyManager.PropertyChanged += (_, args) =>
         {
             if (args.PropertyName != nameof(PolicyManager.PolicyLevel)) return;
-            
+
             foreach (var comboBoxItem in comboBoxItems)
             {
                 if (comboBoxItem.Tag is not PolicyDataOption policyDataOption) continue;
-                
+
                 if (Convert.ToString(policyDataOption.Value) != Convert.ToString(PolicyManager.PolicyValue)) continue;
 
                 ComboBox.SelectedItem = comboBoxItem;
@@ -56,9 +56,9 @@ public sealed partial class DropdownContent
     {
         var comboBoxItem = ComboBox.SelectedItem as ComboBoxItem;
         if (comboBoxItem?.Tag is not PolicyDataOption policyDataOption) return;
-        
+
         if (Convert.ToString(policyDataOption.Value) == Convert.ToString(PolicyManager.PolicyValue)) return;
-        
+
         PolicyManager.PolicyValue = policyDataOption.Value;
     }
 }

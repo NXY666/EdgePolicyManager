@@ -7,7 +7,8 @@
     xmlns:contents="using:PolicyManager.Pages.Policy.Contents"
     DataContext="{x:Bind This}">
     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-        <ToggleSwitch x:Uid="BooleanContent/StatusSwitch" IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}"
+        <ToggleSwitch x:Uid="BooleanContent/StatusSwitch"
+                      IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}"
                       Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}}"
                       IsOn="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" />
         <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"
