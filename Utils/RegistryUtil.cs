@@ -127,7 +127,7 @@ public static class RegistryUtil
         }
     }
     
-    public static List<RegistryResult> GetRegistryValues(string path)
+    public static IEnumerable<RegistryResult> GetRegistryValues(string path)
     {
         var registryKey = Registry.LocalMachine.OpenSubKey(path);
 

@@ -14,7 +14,7 @@ public sealed partial class WelcomePage
     {
         InitializeComponent();
 
-        Name = ResourceUtil.GetString($"{this.GetType().Name}/Name");
+        Name = ResourceUtil.GetString($"{GetType().Name}/Name");
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)

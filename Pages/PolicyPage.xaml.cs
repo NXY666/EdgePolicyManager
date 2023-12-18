@@ -113,19 +113,19 @@ public sealed partial class PolicyPage
                 }
 
                 if (
-                    !policyDetail.Name.ToLower().Contains(lowerKeyword)
+                    !policyDetail.Name.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)
                 )
                 {
                     foundBetter = false;
                 }
 
-                if (!policyDetail.ShortDescription.ToLower().Contains(lowerKeyword))
+                if (!policyDetail.ShortDescription.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase))
                 {
                     foundNormal = false;
                 }
 
                 if (
-                    !policyDetail.Description.ToLower().Contains(lowerKeyword)
+                    !policyDetail.Description.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)
                 )
                 {
                     foundShit = false;

@@ -2,9 +2,7 @@
 
 namespace PolicyManager.Models.Policy;
 
-public class PolicyMenu : List<PolicyMenuItem>
-{
-}
+public class PolicyMenu : List<PolicyMenuItem>;
 
 public class PolicyMenuItem
 {

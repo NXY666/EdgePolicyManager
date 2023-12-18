@@ -18,7 +18,7 @@ public sealed class DetailPageModel : INotifyPropertyChanged
     public delegate void SearchPolicyEventHandler(string keyword);
 
     public event SearchPolicyEventHandler SearchPolicyEvent;
-    
+
     public string PolicyType { get; init; }
 
     public PolicyDetailMap PolicyDetailMap { get; set; }
@@ -40,7 +40,7 @@ public sealed class DetailPageModel : INotifyPropertyChanged
 
     public string ActivePolicyMenuName => ActivePolicyMenu?.Name;
 
-    public ObservableCollection<ExpanderListItem> ExpanderListItems { get; } = new();
+    public ObservableCollection<ExpanderListItem> ExpanderListItems { get; } = [];
 
     public SearchPolicyEventHandler SearchPolicyHandler { get; init; }
 
@@ -84,7 +84,7 @@ public sealed partial class DetailPage
 
         // PolicyPage开始监听SearchPolicyEvent事件
         detailPageModel.SearchPolicyEvent += detailPageModel.SearchPolicyHandler;
-        
+
         // 加载数据
         foreach (var item in detailPageModel.ActivePolicyMenu.Items)
         {
@@ -114,7 +114,7 @@ public sealed partial class DetailPage
 
     private async void MarkdownTextBlock_OnLinkClicked(object sender, LinkClickedEventArgs e)
     {
-        if (e.Link.StartsWith("#"))
+        if (e.Link.StartsWith('#'))
         {
             // 如果link开头是#，则弹出对话框，允许用户复制#后面的内容
             var dialog = new ContentDialog
