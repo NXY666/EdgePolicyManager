@@ -21,7 +21,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <ImageIcon Source="Assets/msedge.ico" Width="40" Height="40" />
+                            <ImageIcon Source="/Assets/msedge.ico" Width="40" Height="40" />
                             <TextBlock Grid.Row="1" Text="Edge" FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" />
                         </Grid>
@@ -34,7 +34,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <ImageIcon Source="Assets/msedgeupdate.ico" Width="40" Height="40" />
+                            <ImageIcon Source="/Assets/msedgeupdate.ico" Width="40" Height="40" />
                             <TextBlock Grid.Row="1" Text="Edge Update" FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" />
                         </Grid>
@@ -47,7 +47,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <ImageIcon Source="Assets/msedgewebview2.ico" Width="40" Height="40" />
+                            <ImageIcon Source="/Assets/msedgewebview2.ico" Width="40" Height="40" />
                             <TextBlock Grid.Row="1" Text="Edge Webview 2" FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" />
                         </Grid>
