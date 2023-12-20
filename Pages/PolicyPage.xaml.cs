@@ -74,6 +74,16 @@ public sealed partial class PolicyPage
         };
         DetailFrame.Navigate(typeof(DetailPage), detailPageModel);
     }
+    
+    private void SettingsNavigate()
+    {
+        var settingsPageModel = new SettingsPageModel
+        {
+            PolicyType = _dataContext.PolicyType,
+            PolicyRegistryPath = _dataContext.PolicyRegistryPath
+        };
+        DetailFrame.Navigate(typeof(SettingsPage), settingsPageModel);
+    }
 
     private void SearchPolicy(string rawKeyword)
     {
@@ -159,11 +169,11 @@ public sealed partial class PolicyPage
         DetailNavigate(policyMenuItem);
     }
 
-    private void GetConfiguredPolicy()
+    private void ConfiguredNavigate()
     {
         var configuredPolicy = new PolicyMenuItem
         {
-            Name = ResourceUtil.GetString("PolicyPage/GetConfiguredPolicy/ConfiguredPolicyName"),
+            Name = ResourceUtil.GetString("PolicyPage/ConfiguredNavigate/ConfiguredPolicyName"),
             Icon = "Flag",
             Identifier = "special:configured",
             Items = []
@@ -194,10 +204,10 @@ public sealed partial class PolicyPage
             switch (tag)
             {
                 case "Settings":
-                    DetailFrame.Navigate(typeof(SettingsPage));
+                    SettingsNavigate();
                     break;
                 case "Configured":
-                    GetConfiguredPolicy();
+                    ConfiguredNavigate();
                     break;
             }
         }

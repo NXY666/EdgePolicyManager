@@ -233,12 +233,84 @@
     <value>Configured</value>
     <comment>已同步</comment>
   </data>
-  <data name="PolicyPage.GetConfiguredPolicy.ConfiguredPolicyName" xml:space="preserve">
+  <data name="PolicyPage.ConfiguredNavigate.ConfiguredPolicyName" xml:space="preserve">
     <value>Configured Policies</value>
     <comment>已同步</comment>
   </data>
   <data name="MainWindow.Title" xml:space="preserve">
     <value>Edge Policy Manager</value>
     <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
+    <value>It is not recommended to import untrusted configuration files.</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
+    <value>Import and export policy config</value>
+  </data>
+  <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>All Files</value>
+  </data>
+  <data name="OpenFilePicker.Title" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="SaveFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>All Files</value>
+  </data>
+  <data name="SaveFilePicker.FileName" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="SaveFilePicker.Title" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.PolicyConfig" xml:space="preserve">
+    <value>Policy Config</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.Title" xml:space="preserve">
+    <value>Export Policy</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>The policy config has been successfully exported.</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Open Folder</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>Export Successful</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ExportButton.Content" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ImportButton.Content" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Content" xml:space="preserve">
+    <value>Please check if the format and type of the policy config file are correct.</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Title" xml:space="preserve">
+    <value>Import Failed</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.PolicyConfig" xml:space="preserve">
+    <value>Policy Config</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.Title" xml:space="preserve">
+    <value>Import Policy</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>The policy config has been successfully imported.</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>Import Successful</value>
   </data>
 </root>

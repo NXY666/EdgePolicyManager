@@ -16,19 +16,16 @@
             <Button Width="45" Height="45">
                 <FontIcon Glyph="&#xE713;" />
             </Button>
-            <TextBlock Text="设置" FontSize="20" VerticalAlignment="Center" Margin="10,0" />
+            <TextBlock x:Uid="SettingsPage/TitleTextBlock" FontSize="20" VerticalAlignment="Center" Margin="10,0" />
         </StackPanel>
-        <StackPanel Grid.Row="1" Margin="10">
-            <controls:SettingsCard HorizontalAlignment="Stretch" Margin="5" Header="语言">
+        <StackPanel Grid.Row="1" Margin="10 0">
+            <controls:SettingsCard HorizontalAlignment="Stretch" Margin="5" x:Uid="SettingsPage/ImpAndExpSettingsCard">
                 <controls:SettingsCard.HeaderIcon>
-                    <FontIcon Glyph="&#xF2B7;"/>
+                    <FontIcon Glyph="&#xE8AB;" />
                 </controls:SettingsCard.HeaderIcon>
-                <StackPanel>
-                    <ComboBox
-                        x:Name="LanguageComboBox"
-                        Width="200"
-                        ItemsSource="{x:Bind _dataContext.LanguageList}" 
-                        SelectionChanged="LanguageComboBox_OnSelectionChanged"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Uid="SettingsPage/ImpAndExpSettings/ImportButton" Click="ImportButton_OnClick" Margin="5" />
+                    <Button x:Uid="SettingsPage/ImpAndExpSettings/ExportButton" Click="ExportButton_OnClick" Margin="5" />
                 </StackPanel>
             </controls:SettingsCard>
         </StackPanel>

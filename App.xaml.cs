@@ -25,10 +25,10 @@ public partial class App
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _mWindow = new MainWindow();
-        _mWindow.ExtendsContentIntoTitleBar = true;
-        _mWindow.Activate();
+        MWindow = new MainWindow();
+        MWindow.ExtendsContentIntoTitleBar = true;
+        MWindow.Activate();
     }
 
-    private Window _mWindow;
+    public static Window MWindow { get; private set; }
 }

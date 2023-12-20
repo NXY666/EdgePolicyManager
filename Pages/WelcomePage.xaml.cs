@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Navigation;
-using PolicyManager.Pages;
 using PolicyManager.Utils;
 
-namespace PolicyManager;
+namespace PolicyManager.Pages;
 
 public sealed partial class WelcomePage
 {

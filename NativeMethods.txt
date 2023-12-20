@@ -1,0 +1,7 @@
+CoCreateInstance
+FileSaveDialog
+IFileSaveDialog
+FileOpenDialog
+IFileOpenDialog
+SHCreateItemFromParsingName
+FILEOPENDIALOGOPTIONS

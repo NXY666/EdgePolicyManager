@@ -21,14 +21,13 @@
         <AssemblyName>EdgePolicyManager</AssemblyName>
         <FileVersion>0.0.0</FileVersion>
         <AssemblyVersion>0.0.0</AssemblyVersion>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     </PropertyGroup>
     <ItemGroup>
         <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="StaticModels\Icon\IconMap.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </EmbeddedResource>
+        <EmbeddedResource Include="StaticModels\Icon\IconMap.json"/>
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
@@ -53,25 +52,13 @@
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.230907" />
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
+        <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    </ItemGroup>
-
-    <!-- 
-      Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-      Tools extension to be activated for this project even if the Windows App SDK Nuget
-      package has not yet been restored.
-    -->
-    <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-        <ProjectCapability Include="Msix" />
-    </ItemGroup>
-    <ItemGroup>
-        <Resource Remove="Pages\PolicyContents\BooleanContent.xaml" />
-        <Resource Remove="Pages\PolicyContents\IntegerContent.xaml" />
-        <Resource Remove="Pages\PolicyContents\StringContent.xaml" />
-        <Resource Remove="Pages\PolicyContents\UnsupportedContent.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Content Update="Assets\msedge.ico">
