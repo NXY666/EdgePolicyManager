@@ -276,10 +276,16 @@
   <data name="UnsupportedContent.TextBlock.Text" xml:space="preserve">
     <value>不可用</value>
   </data>
+  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
+    <value>问题反馈</value>
+  </data>
+  <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
+    <value>Github 仓库</value>
+  </data>
   <data name="WelcomePage.Name" xml:space="preserve">
     <value>欢迎</value>
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
-    <value>欢迎。</value>
+    <value>Edge 策略管理器</value>
   </data>
 </root>

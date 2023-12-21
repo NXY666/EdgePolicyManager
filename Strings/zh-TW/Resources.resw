@@ -211,7 +211,7 @@
     <value>歡迎</value>
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
-    <value>歡迎。</value>
+    <value>Edge 策略管理器</value>
   </data>
   <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
     <value>所有檔案</value>
@@ -281,5 +281,11 @@
   </data>
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
     <value>匯入成功</value>
+  </data>
+  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
+    <value>問題反饋</value>
+  </data>
+  <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
+    <value>Github 倉庫</value>
   </data>
 </root>

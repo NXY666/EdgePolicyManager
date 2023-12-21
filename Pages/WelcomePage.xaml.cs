@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Windows.System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Navigation;
 using PolicyManager.Utils;
@@ -48,5 +50,17 @@ public sealed partial class WelcomePage
             { "policyType", "EdgeWebview" },
             { "policyRegistryPath", @"SOFTWARE\Policies\Microsoft\Edge\WebView2" }
         });
+    }
+
+    private async void GithubButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        // 打开 Github 仓库
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager"));
+    }
+
+    private async void FeedbackButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        // 打开 Github Issues
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager/issues/new/choose"));
     }
 }
