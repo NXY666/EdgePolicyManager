@@ -100,7 +100,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            
+
             <converters:BooleanVisibilityConverter x:Key="BooleanVisibilityConverter" />
             <converters:NegationBooleanConverter x:Key="NegationBooleanConverter" />
         </ResourceDictionary>

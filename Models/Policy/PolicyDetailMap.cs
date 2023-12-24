@@ -5,9 +5,7 @@
 
 namespace PolicyManager.Models.Policy;
 
-public class PolicyDetailMap : Dictionary<string, PolicyDetail>
-{
-}
+public class PolicyDetailMap : Dictionary<string, PolicyDetail>;
 
 public class PolicyDetail
 {

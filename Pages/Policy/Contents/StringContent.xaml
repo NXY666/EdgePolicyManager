@@ -8,8 +8,8 @@
     DataContext="{x:Bind This}">
     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
         <TextBox IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}" x:Uid="IntegerContent/NumberBox"
-                   Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}}"
-                   Text="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" MaxLength="100000"/>
+                 Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}}"
+                 Text="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" MaxLength="100000" />
         <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"
                    Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}, ConverterParameter=Invert}" />
     </StackPanel>

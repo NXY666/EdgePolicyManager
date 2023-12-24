@@ -1,0 +1,19 @@
+name: BUG提交
+description: 软件崩溃等问题在此反馈。
+labels:
+  - BUG
+body:
+  - type: input
+    id: OSV_dropdown
+    attributes:
+      label: 系统版本
+      description: 系统版本的差异可能导致兼容性问题。
+    validations:
+      required: true
+  - type: textarea
+    id: Details_textarea
+    attributes:
+      label: 问题详情
+      description: 请详细说明问题，如有必要请附上截图。
+    validations:
+      required: true

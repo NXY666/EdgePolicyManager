@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Microsoft.UI.Xaml;
+using PolicyManager.Pages;
 using PolicyManager.Utils;
 
 namespace PolicyManager;
@@ -39,7 +40,7 @@ public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 
         OnRouteUpdated();
     }
-    
+
     public void GoPage(Type pageType, Dictionary<string, object> parameters)
     {
         mainPage.MainFrame.Navigate(pageType, new GoPageParameter

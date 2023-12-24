@@ -7,7 +7,7 @@
 
     <NavigationView SelectionChanged="PolicyNavigationView_SelectionChanged"
                     IsBackButtonVisible="Collapsed"
-                    IsSettingsVisible="False"
+                    IsSettingsVisible="True"
                     Name="PolicyNavigationView">
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox QueryIcon="Find" x:Uid="PolicyPage/AutoSuggestBox"

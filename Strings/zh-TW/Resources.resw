@@ -165,17 +165,20 @@
   <data name="Language" xml:space="preserve">
     <value>zh_TW</value>
   </data>
+  <data name="MainWindow.Title" xml:space="preserve">
+    <value>Edge 策略管理器</value>
+  </data>
   <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
     <value>未配置</value>
   </data>
   <data name="PolicyPage.AutoSuggestBox.PlaceholderText" xml:space="preserve">
     <value>搜尋</value>
   </data>
+  <data name="PolicyPage.ConfiguredNavigate.ConfiguredPolicyName" xml:space="preserve">
+    <value>已配置策略</value>
+  </data>
   <data name="PolicyPage.ConfiguredNavigationItem.Content" xml:space="preserve">
     <value>已配置</value>
-  </data>
-  <data name="PolicyPage.GetConfiguredPolicy.ConfiguredPolicyName" xml:space="preserve">
-    <value>已配置策略</value>
   </data>
   <data name="PolicyPage.Name" xml:space="preserve">
     <value>策略</value>
@@ -198,6 +201,9 @@
   <data name="RegistryUtil.ShowValue.UnsupportedText" xml:space="preserve">
     <value>不支援</value>
   </data>
+  <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
   <data name="UnsupportedContent.TextBlock.Text" xml:space="preserve">
     <value>不可用</value>
   </data>
@@ -205,6 +211,81 @@
     <value>歡迎</value>
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
-    <value>歡迎。</value>
+    <value>Edge 策略管理器</value>
+  </data>
+  <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>所有檔案</value>
+  </data>
+  <data name="OpenFilePicker.Title" xml:space="preserve">
+    <value>開啟</value>
+  </data>
+  <data name="SaveFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>所有檔案</value>
+  </data>
+  <data name="SaveFilePicker.FileName" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="SaveFilePicker.Title" xml:space="preserve">
+    <value>另存新檔</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.PolicyConfig" xml:space="preserve">
+    <value>策略配置</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.Title" xml:space="preserve">
+    <value>匯出策略</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>策略配置已成功匯出。</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.SecondaryButtonText" xml:space="preserve">
+    <value>開啟資料夾</value>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>匯出成功</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ExportButton.Content" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ImportButton.Content" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
+    <value>不建議匯入不受信任的配置檔案。</value>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
+    <value>匯入與匯出策略配置</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Content" xml:space="preserve">
+    <value>請檢查策略配置檔案的格式及類型是否正確。</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.PrimaryButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Title" xml:space="preserve">
+    <value>匯入失敗</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.PolicyConfig" xml:space="preserve">
+    <value>策略配置</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.Title" xml:space="preserve">
+    <value>匯入策略</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>策略配置已成功匯入。</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>匯入成功</value>
+  </data>
+  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
+    <value>問題反饋</value>
+  </data>
+  <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
+    <value>Github 倉庫</value>
   </data>
 </root>

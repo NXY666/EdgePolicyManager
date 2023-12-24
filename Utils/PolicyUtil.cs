@@ -228,7 +228,7 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
                     "Boolean" => false,
                     _ => throw new Exception($"Unsupported data type {policyDetail.DataType}.")
                 });
-            
+
             Console.WriteLine($"Set policy level to {value}, value is {policyValue}.");
             switch (value)
             {

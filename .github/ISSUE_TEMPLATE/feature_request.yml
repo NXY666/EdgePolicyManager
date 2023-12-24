@@ -1,0 +1,11 @@
+name: 功能建议
+description: 新功能需求等在此提交。
+labels:
+  - 建议
+body:
+  - type: textarea
+    id: Details
+    attributes:
+      label: 建议详情
+    validations:
+      required: true

@@ -2,6 +2,4 @@
 
 namespace PolicyManager.Models.Icon;
 
-public class IconMap : Dictionary<string, string>
-{
-}
+public class IconMap : Dictionary<string, string>;
