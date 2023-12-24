@@ -27,7 +27,7 @@
         <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="StaticModels\Icon\IconMap.json"/>
+        <EmbeddedResource Include="StaticModels\Icon\IconMap.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
@@ -61,6 +61,12 @@
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
     <ItemGroup>
+        <Content Update="Assets\github.svg">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Assets\icon.ico">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
         <Content Update="Assets\msedge.ico">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
