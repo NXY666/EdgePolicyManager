@@ -31,7 +31,7 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 ### 导入/导出策略配置
 
-> 支持导入/导出策略配置文件，方便备份和共享。
+> 支持导入和导出策略配置文件，方便备份和共享。
 
 ![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/d3663eda-80cd-418d-b76a-1bb63386dbf1)
 
@@ -43,9 +43,30 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 > 使用意外的注册表路径时，将阻止对注册表的写入、删除操作。
 
+## 编译 & 发布
+
+> 你可以下载源码后编译发布版使用。
+
+```bash
+# 克隆仓库
+git clone https://github.com/NXY666/EdgePolicyManager.git
+
+# 进入仓库目录
+cd EdgePolicyManager
+
+# 创建发布版（x64）
+dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-x64.pubxml
+
+# 创建发布版（x86）
+dotnet publish -p:Platform=x86 -p:PublishProfile=Properties/PublishProfiles/win-x86.pubxml
+
+# 创建发布版（ARM64）
+dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/win-arm64.pubxml
+```
+
 ## 说明
 
-* 本软件 100% 开源，发布版通过 GitHub Action 自动发布，如不放心可自行编译使用。
+* 本软件 100% 开源，并通过 GitHub Action 自动发布，如仍不放心可自行下载源码编译使用。
 * 由于需要修改注册表，Windows 可能会弹出安全警告提示，忽略即可。
-* 默认值根据文档内容推断，仅供参考。
-* 暂不支持主动切换显示语言。
+* 默认值根据文档内容推断，仅供参考。如有错误可提交 Issue ，将尽快修正。
+* 显示语言始终跟随系统，暂不支持主动切换。
