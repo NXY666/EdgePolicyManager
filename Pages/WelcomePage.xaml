@@ -9,17 +9,19 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                    Margin="0,0,0,40">
-            <Image Source="/Assets/icon.ico" Width="40" Margin="0,0,20,0" />
-            <TextBlock x:Uid="WelcomePage/TitleTextBlock" Foreground="#004700" FontWeight="bold" FontSize="24"
-                       VerticalAlignment="Center" CharacterSpacing="1" />
+        <Border Background="#D2FFE1" Width="90" Height="90" CornerRadius="100" Margin="0,0,0,20">
+            <Image Source="/Assets/icon.ico" Width="50" VerticalAlignment="Center" />
+        </Border>
+        <StackPanel Grid.Row="1" Margin="0,0,0,30" HorizontalAlignment="Center">
+            <TextBlock x:Uid="WelcomePage/TitleTextBlock" Foreground="#444746" FontSize="24"
+                       FontWeight="Bold" CharacterSpacing="2" Margin=" 0,0,5,0" />
         </StackPanel>
-        <Grid Row="1" ColumnSpacing="20">
+        <Grid Row="2" ColumnSpacing="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -62,7 +64,7 @@
                 </Button.Content>
             </Button>
         </Grid>
-        <Grid Row="2" Margin="0, 20, 0, 0" ColumnSpacing="20">
+        <Grid Row="3" Margin="0, 20, 0, 0" ColumnSpacing="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -70,16 +72,16 @@
             <Button Grid.Column="0" HorizontalAlignment="Stretch" Click="GithubButton_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" Spacing="5">
-                        <ImageIcon Source="/Assets/github.svg" Height="15" />
-                        <TextBlock x:Uid="WelcomePage/GithubButtonText" />
+                        <ImageIcon Source="/Assets/github.svg" Height="25" Margin="2,0" />
+                        <TextBlock x:Uid="WelcomePage/GithubButtonText" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button.Content>
             </Button>
             <Button Grid.Column="1" HorizontalAlignment="Stretch" Click="FeedbackButton_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" Spacing="5">
-                        <FontIcon Glyph="&#xED15;" FontSize="13" />
-                        <TextBlock x:Uid="WelcomePage/FeedbackButtonText" />
+                        <FontIcon Glyph="&#xED15;" FontSize="21" Margin="4,2" />
+                        <TextBlock x:Uid="WelcomePage/FeedbackButtonText" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button.Content>
             </Button>
