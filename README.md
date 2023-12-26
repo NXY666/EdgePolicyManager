@@ -29,7 +29,7 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 ![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/832dfe0c-26fb-480d-8a1a-72d95083211e)
 
-### 导入/导出策略配置
+### 导入与导出
 
 > 支持导入和导出策略配置文件，方便备份和共享。
 
