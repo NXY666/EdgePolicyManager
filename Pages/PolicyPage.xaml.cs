@@ -72,6 +72,9 @@ public sealed partial class PolicyPage
             PolicyNavigationView.MenuItems.Add(navigationViewItem);
         }
 
+        // ConfiguredœÓ
+        PolicyNavigationView.SelectedItem = PolicyNavigationView.FooterMenuItems[0];
+
         DataContext = _dataContext;
     }
 
