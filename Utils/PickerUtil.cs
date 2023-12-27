@@ -8,6 +8,8 @@ using Windows.Win32.UI.Shell;
 using Windows.Win32.UI.Shell.Common;
 using WinRT.Interop;
 
+// ReSharper disable UnusedMember.Global
+
 namespace PolicyManager.Utils;
 
 public class SaveFilePicker
