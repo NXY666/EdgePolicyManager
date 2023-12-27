@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CommunityToolkit.WinUI.UI.Controls.TextToolbarSymbols;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using PolicyManager.Models.Policy;
@@ -220,18 +219,20 @@ public sealed partial class PolicyPage
     private void AutoSuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
     {
         if (args.Reason == AutoSuggestionBoxTextChangeReason.SuggestionChosen) return;
+        
+        var searchText = sender.Text.Trim();
 
-        if (sender.Text == string.Empty)
+        if (searchText == string.Empty)
         {
-            sender.ItemsSource = new List();
+            sender.ItemsSource = null;
             return;
         }
 
-        var splitText = sender.Text.ToLower().Split(" ");
+        var splitSearchText = searchText.Split(" ");
 
         var suggestList = (
             from key in _dataContext.PolicyDetailMap.Keys
-            let found = splitText.All(keyword => key.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+            let found = splitSearchText.All(keyword => key.Contains(keyword, StringComparison.OrdinalIgnoreCase))
             where found
             select _dataContext.PolicyDetailMap[key].Name
         ).ToList();
