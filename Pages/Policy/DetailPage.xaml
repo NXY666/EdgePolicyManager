@@ -71,5 +71,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Visibility="{Binding Path=IsExpanderListItemsEmpty, Converter={StaticResource BooleanVisibilityConverter}}">
+            <TextBlock Text="¯\_(ツ)_/¯" FontSize="50" HorizontalAlignment="Center" Foreground="Gray" Margin="0,0,0,100" />
+        </StackPanel>
     </Grid>
 </Page>

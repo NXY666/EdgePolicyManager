@@ -41,6 +41,8 @@ public sealed class DetailPageModel : INotifyPropertyChanged
     public string ActivePolicyMenuName => ActivePolicyMenu?.Name;
 
     public ObservableCollection<ExpanderListItem> ExpanderListItems { get; } = [];
+    
+    public bool IsExpanderListItemsEmpty => ExpanderListItems.Count == 0;
 
     public SearchPolicyEventHandler SearchPolicyHandler { get; init; }
 
