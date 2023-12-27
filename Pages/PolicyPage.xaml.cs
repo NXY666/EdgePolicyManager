@@ -45,6 +45,18 @@ public sealed partial class PolicyPage
             PolicyMenuList = ResourceUtil.GetEmbeddedJson<PolicyMenu>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyMenuList.json")
         };
 
+        // All
+        PolicyNavigationView.MenuItems.Add(
+            new NavigationViewItem
+            {
+                Content = ResourceUtil.GetString("PolicyPage/AllNavigate/AllPolicyName"),
+                Icon = IconUtil.GetIconByName("ViewAll"),
+                Tag = "All"
+            }
+        );
+
+        PolicyNavigationView.MenuItems.Add(new NavigationViewItemSeparator());
+
         foreach (
             var navigationViewItem
             in _dataContext.PolicyMenuList.Select(
@@ -73,7 +85,19 @@ public sealed partial class PolicyPage
         };
         DetailFrame.Navigate(typeof(DetailPage), detailPageModel);
     }
-    
+
+    private void AllNavigate()
+    {
+        var allPolicyMenuItem = new PolicyMenuItem
+        {
+            Name = ResourceUtil.GetString("PolicyPage/AllNavigate/AllPolicyName"),
+            Icon = "ViewAll",
+            Identifier = "special:all",
+            Items = _dataContext.PolicyDetailMap.Select(keyValuePair => keyValuePair.Key).ToList()
+        };
+        DetailNavigate(allPolicyMenuItem);
+    }
+
     private void SettingsNavigate()
     {
         var settingsPageModel = new SettingsPageModel
@@ -202,6 +226,9 @@ public sealed partial class PolicyPage
         {
             switch (tag)
             {
+                case "All":
+                    AllNavigate();
+                    break;
                 case "Settings":
                     SettingsNavigate();
                     break;
@@ -219,7 +246,7 @@ public sealed partial class PolicyPage
     private void AutoSuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
     {
         if (args.Reason == AutoSuggestionBoxTextChangeReason.SuggestionChosen) return;
-        
+
         var searchText = sender.Text.Trim();
 
         if (searchText == string.Empty)

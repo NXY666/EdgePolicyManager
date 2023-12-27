@@ -345,4 +345,7 @@
     <value>Github Repo</value>
     <comment>已同步</comment>
   </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>All Policies</value>
+  </data>
 </root>

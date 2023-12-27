@@ -177,6 +177,9 @@
   <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
     <value>未配置</value>
   </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>全部策略</value>
+  </data>
   <data name="PolicyPage.AutoSuggestBox.PlaceholderText" xml:space="preserve">
     <value>搜索</value>
   </data>

@@ -288,4 +288,7 @@
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
     <value>Github Repo</value>
   </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>All Policies</value>
+  </data>
 </root>
