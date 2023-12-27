@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using System.Reflection;
-using Windows.ApplicationModel.Resources;
 using Windows.ApplicationModel.Resources.Core;
 using Newtonsoft.Json;
 
@@ -12,11 +10,9 @@ public static class ResourceUtil
 {
     private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-    private static ResourceLoader _resourceLoader;
+    private static readonly ResourceMap ResourceMap = ResourceManager.Current.MainResourceMap.GetSubtree("Resources");
 
     private const string Namespace = "PolicyManager";
-
-    private const string FallbackLanguage = "en-US";
 
     private static string GetEmbeddedPlainText(string resourceName)
     {
@@ -40,36 +36,5 @@ public static class ResourceUtil
         return JsonConvert.DeserializeObject<T>(GetEmbeddedPlainText(resourceName)) ?? throw new InvalidOperationException("Failed to deserialize JSON data.");
     }
 
-    public static void SetLanguage(string language)
-    {
-        ResourceContext resourceContext;
-        try
-        {
-            resourceContext = ResourceContext.GetForCurrentView();
-        }
-        catch (Exception)
-        {
-            resourceContext = ResourceContext.GetForViewIndependentUse();
-        }
-
-        resourceContext.Languages = new[] { language, FallbackLanguage };
-        CultureInfo.CurrentCulture = new CultureInfo(language);
-    }
-
-    public static string GetString(string key)
-    {
-        if (_resourceLoader == null)
-        {
-            try
-            {
-                _resourceLoader ??= ResourceLoader.GetForCurrentView();
-            }
-            catch (Exception)
-            {
-                _resourceLoader ??= ResourceLoader.GetForViewIndependentUse();
-            }
-        }
-
-        return _resourceLoader.GetString(key);
-    }
+    public static string GetString(string key) => ResourceMap.GetValue(key)?.ValueAsString ?? key.Replace('/', '.');
 }
