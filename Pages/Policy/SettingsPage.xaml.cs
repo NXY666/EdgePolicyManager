@@ -31,6 +31,7 @@ public sealed partial class SettingsPage
     public SettingsPage()
     {
         InitializeComponent();
+        NavigationCacheMode = NavigationCacheMode.Disabled;
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)

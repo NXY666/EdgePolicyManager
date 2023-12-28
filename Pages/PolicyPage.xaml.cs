@@ -27,6 +27,7 @@ public sealed partial class PolicyPage
     public PolicyPage()
     {
         InitializeComponent();
+        NavigationCacheMode = NavigationCacheMode.Disabled;
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
