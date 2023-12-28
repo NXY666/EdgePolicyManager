@@ -181,7 +181,7 @@
     <value>Policy anchor</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>en_UK</value>
+    <value>en_US</value>
   </data>
   <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
     <value>Unconfigured</value>
