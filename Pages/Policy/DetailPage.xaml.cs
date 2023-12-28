@@ -41,7 +41,7 @@ public sealed class DetailPageModel : INotifyPropertyChanged
     public string ActivePolicyMenuName => ActivePolicyMenu?.Name;
 
     public ObservableCollection<ExpanderListItem> ExpanderListItems { get; } = [];
-    
+
     public bool IsExpanderListItemsEmpty => ExpanderListItems.Count == 0;
 
     public SearchPolicyEventHandler SearchPolicyHandler { get; init; }
@@ -74,6 +74,7 @@ public sealed partial class DetailPage
     public DetailPage()
     {
         InitializeComponent();
+        DataContext = new DetailPageModel();
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
