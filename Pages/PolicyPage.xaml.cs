@@ -49,7 +49,7 @@ public sealed partial class PolicyPage
         PolicyNavigationView.MenuItems.Add(
             new NavigationViewItem
             {
-                Content = ResourceUtil.GetString("PolicyPage/AllNavigate/AllPolicyName"),
+                Content = ResourceUtil.GetString("PolicyPage/AllNavigationItem/Content"),
                 Icon = IconUtil.GetIconByName("ViewAll"),
                 Tag = "All"
             }
@@ -72,7 +72,7 @@ public sealed partial class PolicyPage
             PolicyNavigationView.MenuItems.Add(navigationViewItem);
         }
 
-        // ConfiguredœÓ
+        // Configured
         PolicyNavigationView.SelectedItem = PolicyNavigationView.FooterMenuItems[0];
 
         DataContext = _dataContext;

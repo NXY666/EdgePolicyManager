@@ -291,4 +291,7 @@
   <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
     <value>全部策略</value>
   </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>全部</value>
+  </data>
 </root>

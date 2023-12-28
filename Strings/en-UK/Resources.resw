@@ -291,4 +291,7 @@
   <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
     <value>All Policies</value>
   </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>All</value>
+  </data>
 </root>

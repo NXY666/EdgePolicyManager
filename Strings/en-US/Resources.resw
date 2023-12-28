@@ -347,5 +347,10 @@
   </data>
   <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
     <value>All Policies</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>All</value>
+    <comment>已同步</comment>
   </data>
 </root>
