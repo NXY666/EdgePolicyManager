@@ -196,7 +196,7 @@
     <value>策略</value>
   </data>
   <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
-    <value>搜索结果</value>
+    <value>“{0}”的搜索结果</value>
   </data>
   <data name="RegistryUtil.ShowValue.DefaultText" xml:space="preserve">
     <value>（默认）</value>

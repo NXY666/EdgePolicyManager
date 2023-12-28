@@ -18,6 +18,8 @@ public class PolicyPageModel
     public PolicyDetailMap PolicyDetailMap { init; get; }
 
     public PolicyMenu PolicyMenuList { init; get; }
+
+    public string LastSearchKeyword { set; get; }
 }
 
 public sealed partial class PolicyPage
@@ -114,25 +116,34 @@ public sealed partial class PolicyPage
 
     private void SearchPolicy(string rawKeyword)
     {
+        rawKeyword = rawKeyword.Trim();
+
+        // 如果是空的，就不搜索
         if (rawKeyword == string.Empty)
         {
             return;
         }
 
-        if (AutoSuggestBox.Text != rawKeyword)
+        if (AutoSuggestBox.Text.Trim() != rawKeyword)
         {
             AutoSuggestBox.Text = rawKeyword;
         }
 
+        // 分割 去重 移除空白
+        var splitKeyword = rawKeyword.Split(" ").Distinct().Where(keyword => keyword != string.Empty).ToList();
+
+        // 如果和上次搜索的一样，就不搜索
+        var parsedKeyword = splitKeyword.Aggregate((a, b) => $"{a} {b}");
+        if (parsedKeyword == _dataContext.LastSearchKeyword) return;
+        _dataContext.LastSearchKeyword = parsedKeyword;
+
         var policyMenuItem = new PolicyMenuItem
         {
-            Name = ResourceUtil.GetString("PolicyPage/SearchPolicy/SearchResultName"),
+            Name = string.Format(ResourceUtil.GetString("PolicyPage/SearchPolicy/SearchResultName"), parsedKeyword),
             Icon = "Search",
             Identifier = "special:searchresult",
             Items = []
         };
-
-        var splitKeyword = rawKeyword.ToLower().Split(" ");
 
         List<string> perfectResult = [], betterResult = [], normalResult = [], shitResult = [];
 

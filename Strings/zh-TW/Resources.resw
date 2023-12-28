@@ -184,7 +184,7 @@
     <value>策略</value>
   </data>
   <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
-    <value>搜尋結果</value>
+    <value>“{0}”的搜尋結果</value>
   </data>
   <data name="RegistryUtil.ShowValue.DefaultText" xml:space="preserve">
     <value> (預設)</value>
