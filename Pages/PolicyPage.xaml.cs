@@ -89,7 +89,7 @@ public sealed partial class PolicyPage
             SearchPolicyHandler = SearchPolicy,
             PolicyType = _dataContext.PolicyType
         };
-        DetailFrame.Navigate(typeof(DetailPage), detailPageModel);
+        BaseNavigate(typeof(DetailPage), policyMenuItem.Identifier, detailPageModel);
     }
 
     private void AllNavigate()
@@ -111,7 +111,13 @@ public sealed partial class PolicyPage
             PolicyType = _dataContext.PolicyType,
             PolicyRegistryPath = _dataContext.PolicyRegistryPath
         };
-        DetailFrame.Navigate(typeof(SettingsPage), settingsPageModel);
+        BaseNavigate(typeof(SettingsPage), "special:settings", settingsPageModel);
+    }
+
+    private void BaseNavigate(Type pageType, string identifier, object parameter = null)
+    {
+        DetailFrame.Tag = identifier;
+        DetailFrame.Navigate(pageType, parameter);
     }
 
     private void SearchPolicy(string rawKeyword)
@@ -134,7 +140,7 @@ public sealed partial class PolicyPage
 
         // 如果和上次搜索的一样，就不搜索
         var parsedKeyword = splitKeyword.Aggregate((a, b) => $"{a} {b}");
-        if (parsedKeyword == _dataContext.LastSearchKeyword) return;
+        if (parsedKeyword == _dataContext.LastSearchKeyword && ReferenceEquals(DetailFrame.Tag, "special:searchresult")) return;
         _dataContext.LastSearchKeyword = parsedKeyword;
 
         var policyMenuItem = new PolicyMenuItem
