@@ -1,6 +1,13 @@
-# Edge 策略管理器
-
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/fa759fdd-9882-4cf4-93df-d4d429a3c0cb)
+<p align="center">
+  <img src="https://s11.ax1x.com/2023/12/29/piLDqKO.png" alt="Edge Policy Manager" width="60px"/>
+</p>
+<h1 align="center">Edge 策略管理器</h1>
+<p align="center">
+    <a href="README.md">简体中文</a> | <b>繁體中文</b> | <a href="README.en-US.md">English</a>
+</p>
+<p align="center">
+    <img alt="image" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/63bb6b03-8188-4c49-8c9e-11c8e9324eb4"/>
+</p>
 
 ## “策略”的用途是什麼？
 
@@ -21,19 +28,19 @@
 
 > 支援查看和編輯策略配置，在未配置的情況下展示通過文檔推斷的預設值。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9a1ef6ea-2020-4d63-8072-e6ef350b2e23)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/b6d4edab-2a03-4648-8177-32160d92099c)
 
 ### 關鍵字檢索
 
 > 支援根據關鍵字模糊搜索策略，並根據相關度排序。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/832dfe0c-26fb-480d-8a1a-72d95083211e)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/f7411764-1548-475a-b440-a40beb4025f3)
 
 ### 導入與導出
 
 > 支援導入和導出策略配置文件，方便備份和共享。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/d3663eda-80cd-418d-b76a-1bb63386dbf1)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/a3956bef-5071-4c91-8a3e-85bcd36ec521)
 
 ### 多語言支援
 

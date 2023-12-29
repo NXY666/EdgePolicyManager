@@ -1,6 +1,13 @@
-# Edge 策略管理器
-
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/fa759fdd-9882-4cf4-93df-d4d429a3c0cb)
+<p align="center">
+  <img src="https://s11.ax1x.com/2023/12/29/piLDqKO.png" alt="Edge Policy Manager" width="60px"/>
+</p>
+<h1 align="center">Edge 策略管理器</h1>
+<p align="center">
+    <b>简体中文</b> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.en-US.md">English</a>
+</p>
+<p align="center">
+    <img alt="image" src="https://s11.ax1x.com/2023/12/29/piL6mid.png"/>
+</p>
 
 ## “策略”有什么用？
 
@@ -21,19 +28,19 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 > 支持查看和编辑策略配置，在未配置的情况下展示通过文档推断的默认值。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9a1ef6ea-2020-4d63-8072-e6ef350b2e23)
+![image](https://s11.ax1x.com/2023/12/29/piLcpTg.png)
 
 ### 关键字检索
 
 > 支持根据关键字模糊搜索策略，并根据相关度排序。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/832dfe0c-26fb-480d-8a1a-72d95083211e)
+![image](https://s11.ax1x.com/2023/12/29/piLcifs.png)
 
 ### 导入与导出
 
 > 支持导入和导出策略配置文件，方便备份和共享。
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/d3663eda-80cd-418d-b76a-1bb63386dbf1)
+![image](https://s11.ax1x.com/2023/12/29/piLcKk4.png)
 
 ### 多语言支持
 

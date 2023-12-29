@@ -1,6 +1,13 @@
-# Edge Policy Manager
-
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/fa759fdd-9882-4cf4-93df-d4d429a3c0cb)
+<p align="center">
+  <img src="https://s11.ax1x.com/2023/12/29/piLDqKO.png" alt="Edge Policy Manager" width="60px"/>
+</p>
+<h1 align="center">Edge Policy Manager</h1>
+<p align="center">
+    <a href="README.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <b>English</b>
+</p>
+<p align="center">
+    <img alt="image" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/63bb6b03-8188-4c49-8c9e-11c8e9324eb4"/>
+</p>
 
 ## What is the Use of "Policies"?
 
@@ -21,19 +28,19 @@ For example:
 
 > Supports viewing and editing policy configurations, displaying inferred default values in unconfigured cases.
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9a1ef6ea-2020-4d63-8072-e6ef350b2e23)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/b6d4edab-2a03-4648-8177-32160d92099c)
 
 ### Keyword Search
 
 > Supports fuzzy search of policies by keywords and sorts them by relevance.
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/832dfe0c-26fb-480d-8a1a-72d95083211e)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/f7411764-1548-475a-b440-a40beb4025f3)
 
 ### Import and Export
 
 > Supports importing and exporting policy configuration files for easy backup and sharing.
 
-![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/d3663eda-80cd-418d-b76a-1bb63386dbf1)
+![image](https://github.com/NXY666/EdgePolicyManager/assets/62371554/a3956bef-5071-4c91-8a3e-85bcd36ec521)
 
 ### Multilingual Support
 
