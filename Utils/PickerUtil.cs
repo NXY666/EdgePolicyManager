@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-
-namespace PolicyManager.Utils;
-
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.System.Com;
 using Windows.Win32.UI.Shell;
 using Windows.Win32.UI.Shell.Common;
+using WinRT.Interop;
+
+// ReSharper disable UnusedMember.Global
+
+namespace PolicyManager.Utils;
 
 public class SaveFilePicker
 {
@@ -17,7 +19,7 @@ public class SaveFilePicker
     private string _defaultExtension = "txt";
     private string _folder;
     private string _defaultFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-    private string _fileFilter = $"{ResourceUtil.GetString("SaveFilePicker.FileFilter.AllFiles")}|*.*";
+    private string _fileFilter = $"{ResourceUtil.GetString("SaveFilePicker/FileFilter/AllFiles")}|*.*";
     private uint _options;
 
     public SaveFilePicker SetTitle(string title)
@@ -118,7 +120,7 @@ public class SaveFilePicker
             var fsd = CreateSaveFileDialog();
 
             // Retrieve the window handle (HWND) and other setup here...
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MWindow);
+            var hWnd = WindowNative.GetWindowHandle(App.MWindow);
 
             fsd.Show(new HWND(hWnd));
 
@@ -145,7 +147,7 @@ public class OpenFilePicker
     private string _defaultExtension = "";
     private string _folder;
     private string _defaultFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-    private string _fileFilter = $"{ResourceUtil.GetString("OpenFilePicker.FileFilter.AllFiles")}|*.*";
+    private string _fileFilter = $"{ResourceUtil.GetString("OpenFilePicker/FileFilter/AllFiles")}|*.*";
     private uint _options;
 
     public OpenFilePicker SetTitle(string title)
@@ -246,7 +248,7 @@ public class OpenFilePicker
             var fod = CreateOpenFileDialog();
 
             // Retrieve the window handle (HWND) and other setup here...
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MWindow);
+            var hWnd = WindowNative.GetWindowHandle(App.MWindow);
 
             fod.Show(new HWND(hWnd));
 

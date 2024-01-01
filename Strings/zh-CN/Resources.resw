@@ -177,6 +177,12 @@
   <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
     <value>未配置</value>
   </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>全部策略</value>
+  </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>全部</value>
+  </data>
   <data name="PolicyPage.AutoSuggestBox.PlaceholderText" xml:space="preserve">
     <value>搜索</value>
   </data>
@@ -190,7 +196,7 @@
     <value>策略</value>
   </data>
   <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
-    <value>搜索结果</value>
+    <value>“{0}”的搜索结果</value>
   </data>
   <data name="RegistryUtil.ShowValue.DefaultText" xml:space="preserve">
     <value>（默认）</value>

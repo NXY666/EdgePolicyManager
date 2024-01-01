@@ -182,7 +182,7 @@
     <comment>已同步</comment>
   </data>
   <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
-    <value>Search Result</value>
+    <value>Search Results for "{0}"</value>
     <comment>已同步</comment>
   </data>
   <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogCancelButtonText" xml:space="preserve">
@@ -343,6 +343,14 @@
   </data>
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
     <value>Github Repo</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>All Policies</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>All</value>
     <comment>已同步</comment>
   </data>
 </root>

@@ -13,7 +13,7 @@ using PolicyManager.Utils;
 
 namespace PolicyManager.Pages.Policy;
 
-public sealed class DetailPageModel : INotifyPropertyChanged
+public sealed class DetailPageModel : INotifyPropertyChanged, IDisposable
 {
     public delegate void SearchPolicyEventHandler(string keyword);
 
@@ -42,6 +42,8 @@ public sealed class DetailPageModel : INotifyPropertyChanged
 
     public ObservableCollection<ExpanderListItem> ExpanderListItems { get; } = [];
 
+    public bool IsExpanderListItemsEmpty => ExpanderListItems.Count == 0;
+
     public SearchPolicyEventHandler SearchPolicyHandler { get; init; }
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -54,6 +56,12 @@ public sealed class DetailPageModel : INotifyPropertyChanged
     internal void OnSearchPolicyEvent(string keyword)
     {
         SearchPolicyEvent?.Invoke(keyword);
+    }
+
+    public void Dispose()
+    {
+        // PolicyPage停止监听SearchPolicyEvent事件
+        SearchPolicyEvent -= SearchPolicyHandler;
     }
 }
 
@@ -72,6 +80,8 @@ public sealed partial class DetailPage
     public DetailPage()
     {
         InitializeComponent();
+        NavigationCacheMode = NavigationCacheMode.Disabled;
+        DataContext = null;
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -167,5 +177,12 @@ public sealed partial class DetailPage
         if (dataContext == null) return;
 
         dataContext.PolicyManager.PolicyLevel = comboBox.SelectedIndex;
+    }
+
+    protected override void OnNavigatedFrom(NavigationEventArgs e)
+    {
+        base.OnNavigatedFrom(e);
+        
+        _dataContext.Dispose();
     }
 }

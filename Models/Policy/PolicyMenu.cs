@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
 
+// ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable PropertyCanBeMadeInitOnly.Global
+
 namespace PolicyManager.Models.Policy;
 
 public class PolicyMenu : List<PolicyMenuItem>;

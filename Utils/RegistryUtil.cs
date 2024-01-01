@@ -5,6 +5,8 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+// ReSharper disable UnusedMember.Global
+
 namespace PolicyManager.Utils;
 
 public class RegistryResult(string path, string name, RegistryValueKind valueKind = RegistryValueKind.None, object value = null)

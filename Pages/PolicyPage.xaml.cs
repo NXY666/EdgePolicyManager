@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CommunityToolkit.WinUI.UI.Controls.TextToolbarSymbols;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using PolicyManager.Models.Policy;
@@ -19,6 +18,8 @@ public class PolicyPageModel
     public PolicyDetailMap PolicyDetailMap { init; get; }
 
     public PolicyMenu PolicyMenuList { init; get; }
+
+    public string LastSearchKeyword { set; get; }
 }
 
 public sealed partial class PolicyPage
@@ -28,6 +29,7 @@ public sealed partial class PolicyPage
     public PolicyPage()
     {
         InitializeComponent();
+        NavigationCacheMode = NavigationCacheMode.Disabled;
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -46,6 +48,18 @@ public sealed partial class PolicyPage
             PolicyMenuList = ResourceUtil.GetEmbeddedJson<PolicyMenu>($"StaticModels.Policy.{policyType}.{{LangCode}}.PolicyMenuList.json")
         };
 
+        // All
+        PolicyNavigationView.MenuItems.Add(
+            new NavigationViewItem
+            {
+                Content = ResourceUtil.GetString("PolicyPage/AllNavigationItem/Content"),
+                Icon = IconUtil.GetIconByName("ViewAll"),
+                Tag = "All"
+            }
+        );
+
+        PolicyNavigationView.MenuItems.Add(new NavigationViewItemSeparator());
+
         foreach (
             var navigationViewItem
             in _dataContext.PolicyMenuList.Select(
@@ -61,6 +75,9 @@ public sealed partial class PolicyPage
             PolicyNavigationView.MenuItems.Add(navigationViewItem);
         }
 
+        // Configured
+        PolicyNavigationView.SelectedItem = PolicyNavigationView.FooterMenuItems[0];
+
         DataContext = _dataContext;
     }
 
@@ -72,9 +89,21 @@ public sealed partial class PolicyPage
             SearchPolicyHandler = SearchPolicy,
             PolicyType = _dataContext.PolicyType
         };
-        DetailFrame.Navigate(typeof(DetailPage), detailPageModel);
+        BaseNavigate(typeof(DetailPage), policyMenuItem.Identifier, detailPageModel);
     }
-    
+
+    private void AllNavigate()
+    {
+        var allPolicyMenuItem = new PolicyMenuItem
+        {
+            Name = ResourceUtil.GetString("PolicyPage/AllNavigate/AllPolicyName"),
+            Icon = "ViewAll",
+            Identifier = "special:all",
+            Items = _dataContext.PolicyDetailMap.Select(keyValuePair => keyValuePair.Key).ToList()
+        };
+        DetailNavigate(allPolicyMenuItem);
+    }
+
     private void SettingsNavigate()
     {
         var settingsPageModel = new SettingsPageModel
@@ -82,30 +111,45 @@ public sealed partial class PolicyPage
             PolicyType = _dataContext.PolicyType,
             PolicyRegistryPath = _dataContext.PolicyRegistryPath
         };
-        DetailFrame.Navigate(typeof(SettingsPage), settingsPageModel);
+        BaseNavigate(typeof(SettingsPage), "special:settings", settingsPageModel);
+    }
+
+    private void BaseNavigate(Type pageType, string identifier, object parameter = null)
+    {
+        DetailFrame.Tag = identifier;
+        DetailFrame.Navigate(pageType, parameter);
     }
 
     private void SearchPolicy(string rawKeyword)
     {
+        rawKeyword = rawKeyword.Trim();
+
+        // 如果是空的，就不搜索
         if (rawKeyword == string.Empty)
         {
             return;
         }
 
-        if (AutoSuggestBox.Text != rawKeyword)
+        if (AutoSuggestBox.Text.Trim() != rawKeyword)
         {
             AutoSuggestBox.Text = rawKeyword;
         }
 
+        // 分割 去重 移除空白
+        var splitKeyword = rawKeyword.Split(" ").Distinct().Where(keyword => keyword != string.Empty).ToList();
+
+        // 如果和上次搜索的一样，就不搜索
+        var parsedKeyword = splitKeyword.Aggregate((a, b) => $"{a} {b}");
+        if (parsedKeyword == _dataContext.LastSearchKeyword && ReferenceEquals(DetailFrame.Tag, "special:searchresult")) return;
+        _dataContext.LastSearchKeyword = parsedKeyword;
+
         var policyMenuItem = new PolicyMenuItem
         {
-            Name = ResourceUtil.GetString("PolicyPage/SearchPolicy/SearchResultName"),
+            Name = string.Format(ResourceUtil.GetString("PolicyPage/SearchPolicy/SearchResultName"), parsedKeyword),
             Icon = "Search",
             Identifier = "special:searchresult",
             Items = []
         };
-
-        var splitKeyword = rawKeyword.ToLower().Split(" ");
 
         List<string> perfectResult = [], betterResult = [], normalResult = [], shitResult = [];
 
@@ -203,6 +247,9 @@ public sealed partial class PolicyPage
         {
             switch (tag)
             {
+                case "All":
+                    AllNavigate();
+                    break;
                 case "Settings":
                     SettingsNavigate();
                     break;
@@ -221,17 +268,19 @@ public sealed partial class PolicyPage
     {
         if (args.Reason == AutoSuggestionBoxTextChangeReason.SuggestionChosen) return;
 
-        if (sender.Text == string.Empty)
+        var searchText = sender.Text.Trim();
+
+        if (searchText == string.Empty)
         {
-            sender.ItemsSource = new List();
+            sender.ItemsSource = null;
             return;
         }
 
-        var splitText = sender.Text.ToLower().Split(" ");
+        var splitSearchText = searchText.Split(" ");
 
         var suggestList = (
             from key in _dataContext.PolicyDetailMap.Keys
-            let found = splitText.All(keyword => key.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+            let found = splitSearchText.All(keyword => key.Contains(keyword, StringComparison.OrdinalIgnoreCase))
             where found
             select _dataContext.PolicyDetailMap[key].Name
         ).ToList();
