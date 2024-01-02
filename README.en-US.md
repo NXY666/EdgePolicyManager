@@ -6,7 +6,7 @@
     <a href="README.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <b>English</b>
 </p>
 <p align="center">
-    <img alt="Edge Policy Manager Screenshot" src="https://s11.ax1x.com/2023/12/29/piL6mid.png"/>
+    <img alt="Edge Policy Manager Screenshot" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/230d697f-8a2a-4cdf-a88d-1c2f04a14592"/>
 </p>
 
 ## What is "Policy" Used For?

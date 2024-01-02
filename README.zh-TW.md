@@ -6,7 +6,7 @@
     <a href="README.md">简体中文</a> | <b>繁體中文</b> | <a href="README.en-US.md">English</a>
 </p>
 <p align="center">
-    <img alt="Edge策略管理器截圖" src="https://s11.ax1x.com/2023/12/29/piL6mid.png"/>
+    <img alt="Edge策略管理器截圖" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/230d697f-8a2a-4cdf-a88d-1c2f04a14592"/>
 </p>
 
 ## 「策略」有什麼用途？
