@@ -28,25 +28,25 @@ For example:
 
 > Supports viewing and configuring policies, and displays default values inferred from the documentation when not configured.
 
-![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/ccaf628d-1ee4-42f4-9e58-8fe47b4a80fa)
+![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7a9ba712-80af-490a-9c87-980d9872ee64)
 
 ### Detailed Documentation Lookup
 
 > Supports viewing detailed documentation for policies, content and translations are reviewed by Microsoft and [provided](https://www.microsoft.com/edge/business/download).
 
-![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/8094142f-8e81-4b66-8803-77142dde5aee)
+![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/ec579a4e-ef9d-434b-9e75-4fd3b2ed32ad)
 
 ### Keyword Fuzzy Search
 
 > Supports searching policies based on keywords and sorts them by relevance.
 
-![Keyword Fuzzy Search Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/f7411764-1548-475a-b440-a40beb4025f3)
+![Keyword Fuzzy Search Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
 ### Import and Export Configuration Files
 
 > Supports importing and exporting policy configuration files for easy backup and sharing.
 
-![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/2fd2a50c-055d-4900-81cf-fce2b5f5fc23)
+![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/5e5d1ebf-d171-44de-8448-fcf3cb815a02)
 
 ### Multilingual Support
 
@@ -82,4 +82,3 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 * This tool is 100% open-source and is automatically built and released via GitHub Actions, ensuring that there are no backdoors or virus code.
 * As it requires modifying the registry, the tool must run with administrator privileges, and Windows may display security warnings, which can be ignored.
 * Default values are inferred from the documentation and are for reference only. If there are errors, please submit an issue, and they will be corrected as soon as possible.
-* Display language always follows the system and does not support active switching.
