@@ -28,25 +28,25 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 > 支持查看和配置策略，并在未配置的情况下展示通过文档推断的默认值。
 
-![策略浏览与配置截图](https://s11.ax1x.com/2024/01/12/pFCo8e0.png)
+![策略浏览与配置截图](https://s11.ax1x.com/2024/01/12/pFCTYnI.png)
 
 ### 详细文档查询
 
 > 支持查看策略的详细文档，内容及其翻译由微软审核并[提供](https://www.microsoft.com/edge/business/download)。
 
-![详细文档查询截图](https://s11.ax1x.com/2024/01/12/pFCoGwV.png)
+![详细文档查询截图](https://s11.ax1x.com/2024/01/12/pFCTtBt.png)
 
 ### 关键字模糊检索
 
 > 支持根据关键字模糊搜索策略，并根据相关度排序。
 
-![关键字模糊检索截图](https://s11.ax1x.com/2024/01/12/pFColyn.png)
+![关键字模糊检索截图](https://s11.ax1x.com/2024/01/12/pFCTGjA.png)
 
 ### 导入与导出配置文件
 
 > 支持导入和导出策略配置文件，方便备份和共享。
 
-![导入与导出配置文件截图](https://s11.ax1x.com/2024/01/12/pFCo1Lq.png)
+![导入与导出配置文件截图](https://s11.ax1x.com/2024/01/12/pFCT8cd.png)
 
 ### 多语言支持
 

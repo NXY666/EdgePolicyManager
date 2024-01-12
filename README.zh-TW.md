@@ -28,13 +28,13 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 
 > 支援查看和配置策略，並在未配置的情況下展示通過文檔推斷的預設值。
 
-![策略瀏覽與配置截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7a9ba712-80af-490a-9c87-980d9872ee64)
+![策略瀏覽與配置截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### 詳細文檔查詢
 
 > 支援查看策略的詳細文檔，內容及其翻譯由微軟審核並[提供](https://www.microsoft.com/edge/business/download)。
 
-![詳細文檔查詢截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/ec579a4e-ef9d-434b-9e75-4fd3b2ed32ad)
+![詳細文檔查詢截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### 關鍵字模糊檢索
 
@@ -46,7 +46,7 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 
 > 支援匯入和匯出策略配置文件，方便備份和共享。
 
-![匯入與匯出配置文件截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/5e5d1ebf-d171-44de-8448-fcf3cb815a02)
+![匯入與匯出配置文件截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### 多語言支援
 

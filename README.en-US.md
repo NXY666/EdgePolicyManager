@@ -28,13 +28,13 @@ For example:
 
 > Supports viewing and configuring policies, and displays default values inferred from the documentation when not configured.
 
-![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7a9ba712-80af-490a-9c87-980d9872ee64)
+![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### Detailed Documentation Lookup
 
 > Supports viewing detailed documentation for policies, content and translations are reviewed by Microsoft and [provided](https://www.microsoft.com/edge/business/download).
 
-![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/ec579a4e-ef9d-434b-9e75-4fd3b2ed32ad)
+![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### Keyword Fuzzy Search
 
@@ -46,7 +46,7 @@ For example:
 
 > Supports importing and exporting policy configuration files for easy backup and sharing.
 
-![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/5e5d1ebf-d171-44de-8448-fcf3cb815a02)
+![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### Multilingual Support
 
