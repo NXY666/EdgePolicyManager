@@ -28,25 +28,25 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 > 支持查看和配置策略，并在未配置的情况下展示通过文档推断的默认值。
 
-![策略浏览与配置截图](https://s11.ax1x.com/2023/12/31/piOgmyq.png)
+![策略浏览与配置截图](https://s11.ax1x.com/2024/01/12/pFCTYnI.png)
 
 ### 详细文档查询
 
 > 支持查看策略的详细文档，内容及其翻译由微软审核并[提供](https://www.microsoft.com/edge/business/download)。
 
-![详细文档查询截图](https://s11.ax1x.com/2023/12/31/piOcjWd.png)
+![详细文档查询截图](https://s11.ax1x.com/2024/01/12/pFCTtBt.png)
 
 ### 关键字模糊检索
 
 > 支持根据关键字模糊搜索策略，并根据相关度排序。
 
-![关键字模糊检索截图](https://s11.ax1x.com/2023/12/29/piLcifs.png)
+![关键字模糊检索截图](https://s11.ax1x.com/2024/01/12/pFCTGjA.png)
 
 ### 导入与导出配置文件
 
 > 支持导入和导出策略配置文件，方便备份和共享。
 
-![导入与导出配置文件截图](https://s11.ax1x.com/2023/12/31/piOgeln.png)
+![导入与导出配置文件截图](https://s11.ax1x.com/2024/01/12/pFCT8cd.png)
 
 ### 多语言支持
 
@@ -80,6 +80,5 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 ## 说明
 
 * 本工具 100% 开源，并通过 GitHub Action 自动构建并发布，不会也不可能存在后门或病毒代码。
-* 由于需要修改注册表，工具必须以管理员权限运行，Windows 可能会因此弹出安全警告提示，忽略即可。
+* 由于需要编辑注册表，工具必须以管理员权限运行，Windows 可能会因此弹出安全警告提示，忽略即可。
 * 默认值根据文档内容推断，仅供参考。如有错误可提交 Issue ，将尽快修正。
-* 显示语言始终跟随系统，暂不支持主动切换。

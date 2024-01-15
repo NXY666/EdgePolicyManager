@@ -6,7 +6,7 @@
     <a href="README.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <b>English</b>
 </p>
 <p align="center">
-    <img alt="Edge Policy Manager Screenshot" src="https://s11.ax1x.com/2023/12/29/piL6mid.png"/>
+    <img alt="Edge Policy Manager Screenshot" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/230d697f-8a2a-4cdf-a88d-1c2f04a14592"/>
 </p>
 
 ## What is "Policy" Used For?
@@ -28,25 +28,25 @@ For example:
 
 > Supports viewing and configuring policies, and displays default values inferred from the documentation when not configured.
 
-![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/ccaf628d-1ee4-42f4-9e58-8fe47b4a80fa)
+![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### Detailed Documentation Lookup
 
 > Supports viewing detailed documentation for policies, content and translations are reviewed by Microsoft and [provided](https://www.microsoft.com/edge/business/download).
 
-![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/8094142f-8e81-4b66-8803-77142dde5aee)
+![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### Keyword Fuzzy Search
 
 > Supports searching policies based on keywords and sorts them by relevance.
 
-![Keyword Fuzzy Search Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/f7411764-1548-475a-b440-a40beb4025f3)
+![Keyword Fuzzy Search Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
 ### Import and Export Configuration Files
 
 > Supports importing and exporting policy configuration files for easy backup and sharing.
 
-![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/2fd2a50c-055d-4900-81cf-fce2b5f5fc23)
+![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### Multilingual Support
 
@@ -82,4 +82,3 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 * This tool is 100% open-source and is automatically built and released via GitHub Actions, ensuring that there are no backdoors or virus code.
 * As it requires modifying the registry, the tool must run with administrator privileges, and Windows may display security warnings, which can be ignored.
 * Default values are inferred from the documentation and are for reference only. If there are errors, please submit an issue, and they will be corrected as soon as possible.
-* Display language always follows the system and does not support active switching.
