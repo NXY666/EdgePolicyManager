@@ -23,7 +23,7 @@
         <ListView Grid.Row="1" ItemsSource="{Binding Path=ExpanderListItems}" SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <controls:SettingsExpander HorizontalAlignment="Stretch" Margin="0, 5">
+                    <controls:SettingsExpander HorizontalAlignment="Stretch" Margin="0, 5" IsExpanded="False">
                         <controls:SettingsExpander.Header>
                             <StackPanel Spacing="5">
                                 <TextBlock Text="{Binding Path=PolicyDetail.Name}"
