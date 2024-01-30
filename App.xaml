@@ -5,7 +5,7 @@
     x:Class="PolicyManager.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="using:PolicyManager.Utils.Converters"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     xmlns:uiConverters="using:CommunityToolkit.WinUI.UI.Converters"
     RequestedTheme="Light">
     <Application.Resources>
