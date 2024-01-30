@@ -5,7 +5,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
-    xmlns:controls1="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:uiControls="using:CommunityToolkit.WinUI.UI.Controls"
     DataContext="{x:Bind _dataContext}">
 
     <Grid Margin="5 5 5 15">
@@ -58,7 +58,7 @@
                                 <Button x:Uid="DetailPage/DescriptionButton">
                                     <Button.Flyout>
                                         <Flyout Placement="Left">
-                                            <controls1:MarkdownTextBlock LinkClicked="MarkdownTextBlock_OnLinkClicked"
+                                            <uiControls:MarkdownTextBlock LinkClicked="MarkdownTextBlock_OnLinkClicked"
                                                                          Text="{Binding Path=PolicyDetail.Description}"
                                                                          MaxWidth="400" Background="Transparent"
                                                                          TextWrapping="WrapWholeWords" />

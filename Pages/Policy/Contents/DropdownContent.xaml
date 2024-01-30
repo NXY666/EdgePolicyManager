@@ -9,8 +9,8 @@
     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
         <ComboBox IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}" Name="ComboBox"
                   SelectionChanged="ComboBox_OnSelectionChanged"
-                  Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}}" />
+                  Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BoolToVisibilityConverter}}" />
         <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"
-                   Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BooleanVisibilityConverter}, ConverterParameter=Invert}" />
+                   Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=True}" />
     </StackPanel>
 </contents:PolicyContent>
