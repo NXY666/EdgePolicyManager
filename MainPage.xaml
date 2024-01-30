@@ -8,7 +8,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{x:Bind _dataContext}">
     <Grid
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
         HorizontalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
