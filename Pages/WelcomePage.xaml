@@ -68,6 +68,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" HorizontalAlignment="Stretch" Click="GithubButton_OnClick">
                 <Button.Content>
@@ -82,6 +83,14 @@
                     <StackPanel Orientation="Horizontal" Spacing="5">
                         <FontIcon Glyph="&#xED15;" FontSize="21" Margin="4,2" />
                         <TextBlock x:Uid="WelcomePage/FeedbackButtonText" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="2" HorizontalAlignment="Stretch" Click="UpdateButton_OnClick">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <FontIcon Glyph="&#xE946;" FontSize="23" Margin="3,1" />
+                        <TextBlock Text="版本信息" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button.Content>
             </Button>

@@ -14,7 +14,7 @@ public static class ResourceUtil
 
     private const string Namespace = "PolicyManager";
 
-    private static string GetEmbeddedPlainText(string resourceName)
+    public static string GetEmbeddedPlainText(string resourceName)
     {
         // 尝试获取资源的流
         using var stream = Assembly.GetManifestResourceStream($"{Namespace}.{resourceName.Replace("{LangCode}", GetString("Language"))}");
