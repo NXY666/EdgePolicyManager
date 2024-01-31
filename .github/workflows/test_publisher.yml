@@ -8,10 +8,13 @@ on:
 jobs:
   publish:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
 
     steps:
       - name: 检出代码
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: 获取发布信息
         run: |
@@ -56,6 +59,22 @@ jobs:
             > 策略版本：${{ env.EDGE_POLICY_VERSION }}
           draft: true
           prerelease: false
+
+      - name: 修改版本号
+        run: node .github/workflows/edit_version.js
+        env:
+          PUBLISH_VERSION: ${{ env.PUBLISH_VERSION }}
+      
+      - name: 同步推送 Gitee
+        run: |
+          mkdir -p ~/.ssh
+          echo "$GITEE_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+          git config --global user.name "test"
+          git config --global user.email "test@test.com"
+          git remote add gitee https://gitee.com/NXY666/EdgePolicyManager.git
+          git push -f gitee test
 
       - name: 安装 .NET
         uses: actions/setup-dotnet@v1
