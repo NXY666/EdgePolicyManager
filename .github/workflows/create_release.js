@@ -32,32 +32,32 @@ function retry(fn, retryCount = 0) {
 
 	const files = [
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-x64.zip',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.zip',
 			path: 'Publish-x64.zip',
 			contentType: 'application/zip'
 		},
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-x64.7z',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.7z',
 			path: 'Publish-x64.7z',
 			contentType: 'application/7z'
 		},
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-x86.zip',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.zip',
 			path: 'Publish-x86.zip',
 			contentType: 'application/zip'
 		},
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-x86.7z',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.7z',
 			path: 'Publish-x86.7z',
 			contentType: 'application/7z'
 		},
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-arm64.zip',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.zip',
 			path: 'Publish-arm64.zip',
 			contentType: 'application/zip'
 		},
 		{
-			name: 'EdgePolicyManager-${PUBLISH_VERSION}-arm64.7z',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.7z',
 			path: 'Publish-arm64.7z',
 			contentType: 'application/7z'
 		}
