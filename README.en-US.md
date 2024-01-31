@@ -79,6 +79,6 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 
 ## Notes
 
-* This tool is 100% open-source and is automatically built and released via GitHub Actions, ensuring that there are no backdoors or virus code.
+* This tool's code is 100% open-source. Please adhere to the open-source license.
 * As it requires modifying the registry, the tool must run with administrator privileges, and Windows may display security warnings, which can be ignored.
 * Default values are inferred from the documentation and are for reference only. If there are errors, please submit an issue, and they will be corrected as soon as possible.
