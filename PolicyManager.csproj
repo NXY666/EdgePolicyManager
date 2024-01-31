@@ -23,6 +23,7 @@
         <TrimMode>partial</TrimMode>
         <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <Version>0.0.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>

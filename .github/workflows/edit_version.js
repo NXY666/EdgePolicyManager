@@ -1,31 +1,34 @@
 ﻿const fs = require('fs');
-const exec = require("child_process");
+const {XMLParser, XMLBuilder} = require('fast-xml-parser');
 
 (async () => {
-	// 安装依赖
-	exec.execSync('npm install fast-xml-parser');
-	
-	const {XMLParser, XMLBuilder} = require('fast-xml-parser');
-	
-	const {PUBLISH_VERSION} = process.argv;
+	const {PUBLISH_VERSION} = process.env;
 
 	const csprojPath = './PolicyManager.csproj';
-	const csprojData = fs.readFileSync(csprojPath, 'utf-8');
+	const csprojData = fs.readFileSync(csprojPath);
 
 	// 解析XML
 	const options = {
 		ignoreAttributes: false,
 		attributeNamePrefix: '@',
 		suppressEmptyNode: true,
-		format: true
+		format: process.env.CONFIG === 'debug'
 	};
 
 	const parser = new XMLParser(options);
 	const csprojObj = parser.parse(csprojData);
 
 	// 修改版本号
-	if (csprojObj.Project?.PropertyGroup?.[0]) {
-		csprojObj.Project.PropertyGroup[0].Version = PUBLISH_VERSION;
+	if (csprojObj.Project?.PropertyGroup) {
+		const config = csprojObj.Project.PropertyGroup.find((item) => item["Version"]);
+		if (!config) {
+			console.log(JSON.stringify(csprojObj.Project.PropertyGroup));
+			throw new Error('Cannot find version property.');
+		}
+		config["Version"] = PUBLISH_VERSION;
+	} else {
+		console.log(JSON.stringify(csprojObj));
+		throw new Error('Cannot find PropertyGroup.');
 	}
 
 	// 转换为XML字符串

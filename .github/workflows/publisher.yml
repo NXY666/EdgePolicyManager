@@ -8,6 +8,11 @@ on:
 jobs:
   publish:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+    env:
+      CONFIG: Release
 
     steps:
       - name: 检出代码
@@ -30,109 +35,40 @@ jobs:
           } >> "$GITHUB_ENV"
         shell: bash
 
-      - name: 创建 Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 修改版本号
+        run: |
+          npm i fast-xml-parser
+          node .github/workflows/edit_version.js
+
+      - name: 克隆完整仓库
+        run: |
+          git fetch --unshallow
+
+      - name: 优化 Gitee 连接
+        run: |
+          echo 182.255.33.134 gitee.com >> C:\Windows\System32\drivers\etc\hosts
+          ipconfig /flushdns
+
+      - name: 同步分支到 Gitee
+        uses: nick-fields/retry@v3
         with:
-          tag_name: v${{ env.PUBLISH_VERSION }}
-          release_name: Release ${{ env.PUBLISH_VERSION }}
-          body: |
-            ## 更新日志
-            
-            概述：**${{ env.COMMIT_TITLE }}**
-            
-            <details>
-            
-            ${{ env.COMMIT_BODY }}
-            
-            </details>
-            
-            <hr>
-            
-            > 发布时间：${{ env.PUBLISH_DATETIME }}
-            
-            > 策略版本：${{ env.EDGE_POLICY_VERSION }}
-          draft: false
-          prerelease: false
+          timeout_minutes: 5
+          max_attempts: 3
+          command: |
+            git fetch --unshallow
+            git push -f "https://NXY666:$env:GITEE_TOKEN@gitee.com/NXY666/EdgePolicyManager.git"
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
 
       - name: 安装 .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: 生成软件包
+      - name: 发布软件包
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
-          dotnet publish -p:Platform=x64 -p:PublishProfile=Properties/PublishProfiles/win-x64.pubxml
-          dotnet publish -p:Platform=x86 -p:PublishProfile=Properties/PublishProfiles/win-x86.pubxml
-          dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/win-arm64.pubxml
-
-      - name: 压缩软件包
-        run: |
-          7z a -tzip -mx=9 Publish-x64.zip ./bin/publish/win-x64/*
-          7z a -t7z -mx=9 Publish-x64.7z ./bin/publish/win-x64/*
-          7z a -tzip -mx=9 Publish-x86.zip ./bin/publish/win-x86/*
-          7z a -t7z -mx=9 Publish-x86.7z ./bin/publish/win-x86/*
-          7z a -tzip -mx=9 Publish-arm64.zip ./bin/publish/win-arm64/*
-          7z a -t7z -mx=9 Publish-arm64.7z ./bin/publish/win-arm64/*
-
-      - name: 上传软件包（x64-zip）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-x64.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x64.zip
-          asset_content_type: application/zip
-
-      - name: 上传软件包（x64-7z）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-x64.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x64.7z
-          asset_content_type: application/7z
-
-      - name: 上传软件包（x86-zip）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-x86.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x86.zip
-          asset_content_type: application/zip
-
-      - name: 上传软件包（x86-7z）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-x86.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-x86.7z
-          asset_content_type: application/7z
-
-      - name: 上传软件包（arm64-zip）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-arm64.zip
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-arm64.zip
-          asset_content_type: application/zip
-
-      - name: 上传软件包（arm64-7z）
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Publish-arm64.7z
-          asset_name: EdgePolicyManager-Release-${{ env.PUBLISH_VERSION }}-arm64.7z
-          asset_content_type: application/7z
+          npm i @actions/github @octokit/rest
+          node .github/workflows/create_release.js
