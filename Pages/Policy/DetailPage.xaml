@@ -32,7 +32,7 @@
                             </StackPanel>
                         </controls:SettingsExpander.Header>
                         <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                   Text="{Binding Path=PolicyManager.PolicyShowValue}" />
+                                   Text="{Binding Path=PolicyManager.PolicyShowValue}" MaxWidth="300"/>
                         <controls:SettingsExpander.Items>
                             <controls:SettingsCard x:Uid="DetailPage/LevelSettingsCard">
                                 <ComboBox SelectedIndex="{Binding Path=PolicyManager.PolicyLevel}"
@@ -46,7 +46,7 @@
                                 </ComboBox>
                             </controls:SettingsCard>
                             <controls:SettingsCard x:Uid="DetailPage/StatusSettingsCard">
-                                <Frame Content="{Binding Path=StatusFrame}" />
+                                <Frame Content="{Binding Path=StatusFrame}"/>
                             </controls:SettingsCard>
                             <controls:SettingsCard x:Uid="DetailPage/SupportVersionSettingsCard">
                                 <TextBlock Text="{Binding Path=PolicyDetail.SupportVersion}" />

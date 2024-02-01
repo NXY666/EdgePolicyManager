@@ -9,7 +9,13 @@
     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
         <TextBox IsEnabled="{Binding Path=PolicyManager.UsingPolicyCustomValue}" x:Uid="IntegerContent/NumberBox"
                  Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BoolToVisibilityConverter}}"
-                 Text="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" MaxLength="100000" />
+                 Text="{Binding Path=PolicyManager.PolicyValue, Mode=TwoWay}" MaxLength="100000" MaxWidth="300"
+                 GotFocus="TextBox_OnGotFocus" LostFocus="TextBox_OnLostFocus" />
+        <HyperlinkButton x:Name="AcceptButton" Width="32" Height="32" Margin="5,0,-37,0" Visibility="Collapsed" Padding="0">
+            <HyperlinkButton.Content>
+                <FontIcon Glyph="&#xE8FB;" FontSize="14" Foreground="#18864B" FontWeight="bold"/>
+            </HyperlinkButton.Content>
+        </HyperlinkButton>
         <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"
                    Visibility="{Binding Path=PolicyManager.PolicyValueExists, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=True}" />
     </StackPanel>
