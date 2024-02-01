@@ -68,6 +68,12 @@ public sealed partial class WelcomePage
         await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager"));
     }
 
+    private async void DownloadButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        // 打开 Github Release
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager/releases/latest"));
+    }
+
     private async void FeedbackButton_OnClick(object sender, RoutedEventArgs e)
     {
         // 打开 Github Issues
@@ -124,64 +130,64 @@ public sealed partial class WelcomePage
         var titleColor = new SolidColorBrush(Colors.Black);
         var valueColor = new SolidColorBrush(Color.FromArgb(0xFF, 0x64, 0x64, 0x64));
 
-        var mainTitle1 = new TextBlock { Text = "工具", FontWeight = FontWeights.Bold };
-        mainTitle1.SetValue(Grid.RowProperty, 0);
-        mainTitle1.SetValue(Grid.ColumnProperty, 0);
-        mainTitle1.SetValue(Grid.ColumnSpanProperty, 2);
-        grid.Children.Add(mainTitle1);
-
-        var title1 = new TextBlock { Text = "当前版本", Foreground = titleColor };
-        title1.SetValue(Grid.RowProperty, 1);
+        var title1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyManagerTitle"), FontWeight = FontWeights.Bold };
+        title1.SetValue(Grid.RowProperty, 0);
         title1.SetValue(Grid.ColumnProperty, 0);
+        title1.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title1);
 
-        var title2 = new TextBlock { Text = "最新版本", Foreground = titleColor };
-        title2.SetValue(Grid.RowProperty, 2);
+        var key1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = titleColor };
+        key1.SetValue(Grid.RowProperty, 1);
+        key1.SetValue(Grid.ColumnProperty, 0);
+        grid.Children.Add(key1);
+
+        var key2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestVersionKey"), Foreground = titleColor };
+        key2.SetValue(Grid.RowProperty, 2);
+        key2.SetValue(Grid.ColumnProperty, 0);
+        grid.Children.Add(key2);
+
+        var title2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyCompatibilityTitle"), FontWeight = FontWeights.Bold };
+        title2.SetValue(Grid.RowProperty, 3);
         title2.SetValue(Grid.ColumnProperty, 0);
+        title2.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title2);
 
-        var mainTitle2 = new TextBlock { Text = "策略兼容性", FontWeight = FontWeights.Bold };
-        mainTitle2.SetValue(Grid.RowProperty, 3);
-        mainTitle2.SetValue(Grid.ColumnProperty, 0);
-        mainTitle2.SetValue(Grid.ColumnSpanProperty, 2);
-        grid.Children.Add(mainTitle2);
+        var key3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/EdgeVersionKey"), Foreground = titleColor };
+        key3.SetValue(Grid.RowProperty, 4);
+        key3.SetValue(Grid.ColumnProperty, 0);
+        grid.Children.Add(key3);
 
-        var title3 = new TextBlock { Text = "Edge 版本", Foreground = titleColor };
-        title3.SetValue(Grid.RowProperty, 4);
-        title3.SetValue(Grid.ColumnProperty, 0);
-        grid.Children.Add(title3);
+        var key4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentCompatibleVersionKey"), Foreground = titleColor };
+        key4.SetValue(Grid.RowProperty, 5);
+        key4.SetValue(Grid.ColumnProperty, 0);
+        grid.Children.Add(key4);
 
-        var title4 = new TextBlock { Text = "当前兼容版本", Foreground = titleColor };
-        title4.SetValue(Grid.RowProperty, 5);
-        title4.SetValue(Grid.ColumnProperty, 0);
-        grid.Children.Add(title4);
+        var key5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestCompatibleVersionKey"), Foreground = titleColor };
+        key5.SetValue(Grid.RowProperty, 6);
+        key5.SetValue(Grid.ColumnProperty, 0);
+        grid.Children.Add(key5);
 
-        var title5 = new TextBlock { Text = "最新兼容版本", Foreground = titleColor };
-        title5.SetValue(Grid.RowProperty, 6);
-        title5.SetValue(Grid.ColumnProperty, 0);
-        grid.Children.Add(title5);
-
-        var value1 = new TextBlock { Text = "正在获取……", Foreground = valueColor };
+        var value1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value1.SetValue(Grid.RowProperty, 1);
         value1.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value1);
 
-        var value2 = new TextBlock { Text = "正在获取……", Foreground = valueColor };
+        var value2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value2.SetValue(Grid.RowProperty, 2);
         value2.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value2);
 
-        var value3 = new TextBlock { Text = "正在获取……", Foreground = valueColor };
+        var value3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value3.SetValue(Grid.RowProperty, 4);
         value3.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value3);
 
-        var value4 = new TextBlock { Text = "正在获取……", Foreground = valueColor };
+        var value4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value4.SetValue(Grid.RowProperty, 5);
         value4.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value4);
 
-        var value5 = new TextBlock { Text = "正在获取……", Foreground = valueColor };
+        var value5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value5.SetValue(Grid.RowProperty, 6);
         value5.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value5);
@@ -190,9 +196,8 @@ public sealed partial class WelcomePage
         {
             // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
             XamlRoot = XamlRoot,
-            Title = "版本信息",
-            CloseButtonText = "确定",
-            // Content = $"本机 Edge 版本：{edgeVersion}\n当前配置版本：{supportVersion}\n最新配置版本：{latestVersion}"
+            Title = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/Title"),
+            CloseButtonText = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CloseButtonText"),
             Content = grid
         };
 
@@ -205,7 +210,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value1.Text = "未知";
+            value1.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 最新工具版本
@@ -229,7 +234,7 @@ public sealed partial class WelcomePage
             }
             catch (Exception)
             {
-                return "未知";
+                return ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
             }
         });
 
@@ -240,7 +245,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value3.Text = "未知";
+            value3.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 获取当前兼容版本
@@ -250,7 +255,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value4.Text = "未知";
+            value4.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 获取最新版本
@@ -271,7 +276,7 @@ public sealed partial class WelcomePage
             }
             catch (Exception)
             {
-                return "未知";
+                return ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
             }
         });
 
@@ -280,11 +285,5 @@ public sealed partial class WelcomePage
         value2.Text = await task2;
         value5.Text = await task5;
         await dialogTask;
-    }
-
-    private async void DownloadButton_OnClick(object sender, RoutedEventArgs e)
-    {
-        // 打开 Github Release
-        await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager/releases/latest"));
     }
 }
