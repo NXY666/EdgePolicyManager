@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Microsoft.Win32;
 using PolicyManager.Models.Policy;
+using static System.String;
 
 namespace PolicyManager.Utils;
 
@@ -36,6 +37,11 @@ public interface IPolicyManager
     /// 策略显示值
     /// </summary>
     string PolicyShowValue { get; }
+    
+    /// <summary>
+    /// 策略显示值后缀
+    /// </summary>
+    string PolicyShowValueSuffix { get; }
 
     /// <summary>
     /// 策略设定级别
@@ -173,9 +179,22 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
         {
             var policyValue = PolicyValue;
 
-            var showValue = !PolicyDefaultValueExists && policyValue == null
-                ? ResourceUtil.GetString("RegistryUtil/ShowValue/UnconfiguredText")
-                : policyDetail.DataType switch
+            string showValue;
+
+            // 没有默认值，又未配置策略值，则显示未配置
+            if (!PolicyDefaultValueExists && policyValue == null)
+            {
+                showValue = ResourceUtil.GetString("RegistryUtil/ShowValue/UnconfiguredText");
+            }
+            // 是枚举类型，且策略值在枚举中，则显示枚举值
+            else if (PolicyDataOptionsExists && PolicyDataOptions.Exists(option => option.Value == policyValue.ToString()))
+            {
+                showValue = PolicyDataOptions.Find(option => option.Value == policyValue.ToString()).Name;
+            }
+            // 一般
+            else
+            {
+                showValue = policyDetail.DataType switch
                 {
                     "Boolean" => (bool)policyValue
                         ? ResourceUtil.GetString("RegistryUtil/ShowValue/EnabledText")
@@ -184,12 +203,32 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
                     "String" => policyValue.ToString(),
                     _ => ResourceUtil.GetString("RegistryUtil/ShowValue/UnsupportedText")
                 };
-
-            if (UsingPolicyDefaultValue)
-            {
-                showValue += ResourceUtil.GetString("RegistryUtil/ShowValue/DefaultText");
             }
 
+            return showValue;
+        }
+    }
+    
+    public string PolicyShowValueSuffix
+    {
+        get
+        {
+            string showValue;
+            // 默认值后缀
+            if (UsingPolicyDefaultValue)
+            {
+                showValue = ResourceUtil.GetString("RegistryUtil/ShowValue/DefaultText");
+            }
+            // 推荐级别后缀
+            else if (PolicyLevel == 1)
+            {
+                showValue = ResourceUtil.GetString("RegistryUtil/ShowValue/RecommendedText");
+            }
+            else
+            {
+                showValue = Empty;
+            }
+            
             return showValue;
         }
     }
@@ -338,6 +377,8 @@ public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyP
     public object PolicyDefaultValue => policyManager.PolicyDefaultValue;
 
     public string PolicyShowValue => policyManager.PolicyShowValue;
+    
+    public string PolicyShowValueSuffix => policyManager.PolicyShowValueSuffix;
 
     public int PolicyLevel
     {
@@ -348,6 +389,7 @@ public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyP
             OnPropertyChanged(nameof(PolicyLevel));
             OnPropertyChanged(nameof(PolicyValue));
             OnPropertyChanged(nameof(PolicyShowValue));
+            OnPropertyChanged(nameof(PolicyShowValueSuffix));
             OnPropertyChanged(nameof(RegistryValue));
             OnPropertyChanged(nameof(PolicyValueExists));
             OnPropertyChanged(nameof(UsingPolicyDefaultValue));

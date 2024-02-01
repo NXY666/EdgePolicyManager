@@ -27,12 +27,17 @@
                         <controls:SettingsExpander.Header>
                             <StackPanel Spacing="5">
                                 <TextBlock Text="{Binding Path=PolicyDetail.Name}"
-                                           Style="{ThemeResource BodyStrongTextBlockStyle}" />
-                                <TextBlock Text="{Binding Path=PolicyDetail.ShortDescription}" />
+                                           Style="{ThemeResource BodyStrongTextBlockStyle}"
+                                           TextTrimming="CharacterEllipsis" />
+                                <TextBlock Text="{Binding Path=PolicyDetail.ShortDescription}" TextWrapping="Wrap" />
                             </StackPanel>
                         </controls:SettingsExpander.Header>
-                        <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                   Text="{Binding Path=PolicyManager.PolicyShowValue}" MaxWidth="300"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                       Text="{Binding Path=PolicyManager.PolicyShowValue}" MaxWidth="280" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                       Text="{Binding Path=PolicyManager.PolicyShowValueSuffix}" />
+                        </StackPanel>
                         <controls:SettingsExpander.Items>
                             <controls:SettingsCard x:Uid="DetailPage/LevelSettingsCard">
                                 <ComboBox SelectedIndex="{Binding Path=PolicyManager.PolicyLevel}"
@@ -46,7 +51,7 @@
                                 </ComboBox>
                             </controls:SettingsCard>
                             <controls:SettingsCard x:Uid="DetailPage/StatusSettingsCard">
-                                <Frame Content="{Binding Path=StatusFrame}"/>
+                                <Frame Content="{Binding Path=StatusFrame}" />
                             </controls:SettingsCard>
                             <controls:SettingsCard x:Uid="DetailPage/SupportVersionSettingsCard">
                                 <TextBlock Text="{Binding Path=PolicyDetail.SupportVersion}" />
@@ -59,9 +64,9 @@
                                     <Button.Flyout>
                                         <Flyout Placement="Left">
                                             <uiControls:MarkdownTextBlock LinkClicked="MarkdownTextBlock_OnLinkClicked"
-                                                                         Text="{Binding Path=PolicyDetail.Description}"
-                                                                         MaxWidth="400" Background="Transparent"
-                                                                         TextWrapping="WrapWholeWords" />
+                                                                          Text="{Binding Path=PolicyDetail.Description}"
+                                                                          MaxWidth="400" Background="Transparent"
+                                                                          TextWrapping="WrapWholeWords" />
                                         </Flyout>
                                     </Button.Flyout>
                                 </Button>
