@@ -97,7 +97,7 @@ public sealed partial class WelcomePage
         return 0;
     }
 
-    private async void UpdateButton_OnClick(object sender, RoutedEventArgs e)
+    private async void VersionButton_OnClick(object sender, RoutedEventArgs e)
     {
         var senderButton = (Button)sender;
         senderButton.IsEnabled = false;
@@ -207,7 +207,7 @@ public sealed partial class WelcomePage
         {
             value1.Text = "未知";
         }
-        
+
         // 最新工具版本
         var task2 = Task.Run(() =>
         {
@@ -215,7 +215,7 @@ public sealed partial class WelcomePage
             try
             {
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Hello/1.0");
-                    
+
                 var response = client.GetAsync("https://api.github.com/repos/NXY666/EdgePolicyManager/releases/latest").Result;
                 if (!response.IsSuccessStatusCode)
                 {
@@ -260,7 +260,7 @@ public sealed partial class WelcomePage
             try
             {
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Hello/1.0");
-                    
+
                 var response = client.GetAsync("https://raw.githubusercontents.com/NXY666/EdgePolicyManager/master/StaticModels/Policy/SUPPORT_VERSION").Result;
                 if (!response.IsSuccessStatusCode)
                 {
@@ -276,9 +276,15 @@ public sealed partial class WelcomePage
         });
 
         senderButton.IsEnabled = true;
-        
+
         value2.Text = await task2;
         value5.Text = await task5;
         await dialogTask;
+    }
+
+    private async void DownloadButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        // 打开 Github Release
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager/releases/latest"));
     }
 }
