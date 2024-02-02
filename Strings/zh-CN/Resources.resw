@@ -291,9 +291,6 @@
   <data name="WelcomePage.FeedbackButton.Content" xml:space="preserve">
     <value>问题反馈</value>
   </data>
-  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
-    <value>问题反馈</value>
-  </data>
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
     <value>Github 仓库</value>
   </data>

@@ -282,9 +282,6 @@
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
     <value>導入成功</value>
   </data>
-  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
-    <value>問題反饋</value>
-  </data>
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
     <value>Github 倉庫</value>
   </data>
