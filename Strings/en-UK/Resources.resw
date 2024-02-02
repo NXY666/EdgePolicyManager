@@ -123,6 +123,9 @@
   <data name="BooleanContent.StatusSwitch.OnContent" xml:space="preserve">
     <value>Enabled</value>
   </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
   <data name="DetailPage.DefaultLevelComboBoxItem.Content" xml:space="preserve">
     <value>Default</value>
   </data>
@@ -250,7 +253,7 @@
     <value>Import</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>It is not recommended to import untrusted configuration files.</value>
+    <value>It is not recommended to import untrusted configuration files</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
     <value>Import and export policy config</value>
@@ -279,11 +282,29 @@
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
     <value>Import Successful</value>
   </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge appears to be closed, would you like to launch it now?</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>Are you ready?</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>Please ensure to save your work before restart</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>Restart Microsoft Edge</value>
+  </data>
   <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="String" xml:space="preserve">
-    <value>帮我把里面的美式英语转为英式英语，只输出有变化的条目</value>
   </data>
   <data name="UnsupportedContent.TextBlock.Text" xml:space="preserve">
     <value>Not Available</value>

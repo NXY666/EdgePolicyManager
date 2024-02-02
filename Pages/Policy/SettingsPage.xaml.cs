@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 using Windows.Win32.UI.Shell;
@@ -104,5 +105,68 @@ public sealed partial class SettingsPage
         if (result != ContentDialogResult.Secondary) return;
 
         FileUtil.OpenFolder(saveFile);
+    }
+
+    private static bool CloseProcess(string processName, bool entireProcessTree = true)
+    {
+        var hasClosed = false;
+        foreach (var process in Process.GetProcessesByName(processName))
+        {
+            process.CloseMainWindow();
+            if (!process.HasExited)
+            {
+                process.Kill(entireProcessTree);
+            }
+
+            hasClosed = true;
+        }
+
+        return hasClosed;
+    }
+
+    private static void StartProcess(string fileName, string arguments = "")
+    {
+        var pWeb = new Process();
+        pWeb.StartInfo.UseShellExecute = true;
+        pWeb.StartInfo.FileName = fileName;
+        pWeb.StartInfo.Arguments = arguments;
+        pWeb.Start();
+    }
+
+    private async void RestartButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        RestartButton.IsEnabled = false;
+        
+        // 关闭edge
+        if (!CloseProcess("msedge"))
+        {
+            // 确认是否重启
+            var result = await new ContentDialog
+            {
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                XamlRoot = XamlRoot,
+                Title = ResourceUtil.GetString("SettingsPage/RestartButton_OnClick/ConfirmDialog/Title"),
+                Content = ResourceUtil.GetString("SettingsPage/RestartButton_OnClick/ConfirmDialog/Content"),
+                PrimaryButtonText = ResourceUtil.GetString("SettingsPage/RestartButton_OnClick/ConfirmDialog/PrimaryButtonText"),
+                CloseButtonText = ResourceUtil.GetString("SettingsPage/RestartButton_OnClick/ConfirmDialog/CloseButtonText"),
+                DefaultButton = ContentDialogButton.Primary
+            }.ShowAsync();
+            
+            if (result == ContentDialogResult.None)
+            {
+                RestartButton.IsEnabled = true;
+                return;
+            }
+        }
+
+        // 启动edge
+        StartProcess("msedge");
+        
+        RestartButton.IsEnabled = true;
+    }
+
+    private void OpenPolicyButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        StartProcess("msedge", "edge://policy/");
     }
 }

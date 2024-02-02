@@ -28,13 +28,26 @@
                             <StackPanel Spacing="5">
                                 <TextBlock Text="{Binding Path=PolicyDetail.Name}"
                                            Style="{ThemeResource BodyStrongTextBlockStyle}"
-                                           TextTrimming="CharacterEllipsis" />
-                                <TextBlock Text="{Binding Path=PolicyDetail.ShortDescription}" TextWrapping="Wrap" />
+                                           TextTrimming="CharacterEllipsis">
+                                    <TextBlock.ContextFlyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem x:Uid="DetailPage/CopyMenuFlyoutItem" Click="CopyItemTitle_Click" />
+                                        </MenuFlyout>
+                                    </TextBlock.ContextFlyout>
+                                </TextBlock>
+                                <TextBlock Text="{Binding Path=PolicyDetail.ShortDescription}" TextWrapping="Wrap">
+                                    <TextBlock.ContextFlyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem x:Uid="DetailPage/CopyMenuFlyoutItem" Click="CopyItemShortDescription_Click" />
+                                        </MenuFlyout>
+                                    </TextBlock.ContextFlyout>
+                                </TextBlock>
                             </StackPanel>
                         </controls:SettingsExpander.Header>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                       Text="{Binding Path=PolicyManager.PolicyShowValue}" MaxWidth="280" TextTrimming="CharacterEllipsis"/>
+                                       Text="{Binding Path=PolicyManager.PolicyShowValue}" MaxWidth="280"
+                                       TextTrimming="CharacterEllipsis" />
                             <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                        Text="{Binding Path=PolicyManager.PolicyShowValueSuffix}" />
                         </StackPanel>

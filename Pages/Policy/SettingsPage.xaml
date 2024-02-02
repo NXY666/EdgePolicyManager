@@ -5,6 +5,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:winUi="using:CommunityToolkit.WinUI"
     DataContext="{x:Bind _dataContext}">
 
     <Grid Margin="5 5 5 15">
@@ -28,6 +29,15 @@
                     <Button x:Uid="SettingsPage/ImpAndExpSettings/ExportButton" Click="ExportButton_OnClick" Margin="5" />
                 </StackPanel>
             </controls:SettingsCard>
+            <controls:SettingsCard Margin="5" x:Uid="SettingsPage/RestartEdgeSettingsCard"
+                                   HeaderIcon="{winUi:FontIcon Glyph=&#xE72C;}">
+                <Button Click="RestartButton_OnClick" Margin="5" x:Uid="SettingsPage/RestartEdgeSettings/RestartButton" x:Name="RestartButton"/>
+            </controls:SettingsCard>
+            <controls:SettingsCard Margin="5" IsClickEnabled="True" Description="由 Edge 提供的策略管理页面"
+                                   Visibility="Collapsed"
+                                   HeaderIcon="{winUi:FontIcon Glyph=&#xE821;}" Header="策略管理" Padding="16,0,24,0"
+                                   ActionIcon="{winUi:FontIcon Glyph=&#xE8A7;}" ActionIconToolTip="在 Edge 中打开"
+                                   Click="OpenPolicyButton_OnClick" IsEnabled="False" />
         </StackPanel>
     </Grid>
 </Page>

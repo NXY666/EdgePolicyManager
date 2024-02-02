@@ -123,6 +123,9 @@
   <data name="BooleanContent.StatusSwitch.OnContent" xml:space="preserve">
     <value>启用</value>
   </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
   <data name="DetailPage.DefaultLevelComboBoxItem.Content" xml:space="preserve">
     <value>默认</value>
   </data>
@@ -250,7 +253,7 @@
     <value>导入</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>不建议导入不受信任的配置文件。</value>
+    <value>不建议导入不受信任的配置文件</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
     <value>导入和导出策略配置</value>
@@ -278,6 +281,27 @@
   </data>
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
     <value>导入成功</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge 似乎处于关闭状态，需要现在启动吗？</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>准备好了吗？</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>重启前请注意保存工作内容</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>重启 Microsoft Edge</value>
   </data>
   <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
     <value>设置</value>

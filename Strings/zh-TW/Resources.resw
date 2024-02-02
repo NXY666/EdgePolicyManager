@@ -253,7 +253,7 @@
     <value>導入</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>不建議導入不受信任的配置檔案。</value>
+    <value>不建議導入不受信任的配置檔案</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
     <value>導入與導出原則配置</value>
@@ -335,5 +335,29 @@
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.UnknownText" xml:space="preserve">
     <value>未知</value>
+  </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge 似乎處於關閉狀態，需要現在啟動嗎？</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>準備好了嗎？</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>重啟</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>重啟前請確保已妥善儲存工作內容</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>重啟 Microsoft Edge</value>
   </data>
 </root>
