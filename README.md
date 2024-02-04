@@ -79,6 +79,6 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 
 ## 说明
 
-* 本工具 100% 开源，并通过 GitHub Action 自动构建并发布，不会也不可能存在后门或病毒代码。
+* 本工具代码 100% 开源，请遵守开源协议。
 * 由于需要编辑注册表，工具必须以管理员权限运行，Windows 可能会因此弹出安全警告提示，忽略即可。
 * 默认值根据文档内容推断，仅供参考。如有错误可提交 Issue ，将尽快修正。

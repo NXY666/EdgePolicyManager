@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <AssemblyName>EdgePolicyManager</AssemblyName>
+        <Authors>NXY666</Authors>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/NXY666/EdgePolicyManager.git</RepositoryUrl>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
         <TargetPlatformMinVersion>10.0.22621.0</TargetPlatformMinVersion>
@@ -18,12 +22,33 @@
         <PublishTrimmed>true</PublishTrimmed>
         <TrimMode>partial</TrimMode>
         <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
-        <AssemblyName>EdgePolicyManager</AssemblyName>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <Version>0.0.0.0</Version>
     </PropertyGroup>
+
     <ItemGroup>
+        <None Remove="StaticModels\Icon\IconMap.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\Edge\en-US\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json" />
+        <None Remove="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json" />
+        <None Remove="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json" />
         <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
     </ItemGroup>
+
     <ItemGroup>
         <EmbeddedResource Include="StaticModels\Icon\IconMap.json" />
         <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
@@ -51,19 +76,20 @@
         <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.240109" />
         <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
         <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
-          <PrivateAssets>all</PrivateAssets>
+            <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231219000" />
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240124002-experimental2" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26031-preview" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="WinUIEx" Version="2.3.3" />
     </ItemGroup>
     <ItemGroup>
         <Content Update="Assets\github.svg">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Update="Assets\icon.ico">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Update="Assets\msedge.ico">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -74,6 +100,12 @@
         <Content Update="Assets\msedgewebview2.ico">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 
     <!-- 
@@ -93,6 +125,13 @@
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
         <WarningLevel>9999</WarningLevel>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    </PropertyGroup>
+    
     <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
         <ItemGroup>
             <TrimmableAssembly Include="Microsoft.Windows.SDK.NET" />

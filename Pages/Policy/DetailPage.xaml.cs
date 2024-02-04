@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.System;
 using CommunityToolkit.WinUI.UI.Controls;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using PolicyManager.Models.Policy;
@@ -182,7 +183,29 @@ public sealed partial class DetailPage
     protected override void OnNavigatedFrom(NavigationEventArgs e)
     {
         base.OnNavigatedFrom(e);
-        
+
         _dataContext.Dispose();
+    }
+
+    private void CopyItemTitle_Click(object sender, RoutedEventArgs e)
+    {
+        var menuFlyoutItem = sender as MenuFlyoutItem;
+        
+        var itemData = menuFlyoutItem?.DataContext as ExpanderListItem;
+        
+        var dataPackage = new DataPackage();
+        dataPackage.SetText(itemData?.PolicyDetail.Name);
+        Clipboard.SetContent(dataPackage);
+    }
+    
+    private void CopyItemShortDescription_Click(object sender, RoutedEventArgs e)
+    {
+        var menuFlyoutItem = sender as MenuFlyoutItem;
+        
+        var itemData = menuFlyoutItem?.DataContext as ExpanderListItem;
+        
+        var dataPackage = new DataPackage();
+        dataPackage.SetText(itemData?.PolicyDetail.ShortDescription);
+        Clipboard.SetContent(dataPackage);
     }
 }

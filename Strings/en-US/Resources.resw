@@ -242,7 +242,7 @@
     <comment>已同步</comment>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>It is not recommended to import untrusted configuration files.</value>
+    <value>It is not recommended to import untrusted configuration files</value>
     <comment>已同步</comment>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
@@ -337,7 +337,7 @@
     <value>Import Successful</value>
     <comment>已同步</comment>
   </data>
-  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
+  <data name="WelcomePage.FeedbackButton.Content" xml:space="preserve">
     <value>Feedback</value>
     <comment>已同步</comment>
   </data>
@@ -351,6 +351,94 @@
   </data>
   <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
     <value>All</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.DownloadButton.Content" xml:space="preserve">
+    <value>Download</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton.Content" xml:space="preserve">
+    <value>Version Info</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="RegistryUtil.ShowValue.RecommendedText" xml:space="preserve">
+    <value> (Recommend)</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CloseButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentCompatibleVersionKey" xml:space="preserve">
+    <value>Current Compatible Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentVersionKey" xml:space="preserve">
+    <value>Current Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.EdgeVersionKey" xml:space="preserve">
+    <value>Edge Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.GettingValueText" xml:space="preserve">
+    <value>Loading……</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestCompatibleVersionKey" xml:space="preserve">
+    <value>Latest Compatible Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestVersionKey" xml:space="preserve">
+    <value>Latest Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyCompatibilityTitle" xml:space="preserve">
+    <value>Policy Compatibility</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.Title" xml:space="preserve">
+    <value>Version Information</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyManagerTitle" xml:space="preserve">
+    <value>Policy Manager</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.UnknownText" xml:space="preserve">
+    <value>Unknown</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Copy</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge appears to be closed, would you like to launch it now?</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>Are you ready?</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>Restart</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>Please ensure to save your work before restart</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>Restart Microsoft Edge</value>
     <comment>已同步</comment>
   </data>
 </root>

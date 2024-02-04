@@ -130,7 +130,7 @@
     <value>查看</value>
   </data>
   <data name="DetailPage.DescriptionSettingsCard.Header" xml:space="preserve">
-    <value>手冊</value>
+    <value>文件</value>
   </data>
   <data name="DetailPage.DynamicRefreshSettingsCard.Header" xml:space="preserve">
     <value>動態重新整理</value>
@@ -151,7 +151,7 @@
     <value>搜尋</value>
   </data>
   <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogTitle" xml:space="preserve">
-    <value>策略錨點</value>
+    <value>原則錨點</value>
   </data>
   <data name="DetailPage.RecommendedLevelComboBoxItem.Content" xml:space="preserve">
     <value>推薦</value>
@@ -166,7 +166,7 @@
     <value>zh_TW</value>
   </data>
   <data name="MainWindow.Title" xml:space="preserve">
-    <value>Edge 策略管理器</value>
+    <value>Edge 原則管理器</value>
   </data>
   <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
     <value>未配置</value>
@@ -175,13 +175,13 @@
     <value>搜尋</value>
   </data>
   <data name="PolicyPage.ConfiguredNavigate.ConfiguredPolicyName" xml:space="preserve">
-    <value>已配置策略</value>
+    <value>已配置原則</value>
   </data>
   <data name="PolicyPage.ConfiguredNavigationItem.Content" xml:space="preserve">
     <value>已配置</value>
   </data>
   <data name="PolicyPage.Name" xml:space="preserve">
-    <value>策略</value>
+    <value>原則</value>
   </data>
   <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
     <value>“{0}”的搜尋結果</value>
@@ -211,7 +211,7 @@
     <value>歡迎</value>
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
-    <value>Edge 策略管理器</value>
+    <value>Edge 原則管理器</value>
   </data>
   <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
     <value>所有檔案</value>
@@ -223,75 +223,141 @@
     <value>所有檔案</value>
   </data>
   <data name="SaveFilePicker.FileName" xml:space="preserve">
-    <value>文件</value>
+    <value>檔案</value>
   </data>
   <data name="SaveFilePicker.Title" xml:space="preserve">
     <value>另存新檔</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SavePicker.PolicyConfig" xml:space="preserve">
-    <value>策略配置</value>
+    <value>原則配置</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SavePicker.Title" xml:space="preserve">
-    <value>匯出策略</value>
+    <value>導出原則</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
-    <value>策略配置已成功匯出。</value>
+    <value>原則配置已成功導出。</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
     <value>確定</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.SecondaryButtonText" xml:space="preserve">
-    <value>開啟資料夾</value>
+    <value>打開資料夾</value>
   </data>
   <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
-    <value>匯出成功</value>
+    <value>導出成功</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettings.ExportButton.Content" xml:space="preserve">
-    <value>匯出</value>
+    <value>導出</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettings.ImportButton.Content" xml:space="preserve">
-    <value>匯入</value>
+    <value>導入</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>不建議匯入不受信任的配置檔案。</value>
+    <value>不建議導入不受信任的配置檔案</value>
   </data>
   <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
-    <value>匯入與匯出策略配置</value>
+    <value>導入與導出原則配置</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.FailDialog.Content" xml:space="preserve">
-    <value>請檢查策略配置檔案的格式及類型是否正確。</value>
+    <value>請檢查原則配置檔案的格式及類型是否正確。</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.FailDialog.PrimaryButtonText" xml:space="preserve">
     <value>確定</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.FailDialog.Title" xml:space="preserve">
-    <value>匯入失敗</value>
+    <value>導入失敗</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.OpenPicker.PolicyConfig" xml:space="preserve">
-    <value>策略配置</value>
+    <value>原則配置</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.OpenPicker.Title" xml:space="preserve">
-    <value>匯入策略</value>
+    <value>導入原則</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
-    <value>策略配置已成功匯入。</value>
+    <value>原則配置已成功導入。</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
     <value>確定</value>
   </data>
   <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
-    <value>匯入成功</value>
-  </data>
-  <data name="WelcomePage.FeedbackButtonText.Text" xml:space="preserve">
-    <value>問題反饋</value>
+    <value>導入成功</value>
   </data>
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
     <value>Github 倉庫</value>
   </data>
   <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
-    <value>全部策略</value>
+    <value>全部原則</value>
   </data>
   <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
     <value>全部</value>
+  </data>
+  <data name="RegistryUtil.ShowValue.RecommendedText" xml:space="preserve">
+    <value>（推薦）</value>
+  </data>
+  <data name="WelcomePage.DownloadButton.Content" xml:space="preserve">
+    <value>取得最新版</value>
+  </data>
+  <data name="WelcomePage.FeedbackButton.Content" xml:space="preserve">
+    <value>回報問題</value>
+  </data>
+  <data name="WelcomePage.VersionButton.Content" xml:space="preserve">
+    <value>版本資訊</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CloseButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentCompatibleVersionKey" xml:space="preserve">
+    <value>目前相容版本</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentVersionKey" xml:space="preserve">
+    <value>当前版本</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.EdgeVersionKey" xml:space="preserve">
+    <value>Edge 版本</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.GettingValueText" xml:space="preserve">
+    <value>正在取得……</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestCompatibleVersionKey" xml:space="preserve">
+    <value>最新相容版本</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestVersionKey" xml:space="preserve">
+    <value>最新版本</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyCompatibilityTitle" xml:space="preserve">
+    <value>原則相容性</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.Title" xml:space="preserve">
+    <value>版本資訊</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyManagerTitle" xml:space="preserve">
+    <value>原則管理器</value>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.UnknownText" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge 似乎處於關閉狀態，需要現在啟動嗎？</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>準備好了嗎？</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>重啟</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>重啟前請確保已妥善儲存工作內容</value>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>重啟 Microsoft Edge</value>
   </data>
 </root>

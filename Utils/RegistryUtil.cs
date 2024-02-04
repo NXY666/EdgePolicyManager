@@ -46,9 +46,9 @@ public static class RegistryUtil
         return false;
     }
 
-    public static RegistryResult GetRegistryValue(string path, string name)
+    public static RegistryResult GetRegistryValue(RegistryKey baseKey, string path, string name)
     {
-        var registryKey = Registry.LocalMachine.OpenSubKey(path);
+        var registryKey = baseKey.OpenSubKey(path);
 
         if (registryKey == null) return new RegistryResult(path, name);
 
@@ -69,6 +69,11 @@ public static class RegistryUtil
         return value == null
             ? new RegistryResult(path, name)
             : new RegistryResult(path, name, valueKind, value);
+    }
+
+    public static RegistryResult GetRegistryValue(string path, string name)
+    {
+        return GetRegistryValue(Registry.LocalMachine, path, name);
     }
 
     public static bool GetRegistryValueExists(string path, string name)
