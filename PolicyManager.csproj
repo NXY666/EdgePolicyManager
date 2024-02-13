@@ -78,7 +78,7 @@
         <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240124002-experimental2" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240205001-preview1" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26031-preview" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
