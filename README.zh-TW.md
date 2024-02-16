@@ -46,7 +46,7 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 
 > 支援導入和導出原則設定檔，方便備份和共享。
 
-![匯入與匯出設定檔截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
+![導入與導出設定檔截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### 多語言支援
 
