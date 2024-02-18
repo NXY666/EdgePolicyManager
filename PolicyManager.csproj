@@ -21,6 +21,7 @@
         <SelfContained>true</SelfContained>
         <PublishTrimmed>true</PublishTrimmed>
         <TrimMode>partial</TrimMode>
+        <DebugType>embedded</DebugType>
         <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <Version>0.0.0.0</Version>
@@ -79,7 +80,7 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240124002-experimental2" />
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26031-preview" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="WinUIEx" Version="2.3.3" />
@@ -132,11 +133,6 @@
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     </PropertyGroup>
     
-    <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
-        <ItemGroup>
-            <TrimmableAssembly Include="Microsoft.Windows.SDK.NET" />
-        </ItemGroup>
-    </Target>
     <Target Name="RemovePublishFoldersWithMuiFiles" AfterTargets="GenerateNuspec;Publish">
         <ItemGroup>
             <!-- Create a list of the languages your need to keep.-->

@@ -19,6 +19,17 @@ function retry(fn, retryCount = 0) {
 }
 
 (async () => {
+	const {
+		GITHUB_TOKEN,
+		GITEE_TOKEN,
+		PUBLISH_VERSION,
+		EDGE_POLICY_VERSION,
+		PUBLISH_DATETIME,
+		COMMIT_TITLE,
+		COMMIT_BODY,
+		CONFIG
+	} = process.env;
+
 	const owner = github.context.repo.owner;
 	const repo = github.context.repo.repo;
 
@@ -73,15 +84,15 @@ function retry(fn, retryCount = 0) {
 	let releaseInfo;
 	{
 		const githubO = new Octokit({
-			auth: process.env.GITHUB_TOKEN
+			auth: GITHUB_TOKEN
 		});
 
 		const release = await githubO.repos.createRelease({
 			owner, repo,
-			tag_name: `v${process.env.PUBLISH_VERSION}`,
-			name: `Release ${process.env.PUBLISH_VERSION}`,
-			body: `## 更新日志\n\n概述：**${process.env.COMMIT_TITLE}**\n\n<details>\n\n${process.env.COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${process.env.PUBLISH_DATETIME}\n\n> 策略版本：${process.env.EDGE_POLICY_VERSION}`,
-			draft: false,
+			tag_name: `v${PUBLISH_VERSION}`,
+			name: CONFIG === 'Debug' ? `TestOnly ${PUBLISH_VERSION}` : `Release ${PUBLISH_VERSION}`,
+			body: `## 更新日志\n\n概述：**${COMMIT_TITLE}**\n\n<details>\n\n${COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${PUBLISH_DATETIME}\n\n> 策略版本：${EDGE_POLICY_VERSION}`,
+			draft: CONFIG === 'Debug',
 			prerelease: false
 		});
 
@@ -108,7 +119,7 @@ function retry(fn, retryCount = 0) {
 	{
 		const giteeO = new Octokit({
 			baseUrl: 'https://gitee.com/api/v5',
-			auth: process.env.GITEE_TOKEN
+			auth: GITEE_TOKEN
 		});
 
 		function fileSizeString(size) {
@@ -133,10 +144,10 @@ function retry(fn, retryCount = 0) {
 
 		await retry(() => giteeO.repos.createRelease({
 			owner, repo,
-			tag_name: `v${process.env.PUBLISH_VERSION}`,
-			target_commitish: process.env.CONFIG === 'debug' ? 'test' : 'master',
-			name: `发行版 ${process.env.PUBLISH_VERSION}`,
-			body: `## 更新日志\n\n概述：**${process.env.COMMIT_TITLE}**\n\n<details>\n\n${process.env.COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${process.env.PUBLISH_DATETIME}\n\n> 策略版本：${process.env.EDGE_POLICY_VERSION}\n\n${assetsTable}`,
+			tag_name: CONFIG === 'Debug' ? 'test' : `v${PUBLISH_VERSION}`,
+			target_commitish: CONFIG === 'Debug' ? 'test' : 'master',
+			name: CONFIG === 'Debug' ? `仅供测试 ${PUBLISH_VERSION}` : `发行版 ${PUBLISH_VERSION}`,
+			body: `## 更新日志\n\n概述：**${COMMIT_TITLE}**\n\n<details>\n\n${COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${PUBLISH_DATETIME}\n\n> 策略版本：${EDGE_POLICY_VERSION}\n\n${assetsTable}`,
 			prerelease: false
 		}));
 	}

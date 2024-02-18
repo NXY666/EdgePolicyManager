@@ -2,7 +2,7 @@
 const {XMLParser, XMLBuilder} = require('fast-xml-parser');
 
 (async () => {
-	const {PUBLISH_VERSION} = process.env;
+	const {PUBLISH_VERSION, CONFIG} = process.env;
 
 	const csprojPath = './PolicyManager.csproj';
 	const csprojData = fs.readFileSync(csprojPath);
@@ -12,7 +12,7 @@ const {XMLParser, XMLBuilder} = require('fast-xml-parser');
 		ignoreAttributes: false,
 		attributeNamePrefix: '@',
 		suppressEmptyNode: true,
-		format: process.env.CONFIG === 'debug'
+		format: CONFIG === 'Debug'
 	};
 
 	const parser = new XMLParser(options);

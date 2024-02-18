@@ -26,15 +26,15 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 
 ### 原則瀏覽與配置
 
-> 支援查看和配置原則，並在未配置的情況下展示通過文檔推斷的預設值。
+> 支援查看和配置原則，並在未配置的情況下展示通過文件推斷的預設值。
 
 ![原則瀏覽與配置截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
-### 詳細文檔查詢
+### 詳細文件查詢
 
-> 支援查看原則的詳細文檔，內容及其翻譯由微軟審核並[提供](https://www.microsoft.com/edge/business/download)。
+> 支援查看原則的詳細文件，內容及其翻譯由微軟審核並[提供](https://www.microsoft.com/edge/business/download)。
 
-![詳細文檔查詢截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
+![詳細文件查詢截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### 關鍵字模糊檢索
 
@@ -42,29 +42,29 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 
 ![關鍵字模糊檢索截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
-### 匯入與匯出配置文件
+### 導入與導出設定檔
 
-> 支援匯入和匯出原則配置文件，方便備份和共享。
+> 支援導入和導出原則設定檔，方便備份和共享。
 
-![匯入與匯出配置文件截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
+![導入與導出設定檔截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### 多語言支援
 
 > 可用的顯示語言有簡體中文（中國大陸）、繁體中文（中國台灣）、英語（美國）、英語（英國）。
 
-### 註冊表安全鎖
+### 登錄檔安全鎖
 
-> 遇到意外的註冊表路徑時，將阻止對註冊表的寫入、刪除操作。
+> 遇到意外的登錄檔路徑時，將阻止對登錄檔的寫入、刪除操作。
 
 ## 構建
 
-> 如有需要可以克隆倉庫後自行構建發行版，與 Release 中的發行版完全相同。
+> 如有需要可以取得儲存庫後自行構建發行版，與 Release 中的發行版完全相同。
 
 ```bash
-# 克隆倉庫
+# 取得儲存庫
 git clone https://github.com/NXY666/EdgePolicyManager.git
 
-# 進入倉庫目錄
+# 進入儲存庫目錄
 cd EdgePolicyManager
 
 # 構建發行版（x64）
@@ -80,5 +80,5 @@ dotnet publish -p:Platform=ARM64 -p:PublishProfile=Properties/PublishProfiles/wi
 ## 說明
 
 * 本工具的程式碼 100% 開源，請遵守開源協議。
-* 由於需要編輯註冊表，工具必須以管理員權限運行，Windows 可能會因此彈出安全警告提示，忽略即可。
-* 預設值根據文檔內容推斷，僅供參考。如有錯誤可提交 Issue ，將儘快修正。
+* 由於需要編輯登錄檔，工具必須以管理員權限運行，Windows 可能會因此彈出安全警告提示，忽略即可。
+* 預設值根據文件內容推斷，僅供參考。如有錯誤可提交 Issue ，將儘快修正。

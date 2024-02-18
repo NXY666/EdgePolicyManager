@@ -283,7 +283,7 @@
     <value>導入成功</value>
   </data>
   <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
-    <value>Github 倉庫</value>
+    <value>Github 儲存庫</value>
   </data>
   <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
     <value>全部原則</value>
