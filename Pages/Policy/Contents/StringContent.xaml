@@ -13,7 +13,7 @@
                  GotFocus="TextBox_OnGotFocus" LostFocus="TextBox_OnLostFocus" />
         <HyperlinkButton x:Name="AcceptButton" Width="32" Height="32" Margin="5,0,-37,0" Visibility="Collapsed" Padding="0">
             <HyperlinkButton.Content>
-                <FontIcon Glyph="&#xE8FB;" FontSize="14" Foreground="#18864B" FontWeight="bold"/>
+                <FontIcon Glyph="&#xE8FB;" FontSize="14" Foreground="{ThemeResource SystemFillColorSuccessBrush}" FontWeight="bold"/>
             </HyperlinkButton.Content>
         </HyperlinkButton>
         <TextBlock x:Uid="PolicyContent/UnconfiguredTextBlock" Foreground="{ThemeResource TextFillColorDisabledBrush}"

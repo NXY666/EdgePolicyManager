@@ -127,8 +127,8 @@ public sealed partial class WelcomePage
         grid.ColumnDefinitions.Add(new ColumnDefinition());
         grid.ColumnDefinitions.Add(new ColumnDefinition());
 
-        var titleColor = new SolidColorBrush(Colors.Black);
-        var valueColor = new SolidColorBrush(Color.FromArgb(0xFF, 0x64, 0x64, 0x64));
+        var titleColor = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
+        var valueColor = (SolidColorBrush)Application.Current.Resources["TextFillColorSecondaryBrush"];
 
         var title1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyManagerTitle"), FontWeight = FontWeights.Bold };
         title1.SetValue(Grid.RowProperty, 0);

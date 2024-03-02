@@ -86,9 +86,6 @@
         <PackageReference Include="WinUIEx" Version="2.3.4" />
     </ItemGroup>
     <ItemGroup>
-        <Content Update="Assets\github.svg">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
         <Content Update="Assets\icon.ico">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
