@@ -22,39 +22,45 @@ For example:
 * Disabling the `AllowSurfGame` policy can prevent access to the `Surf Game` .
 * Enabling the `DoubleClickCloseTabEnabled` policy can enable the double-click tab closing feature (only available in China, at least according to the documentation).
 
+More policy recommendations can be found in this [blog](https://blog.csdn.net/NXY666/article/details/135984889).
+
 ## Features
 
 ### Policy Browsing and Configuration
 
-> Supports viewing and configuring policies, and displays default values inferred from the documentation when not configured.
+> Supports displaying default values inferred from the documentation when not configured.
 
 ![Policy Browsing and Configuration Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### Detailed Documentation Lookup
 
-> Supports viewing detailed documentation for policies, content and translations are reviewed by Microsoft and [provided](https://www.microsoft.com/edge/business/download).
+> Translations are reviewed by Microsoft and [provided](https://www.microsoft.com/edge/business/download).
 
 ![Detailed Documentation Lookup Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### Keyword Fuzzy Search
 
-> Supports searching policies based on keywords and sorts them by relevance.
+> The search results are sorted by relevance.
 
 ![Keyword Fuzzy Search Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
 ### Import and Export Configuration Files
 
-> Supports importing and exporting policy configuration files for easy backup and sharing.
+> Convenient for backup and sharing.
 
 ![Import and Export Configuration Files Screenshot](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
-
-### Multilingual Support
-
-> Available display languages include Simplified Chinese (Mainland China), Traditional Chinese (Taiwan), English (United States), and English (United Kingdom).
 
 ### Registry Security Lock
 
 > When encountering unexpected registry paths, it will prevent write and delete operations on the registry.
+
+### Multilingual
+
+> Available display languages include Simplified Chinese (Mainland China), Traditional Chinese (Taiwan), English (United States), and English (United Kingdom).
+
+### Dark Mode
+
+> The theme color automatically switches with the system color mode.
 
 ## Building
 
