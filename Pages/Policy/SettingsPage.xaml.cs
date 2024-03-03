@@ -113,10 +113,7 @@ public sealed partial class SettingsPage
         foreach (var process in Process.GetProcessesByName(processName))
         {
             process.CloseMainWindow();
-            if (!process.HasExited)
-            {
-                process.Kill(entireProcessTree);
-            }
+            if (!process.HasExited) process.Kill(entireProcessTree);
 
             hasClosed = true;
         }
@@ -136,7 +133,7 @@ public sealed partial class SettingsPage
     private async void RestartButton_OnClick(object sender, RoutedEventArgs e)
     {
         RestartButton.IsEnabled = false;
-        
+
         // 关闭edge
         if (!CloseProcess("msedge"))
         {
@@ -151,7 +148,7 @@ public sealed partial class SettingsPage
                 CloseButtonText = ResourceUtil.GetString("SettingsPage/RestartButton_OnClick/ConfirmDialog/CloseButtonText"),
                 DefaultButton = ContentDialogButton.Primary
             }.ShowAsync();
-            
+
             if (result == ContentDialogResult.None)
             {
                 RestartButton.IsEnabled = true;
@@ -161,7 +158,7 @@ public sealed partial class SettingsPage
 
         // 启动edge
         StartProcess("msedge");
-        
+
         RestartButton.IsEnabled = true;
     }
 

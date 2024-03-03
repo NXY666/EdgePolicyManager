@@ -105,64 +105,64 @@ public sealed partial class WelcomePage
         var keyColor = Application.Current.Resources["TextFillColorPrimaryBrush"] as SolidColorBrush;
         var valueColor = Application.Current.Resources["TextFillColorSecondaryBrush"] as SolidColorBrush;
 
-        var title1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyManagerTitle"), FontWeight = FontWeights.Bold };
+        var title1 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyManagerTitle"), FontWeight = FontWeights.Bold };
         title1.SetValue(Grid.RowProperty, 0);
         title1.SetValue(Grid.ColumnProperty, 0);
         title1.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title1);
 
-        var key1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = keyColor };
+        var key1 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = keyColor };
         key1.SetValue(Grid.RowProperty, 1);
         key1.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key1);
 
-        var key2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestVersionKey"), Foreground = keyColor };
+        var key2 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestVersionKey"), Foreground = keyColor };
         key2.SetValue(Grid.RowProperty, 2);
         key2.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key2);
 
-        var title2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyCompatibilityTitle"), FontWeight = FontWeights.Bold };
+        var title2 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyCompatibilityTitle"), FontWeight = FontWeights.Bold };
         title2.SetValue(Grid.RowProperty, 3);
         title2.SetValue(Grid.ColumnProperty, 0);
         title2.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title2);
 
-        var key3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/EdgeVersionKey"), Foreground = keyColor };
+        var key3 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/EdgeVersionKey"), Foreground = keyColor };
         key3.SetValue(Grid.RowProperty, 4);
         key3.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key3);
 
-        var key4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentCompatibleVersionKey"), Foreground = keyColor };
+        var key4 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentCompatibleVersionKey"), Foreground = keyColor };
         key4.SetValue(Grid.RowProperty, 5);
         key4.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key4);
 
-        var key5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestCompatibleVersionKey"), Foreground = keyColor };
+        var key5 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestCompatibleVersionKey"), Foreground = keyColor };
         key5.SetValue(Grid.RowProperty, 6);
         key5.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key5);
 
-        var value1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
+        var value1 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value1.SetValue(Grid.RowProperty, 1);
         value1.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value1);
 
-        var value2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
+        var value2 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value2.SetValue(Grid.RowProperty, 2);
         value2.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value2);
 
-        var value3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
+        var value3 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value3.SetValue(Grid.RowProperty, 4);
         value3.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value3);
 
-        var value4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
+        var value4 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value4.SetValue(Grid.RowProperty, 5);
         value4.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value4);
 
-        var value5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
+        var value5 = new TextBlock { Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/GettingValueText"), Foreground = valueColor };
         value5.SetValue(Grid.RowProperty, 6);
         value5.SetValue(Grid.ColumnProperty, 1);
         grid.Children.Add(value5);
@@ -171,8 +171,8 @@ public sealed partial class WelcomePage
         {
             // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
             XamlRoot = XamlRoot,
-            Title = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/Title"),
-            CloseButtonText = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CloseButtonText"),
+            Title = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/Title"),
+            CloseButtonText = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/CloseButtonText"),
             Content = grid,
             // 字的颜色不会跟着变，只能整个都不变了 :(
             RequestedTheme = Application.Current.RequestedTheme == ApplicationTheme.Dark ? ElementTheme.Dark : ElementTheme.Light
@@ -191,7 +191,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value1.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
+            value1.Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 最新工具版本
@@ -203,10 +203,7 @@ public sealed partial class WelcomePage
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Hello/1.0");
 
                 var response = client.GetAsync("https://api.github.com/repos/NXY666/EdgePolicyManager/releases/latest").Result;
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception();
-                }
+                if (!response.IsSuccessStatusCode) throw new Exception();
 
                 // 解析 JSON
                 var jsonContent = response.Content.ReadAsStringAsync().Result;
@@ -215,7 +212,7 @@ public sealed partial class WelcomePage
             }
             catch (Exception)
             {
-                return ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
+                return ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
             }
         });
 
@@ -226,7 +223,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value3.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
+            value3.Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 获取当前兼容版本
@@ -236,7 +233,7 @@ public sealed partial class WelcomePage
         }
         catch (Exception)
         {
-            value4.Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
+            value4.Text = ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
         }
 
         // 获取最新版本
@@ -248,16 +245,13 @@ public sealed partial class WelcomePage
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("Hello/1.0");
 
                 var response = client.GetAsync("https://raw.githubusercontents.com/NXY666/EdgePolicyManager/master/StaticModels/Policy/SUPPORT_VERSION").Result;
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception();
-                }
+                if (!response.IsSuccessStatusCode) throw new Exception();
 
                 return response.Content.ReadAsStringAsync().Result;
             }
             catch (Exception)
             {
-                return ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
+                return ResourceUtil.GetString("WelcomePage/VersionButton_OnClick/VersionInfoDialog/UnknownText");
             }
         });
 

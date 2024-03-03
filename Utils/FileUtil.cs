@@ -8,7 +8,7 @@ public static partial class FileUtil
 {
     [LibraryImport("shell32.dll")]
     // ReSharper disable once InconsistentNaming
-    private static partial int SHOpenFolderAndSelectItems(IntPtr pidlFolder, uint cidl, [In, MarshalAs(UnmanagedType.LPArray)] IntPtr[] apidl, uint dwFlags);
+    private static partial int SHOpenFolderAndSelectItems(IntPtr pidlFolder, uint cidl, [In] [MarshalAs(UnmanagedType.LPArray)] IntPtr[] apidl, uint dwFlags);
 
     [LibraryImport("shell32.dll", StringMarshalling = StringMarshalling.Utf16)]
     // ReSharper disable once InconsistentNaming

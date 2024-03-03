@@ -42,7 +42,7 @@
 
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
-                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Normal" />
 
                                         <VisualState x:Name="PointerOver">
                                             <Storyboard>

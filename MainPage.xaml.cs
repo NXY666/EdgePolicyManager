@@ -15,11 +15,10 @@ public class GoPageParameter
 
 public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 {
+    private string _activePageName;
     public bool CanGoBack => mainPage.MainFrame.CanGoBack;
 
     public bool CantGoBack => !CanGoBack;
-
-    private string _activePageName;
 
     public string ActivePageName
     {
@@ -31,6 +30,8 @@ public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
             OnPropertyChanged(nameof(ActivePageName));
         }
     }
+
+    public event PropertyChangedEventHandler PropertyChanged;
 
     public void GoBack()
     {
@@ -63,8 +64,6 @@ public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
         OnPropertyChanged(nameof(CanGoBack));
         OnPropertyChanged(nameof(CantGoBack));
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
 
     private void OnPropertyChanged(string propertyName)
     {
