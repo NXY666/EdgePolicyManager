@@ -78,29 +78,6 @@ public sealed partial class WelcomePage
         await Launcher.LaunchUriAsync(new Uri("https://github.com/NXY666/EdgePolicyManager/issues/new/choose"));
     }
 
-    private static int CompareVersion(string v1, string v2)
-    {
-        var v1S = v1.Split('.');
-        var v2S = v2.Split('.');
-        var len = Math.Max(v1S.Length, v2S.Length);
-        for (var i = 0; i < len; i++)
-        {
-            var v1I = i < v1S.Length ? int.Parse(v1S[i]) : 0;
-            var v2I = i < v2S.Length ? int.Parse(v2S[i]) : 0;
-            if (v1I > v2I)
-            {
-                return 1;
-            }
-
-            if (v1I < v2I)
-            {
-                return -1;
-            }
-        }
-
-        return 0;
-    }
-
     private async void VersionButton_OnClick(object sender, RoutedEventArgs e)
     {
         var senderButton = (Button)sender;
@@ -133,7 +110,7 @@ public sealed partial class WelcomePage
         title1.SetValue(Grid.ColumnProperty, 0);
         title1.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title1);
-        
+
         var key1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = keyColor };
         key1.SetValue(Grid.RowProperty, 1);
         key1.SetValue(Grid.ColumnProperty, 0);
@@ -206,7 +183,11 @@ public sealed partial class WelcomePage
         // 当前工具版本
         try
         {
-            value1.Text = Assembly.GetExecutingAssembly().GetName().Version?.ToString();
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            value1.Text = $"{version?.Major.ToString().PadLeft(4, '0')}." +
+                          $"{version?.Minor.ToString().PadLeft(2, '0')}." +
+                          $"{version?.Build.ToString().PadLeft(2, '0')}." +
+                          $"{version?.Revision.ToString().PadLeft(4, '0')}";
         }
         catch (Exception)
         {
