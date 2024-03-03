@@ -6,16 +6,16 @@ namespace PolicyManager.Pages.Policy.Contents;
 
 public abstract class PolicyContent : Page
 {
-    public NotifyPolicyManager PolicyManager { get; }
-
-    public PolicyContent This => this;
-
     protected PolicyContent(NotifyPolicyManager policyManager)
     {
         NavigationCacheMode = NavigationCacheMode.Disabled;
-        
+
         PolicyManager = policyManager;
 
         DataContext = This;
     }
+
+    public NotifyPolicyManager PolicyManager { get; }
+
+    public PolicyContent This => this;
 }

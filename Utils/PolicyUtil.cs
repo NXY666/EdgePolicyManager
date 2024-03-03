@@ -10,17 +10,17 @@ namespace PolicyManager.Utils;
 public interface IPolicyManager
 {
     /// <summary>
-    /// 注册表值类型（永远不变）
+    ///     注册表值类型（永远不变）
     /// </summary>
     RegistryValueKind RegistryValueKind { get; }
 
     /// <summary>
-    /// 注册表值
+    ///     注册表值
     /// </summary>
     object RegistryValue { get; }
 
     /// <summary>
-    /// 策略值
+    ///     策略值
     /// </summary>
     object PolicyValue { get; set; }
 
@@ -29,49 +29,49 @@ public interface IPolicyManager
     List<PolicyDataOption> PolicyDataOptions { get; }
 
     /// <summary>
-    /// 策略默认值（永远不变）
+    ///     策略默认值（永远不变）
     /// </summary>
     object PolicyDefaultValue { get; }
 
     /// <summary>
-    /// 策略显示值
+    ///     策略显示值
     /// </summary>
     string PolicyShowValue { get; }
-    
+
     /// <summary>
-    /// 策略显示值后缀
+    ///     策略显示值后缀
     /// </summary>
     string PolicyShowValueSuffix { get; }
 
     /// <summary>
-    /// 策略设定级别
+    ///     策略设定级别
     /// </summary>
     int PolicyLevel { get; set; }
 
     /// <summary>
-    /// 策略默认值是否存在（永远不变）
+    ///     策略默认值是否存在（永远不变）
     /// </summary>
     bool PolicyDefaultValueExists { get; }
 
     /// <summary>
-    /// 策略值是否存在
+    ///     策略值是否存在
     /// </summary>
     bool PolicyValueExists { get; }
 
     /// <summary>
-    /// 恢复策略默认值
-    /// </summary>
-    void RevertPolicyDefaultValue();
-
-    /// <summary>
-    /// 是否使用策略默认值
+    ///     是否使用策略默认值
     /// </summary>
     bool UsingPolicyDefaultValue { get; }
 
     /// <summary>
-    /// 是否使用非策略默认值
+    ///     是否使用非策略默认值
     /// </summary>
     bool UsingPolicyCustomValue { get; }
+
+    /// <summary>
+    ///     恢复策略默认值
+    /// </summary>
+    void RevertPolicyDefaultValue();
 }
 
 public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
@@ -109,10 +109,7 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
         get
         {
             var registryValue = RegistryValue;
-            if (registryValue == null)
-            {
-                return PolicyDefaultValue;
-            }
+            if (registryValue == null) return PolicyDefaultValue;
 
             return policyDetail.DataType switch
             {
@@ -208,7 +205,7 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
             return showValue;
         }
     }
-    
+
     public string PolicyShowValueSuffix
     {
         get
@@ -228,7 +225,7 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
             {
                 showValue = Empty;
             }
-            
+
             return showValue;
         }
     }
@@ -237,25 +234,16 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
     {
         get
         {
-            if (policyDetail.Registry.CanMandatory && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.MandatoryPath, policyDetail.Registry.Name))
-            {
-                return 2;
-            }
+            if (policyDetail.Registry.CanMandatory && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.MandatoryPath, policyDetail.Registry.Name)) return 2;
 
-            if (policyDetail.Registry.CanRecommended && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.RecommendedPath, policyDetail.Registry.Name))
-            {
-                return 1;
-            }
+            if (policyDetail.Registry.CanRecommended && RegistryUtil.GetRegistryValueExists(policyDetail.Registry.RecommendedPath, policyDetail.Registry.Name)) return 1;
 
             return 0;
         }
         set
         {
             var nowLevel = PolicyLevel;
-            if (nowLevel == value)
-            {
-                return;
-            }
+            if (nowLevel == value) return;
 
             // 当前策略值 > 策略默认值 > 类型默认值
             var policyValue = (PolicyValue ?? PolicyDefaultValue) ?? (PolicyDataOptionsExists
@@ -352,6 +340,8 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
 
 public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyPropertyChanged, IPolicyManager
 {
+    public event PropertyChangedEventHandler PropertyChanged;
+    
     public RegistryValueKind RegistryValueKind => policyManager.RegistryValueKind;
 
     public object RegistryValue => policyManager.RegistryValue;
@@ -377,7 +367,7 @@ public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyP
     public object PolicyDefaultValue => policyManager.PolicyDefaultValue;
 
     public string PolicyShowValue => policyManager.PolicyShowValue;
-    
+
     public string PolicyShowValueSuffix => policyManager.PolicyShowValueSuffix;
 
     public int PolicyLevel
@@ -413,8 +403,6 @@ public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyP
     public bool UsingPolicyDefaultValue => policyManager.UsingPolicyDefaultValue;
 
     public bool UsingPolicyCustomValue => policyManager.UsingPolicyCustomValue;
-
-    public event PropertyChangedEventHandler PropertyChanged;
 
     private void OnPropertyChanged(string propertyName = null)
     {

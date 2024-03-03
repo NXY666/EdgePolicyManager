@@ -22,39 +22,45 @@ Edge 作為系統內建的瀏覽器，功能繁雜且冗餘。不僅如此，微
 * 禁用 `AllowSurfGame` 原則可阻止進入 `衝浪遊戲` 。
 * 啟用 `DoubleClickCloseTabEnabled` 原則可啟用雙擊關閉標籤頁功能（僅在中國可用，至少文件是這樣寫的）。
 
+更多原則推薦詳見[博客](https://blog.csdn.net/NXY666/article/details/135984889)。
+
 ## 特性
 
 ### 原則瀏覽與配置
 
-> 支援查看和配置原則，並在未配置的情況下展示通過文件推斷的預設值。
+> 支援在未配置的情況下展示通過文件推斷的預設值。
 
 ![原則瀏覽與配置截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### 詳細文件查詢
 
-> 支援查看原則的詳細文件，內容及其翻譯由微軟審核並[提供](https://www.microsoft.com/edge/business/download)。
+> 內容及其翻譯由微軟審核並[提供](https://www.microsoft.com/edge/business/download)。
 
 ![詳細文件查詢截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### 關鍵字模糊檢索
 
-> 支援根據關鍵字模糊搜索原則，並根據相關度排序。
+> 搜尋結果根據相關度排序。
 
 ![關鍵字模糊檢索截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
 ### 導入與導出設定檔
 
-> 支援導入和導出原則設定檔，方便備份和共享。
+> 方便備份和共享。
 
 ![導入與導出設定檔截圖](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
-
-### 多語言支援
-
-> 可用的顯示語言有簡體中文（中國大陸）、繁體中文（中國台灣）、英語（美國）、英語（英國）。
 
 ### 登錄檔安全鎖
 
 > 遇到意外的登錄檔路徑時，將阻止對登錄檔的寫入、刪除操作。
+
+### 多語言
+
+> 可用的顯示語言有簡體中文（中國大陸）、繁體中文（中國台灣）、英語（美國）、英語（英國）。
+
+### 深色模式
+
+> 主題顏色隨系統色彩模式自動切換。
 
 ## 構建
 

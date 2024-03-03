@@ -8,11 +8,11 @@ namespace PolicyManager.Utils;
 
 public static class ResourceUtil
 {
+    private const string Namespace = "PolicyManager";
+    
     private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
     private static readonly ResourceMap ResourceMap = ResourceManager.Current.MainResourceMap.GetSubtree("Resources");
-
-    private const string Namespace = "PolicyManager";
 
     public static string GetEmbeddedPlainText(string resourceName)
     {
@@ -21,10 +21,7 @@ public static class ResourceUtil
 
 
         // 资源不存在，返回 null
-        if (stream == null)
-        {
-            return null;
-        }
+        if (stream == null) return null;
 
         // 在这里读取和处理资源
         using var reader = new StreamReader(stream);
@@ -36,5 +33,8 @@ public static class ResourceUtil
         return JsonConvert.DeserializeObject<T>(GetEmbeddedPlainText(resourceName)) ?? throw new InvalidOperationException("Failed to deserialize JSON data.");
     }
 
-    public static string GetString(string key) => ResourceMap.GetValue(key)?.ValueAsString ?? key.Replace('/', '.');
+    public static string GetString(string key)
+    {
+        return ResourceMap.GetValue(key)?.ValueAsString ?? key.Replace('/', '.');
+    }
 }

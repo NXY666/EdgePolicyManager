@@ -31,7 +31,7 @@
             </controls:SettingsCard>
             <controls:SettingsCard Margin="5" x:Uid="SettingsPage/RestartEdgeSettingsCard"
                                    HeaderIcon="{winUi:FontIcon Glyph=&#xE72C;}">
-                <Button Click="RestartButton_OnClick" Margin="5" x:Uid="SettingsPage/RestartEdgeSettings/RestartButton" x:Name="RestartButton"/>
+                <Button Click="RestartButton_OnClick" Margin="5" x:Uid="SettingsPage/RestartEdgeSettings/RestartButton" x:Name="RestartButton" />
             </controls:SettingsCard>
             <controls:SettingsCard Margin="5" IsClickEnabled="True" Description="由 Edge 提供的策略管理页面"
                                    Visibility="Collapsed"

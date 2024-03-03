@@ -80,10 +80,7 @@ public static class RegistryUtil
     {
         var registryKey = Registry.LocalMachine.OpenSubKey(path);
 
-        if (registryKey == null)
-        {
-            return false;
-        }
+        if (registryKey == null) return false;
 
         var exists = registryKey.GetValue(name) != null;
 
@@ -96,10 +93,7 @@ public static class RegistryUtil
     {
         Console.WriteLine($@"Editing registry {path}\{name} {valueKind} {value}");
 
-        if (!CheckPathSafe(path))
-        {
-            return false;
-        }
+        if (!CheckPathSafe(path)) return false;
 
         var registryKey = Registry.LocalMachine.OpenSubKey(path, true);
 
@@ -126,10 +120,7 @@ public static class RegistryUtil
     {
         Console.WriteLine($@"Deleting registry {path}\{name}");
 
-        if (!CheckPathSafe(path))
-        {
-            return false;
-        }
+        if (!CheckPathSafe(path)) return false;
 
         var registryKey = Registry.LocalMachine.OpenSubKey(path, true);
         if (registryKey == null) return false;

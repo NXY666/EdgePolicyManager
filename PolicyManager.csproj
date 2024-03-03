@@ -83,12 +83,9 @@
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="WinUIEx" Version="2.3.3" />
+        <PackageReference Include="WinUIEx" Version="2.3.4" />
     </ItemGroup>
     <ItemGroup>
-        <Content Update="Assets\github.svg">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
         <Content Update="Assets\icon.ico">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>

@@ -71,10 +71,7 @@ public class SaveFilePicker
             null,
             CLSCTX.CLSCTX_INPROC_SERVER,
             out var fsd);
-        if (hr < 0)
-        {
-            Marshal.ThrowExceptionForHR(hr);
-        }
+        if (hr < 0) Marshal.ThrowExceptionForHR(hr);
 
         return fsd;
     }
@@ -87,7 +84,7 @@ public class SaveFilePicker
         fsd.SetFileName(_fileName);
 
         if (!string.IsNullOrEmpty(_folder)) fsd.SetFolder(PickerUtil.ParseDirectoryShellItem(_folder));
-        if (!string.IsNullOrEmpty(_defaultFolder)) fsd.SetDefaultFolder(PickerUtil.ParseDirectoryShellItem(_defaultFolder));  
+        if (!string.IsNullOrEmpty(_defaultFolder)) fsd.SetDefaultFolder(PickerUtil.ParseDirectoryShellItem(_defaultFolder));
         fsd.SetDefaultExtension(_defaultExtension);
 
         var extensions = new List<COMDLG_FILTERSPEC>();
@@ -199,10 +196,7 @@ public class OpenFilePicker
             null,
             CLSCTX.CLSCTX_INPROC_SERVER,
             out var fod);
-        if (hr < 0)
-        {
-            Marshal.ThrowExceptionForHR(hr);
-        }
+        if (hr < 0) Marshal.ThrowExceptionForHR(hr);
 
         return fod;
     }
@@ -277,10 +271,7 @@ public static class PickerUtil
             null,
             typeof(IShellItem).GUID,
             out var directoryShellItem);
-        if (hr < 0)
-        {
-            Marshal.ThrowExceptionForHR(hr);
-        }
+        if (hr < 0) Marshal.ThrowExceptionForHR(hr);
 
         return directoryShellItem as IShellItem;
     }

@@ -70,10 +70,7 @@ public sealed partial class PolicyPage
                     Tag = policyMenuItem
                 }
             )
-        )
-        {
-            PolicyNavigationView.MenuItems.Add(navigationViewItem);
-        }
+        ) PolicyNavigationView.MenuItems.Add(navigationViewItem);
 
         // Configured
         PolicyNavigationView.SelectedItem = PolicyNavigationView.FooterMenuItems[0];
@@ -124,21 +121,15 @@ public sealed partial class PolicyPage
     {
         rawKeyword = rawKeyword.Trim();
 
-        // 如果是空的，就不搜索
-        if (rawKeyword == string.Empty)
-        {
-            return;
-        }
+        // 濡傛灉鏄┖鐨勶紝灏变笉鎼滅储
+        if (rawKeyword == string.Empty) return;
 
-        if (AutoSuggestBox.Text.Trim() != rawKeyword)
-        {
-            AutoSuggestBox.Text = rawKeyword;
-        }
+        if (AutoSuggestBox.Text.Trim() != rawKeyword) AutoSuggestBox.Text = rawKeyword;
 
-        // 分割 去重 移除空白
+        // 鍒嗗壊 鍘婚噸 绉婚櫎绌虹櫧
         var splitKeyword = rawKeyword.Split(" ").Distinct().Where(keyword => keyword != string.Empty).ToList();
 
-        // 如果和上次搜索的一样，就不搜索
+        // 濡傛灉鍜屼笂娆℃悳绱㈢殑涓�鏍凤紝灏变笉鎼滅储
         var parsedKeyword = splitKeyword.Aggregate((a, b) => $"{a} {b}");
         if (parsedKeyword == _dataContext.LastSearchKeyword && ReferenceEquals(DetailFrame.Tag, "special:searchresult")) return;
         _dataContext.LastSearchKeyword = parsedKeyword;
@@ -157,51 +148,21 @@ public sealed partial class PolicyPage
         {
             var policyDetail = _dataContext.PolicyDetailMap[key];
             bool foundPerfect = true, foundBetter = true, foundNormal = true, foundShit = true;
-            foreach (var keyword in splitKeyword)
+            foreach (var lowerKeyword in splitKeyword.Select(keyword => keyword.ToLower()))
             {
-                var lowerKeyword = keyword.ToLower();
+                if (lowerKeyword != policyDetail.Name && lowerKeyword != key) foundPerfect = false;
 
-                if (lowerKeyword != policyDetail.Name && lowerKeyword != key)
-                {
-                    foundPerfect = false;
-                }
+                if (!policyDetail.Name.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)) foundBetter = false;
 
-                if (
-                    !policyDetail.Name.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)
-                )
-                {
-                    foundBetter = false;
-                }
+                if (!policyDetail.ShortDescription.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)) foundNormal = false;
 
-                if (!policyDetail.ShortDescription.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase))
-                {
-                    foundNormal = false;
-                }
-
-                if (
-                    !policyDetail.Description.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)
-                )
-                {
-                    foundShit = false;
-                }
+                if (!policyDetail.Description.Contains(lowerKeyword, StringComparison.OrdinalIgnoreCase)) foundShit = false;
             }
 
-            if (foundPerfect)
-            {
-                perfectResult.Add(key);
-            }
-            else if (foundBetter)
-            {
-                betterResult.Add(key);
-            }
-            else if (foundNormal)
-            {
-                normalResult.Add(key);
-            }
-            else if (foundShit)
-            {
-                shitResult.Add(key);
-            }
+            if (foundPerfect) perfectResult.Add(key);
+            else if (foundBetter) betterResult.Add(key);
+            else if (foundNormal) normalResult.Add(key);
+            else if (foundShit) shitResult.Add(key);
         }
 
         policyMenuItem.Items.AddRange(perfectResult);
@@ -230,10 +191,7 @@ public sealed partial class PolicyPage
             into policyKey
             where _dataContext.PolicyDetailMap.ContainsKey(policyKey)
             select policyKey
-        )
-        {
-            configuredPolicy.Items.Add(policyKey);
-        }
+        ) configuredPolicy.Items.Add(policyKey);
 
         DetailNavigate(configuredPolicy);
     }
@@ -242,7 +200,7 @@ public sealed partial class PolicyPage
     {
         if (args.SelectedItem is not NavigationViewItem selectedItem) return;
 
-        // 判断是不是settings
+        // 鍒ゆ柇鏄笉鏄痵ettings
         if (selectedItem.Tag is string tag)
         {
             switch (tag)

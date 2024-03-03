@@ -18,13 +18,11 @@ public sealed class DetailPageModel : INotifyPropertyChanged, IDisposable
 {
     public delegate void SearchPolicyEventHandler(string keyword);
 
-    public event SearchPolicyEventHandler SearchPolicyEvent;
+    private readonly PolicyMenuItem _activePolicyMenu;
 
     public string PolicyType { get; init; }
 
     public PolicyDetailMap PolicyDetailMap { get; set; }
-
-    private readonly PolicyMenuItem _activePolicyMenu;
 
     public PolicyMenuItem ActivePolicyMenu
     {
@@ -47,7 +45,15 @@ public sealed class DetailPageModel : INotifyPropertyChanged, IDisposable
 
     public SearchPolicyEventHandler SearchPolicyHandler { get; init; }
 
+    public void Dispose()
+    {
+        // PolicyPage停止监听SearchPolicyEvent事件
+        SearchPolicyEvent -= SearchPolicyHandler;
+    }
+
     public event PropertyChangedEventHandler PropertyChanged;
+
+    public event SearchPolicyEventHandler SearchPolicyEvent;
 
     private void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
@@ -57,12 +63,6 @@ public sealed class DetailPageModel : INotifyPropertyChanged, IDisposable
     internal void OnSearchPolicyEvent(string keyword)
     {
         SearchPolicyEvent?.Invoke(keyword);
-    }
-
-    public void Dispose()
-    {
-        // PolicyPage停止监听SearchPolicyEvent事件
-        SearchPolicyEvent -= SearchPolicyHandler;
     }
 }
 
@@ -190,20 +190,20 @@ public sealed partial class DetailPage
     private void CopyItemTitle_Click(object sender, RoutedEventArgs e)
     {
         var menuFlyoutItem = sender as MenuFlyoutItem;
-        
+
         var itemData = menuFlyoutItem?.DataContext as ExpanderListItem;
-        
+
         var dataPackage = new DataPackage();
         dataPackage.SetText(itemData?.PolicyDetail.Name);
         Clipboard.SetContent(dataPackage);
     }
-    
+
     private void CopyItemShortDescription_Click(object sender, RoutedEventArgs e)
     {
         var menuFlyoutItem = sender as MenuFlyoutItem;
-        
+
         var itemData = menuFlyoutItem?.DataContext as ExpanderListItem;
-        
+
         var dataPackage = new DataPackage();
         dataPackage.SetText(itemData?.PolicyDetail.ShortDescription);
         Clipboard.SetContent(dataPackage);
