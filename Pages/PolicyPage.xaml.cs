@@ -124,7 +124,7 @@ public sealed partial class PolicyPage
     {
         rawKeyword = rawKeyword.Trim();
 
-        // 如果是空的，就不搜索
+        // 濡傛灉鏄┖鐨勶紝灏变笉鎼滅储
         if (rawKeyword == string.Empty)
         {
             return;
@@ -135,10 +135,10 @@ public sealed partial class PolicyPage
             AutoSuggestBox.Text = rawKeyword;
         }
 
-        // 分割 去重 移除空白
+        // 鍒嗗壊 鍘婚噸 绉婚櫎绌虹櫧
         var splitKeyword = rawKeyword.Split(" ").Distinct().Where(keyword => keyword != string.Empty).ToList();
 
-        // 如果和上次搜索的一样，就不搜索
+        // 濡傛灉鍜屼笂娆℃悳绱㈢殑涓�鏍凤紝灏变笉鎼滅储
         var parsedKeyword = splitKeyword.Aggregate((a, b) => $"{a} {b}");
         if (parsedKeyword == _dataContext.LastSearchKeyword && ReferenceEquals(DetailFrame.Tag, "special:searchresult")) return;
         _dataContext.LastSearchKeyword = parsedKeyword;
@@ -242,7 +242,7 @@ public sealed partial class PolicyPage
     {
         if (args.SelectedItem is not NavigationViewItem selectedItem) return;
 
-        // 判断是不是settings
+        // 鍒ゆ柇鏄笉鏄痵ettings
         if (selectedItem.Tag is string tag)
         {
             switch (tag)

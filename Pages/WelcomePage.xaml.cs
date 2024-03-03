@@ -5,8 +5,6 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.System;
-using Windows.UI;
-using Microsoft.UI;
 using Microsoft.UI.Text;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -127,21 +125,21 @@ public sealed partial class WelcomePage
         grid.ColumnDefinitions.Add(new ColumnDefinition());
         grid.ColumnDefinitions.Add(new ColumnDefinition());
 
-        var titleColor = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
-        var valueColor = (SolidColorBrush)Application.Current.Resources["TextFillColorSecondaryBrush"];
+        var keyColor = Application.Current.Resources["TextFillColorPrimaryBrush"] as SolidColorBrush;
+        var valueColor = Application.Current.Resources["TextFillColorSecondaryBrush"] as SolidColorBrush;
 
         var title1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/PolicyManagerTitle"), FontWeight = FontWeights.Bold };
         title1.SetValue(Grid.RowProperty, 0);
         title1.SetValue(Grid.ColumnProperty, 0);
         title1.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title1);
-
-        var key1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = titleColor };
+        
+        var key1 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentVersionKey"), Foreground = keyColor };
         key1.SetValue(Grid.RowProperty, 1);
         key1.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key1);
 
-        var key2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestVersionKey"), Foreground = titleColor };
+        var key2 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestVersionKey"), Foreground = keyColor };
         key2.SetValue(Grid.RowProperty, 2);
         key2.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key2);
@@ -152,17 +150,17 @@ public sealed partial class WelcomePage
         title2.SetValue(Grid.ColumnSpanProperty, 2);
         grid.Children.Add(title2);
 
-        var key3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/EdgeVersionKey"), Foreground = titleColor };
+        var key3 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/EdgeVersionKey"), Foreground = keyColor };
         key3.SetValue(Grid.RowProperty, 4);
         key3.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key3);
 
-        var key4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentCompatibleVersionKey"), Foreground = titleColor };
+        var key4 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CurrentCompatibleVersionKey"), Foreground = keyColor };
         key4.SetValue(Grid.RowProperty, 5);
         key4.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key4);
 
-        var key5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestCompatibleVersionKey"), Foreground = titleColor };
+        var key5 = new TextBlock { Text = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/LatestCompatibleVersionKey"), Foreground = keyColor };
         key5.SetValue(Grid.RowProperty, 6);
         key5.SetValue(Grid.ColumnProperty, 0);
         grid.Children.Add(key5);
@@ -198,7 +196,9 @@ public sealed partial class WelcomePage
             XamlRoot = XamlRoot,
             Title = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/Title"),
             CloseButtonText = ResourceUtil.GetString($"WelcomePage/VersionButton_OnClick/VersionInfoDialog/CloseButtonText"),
-            Content = grid
+            Content = grid,
+            // 字的颜色不会跟着变，只能整个都不变了 :(
+            RequestedTheme = Application.Current.RequestedTheme == ApplicationTheme.Dark ? ElementTheme.Dark : ElementTheme.Light
         };
 
         var dialogTask = dialog.ShowAsync();
