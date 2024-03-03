@@ -16,6 +16,7 @@ public class GoPageParameter
 public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 {
     private string _activePageName;
+    
     public bool CanGoBack => mainPage.MainFrame.CanGoBack;
 
     public bool CantGoBack => !CanGoBack;
