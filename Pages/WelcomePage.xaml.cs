@@ -184,10 +184,10 @@ public sealed partial class WelcomePage
         try
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version;
-            value1.Text = $"{version?.Major.ToString().PadLeft(4, '0')}." +
-                          $"{version?.Minor.ToString().PadLeft(2, '0')}." +
-                          $"{version?.Build.ToString().PadLeft(2, '0')}." +
-                          $"{version?.Revision.ToString().PadLeft(4, '0')}";
+            value1.Text = $"{version?.Major:0000}." +
+                          $"{version?.Minor:00}." +
+                          $"{version?.Build:00}." +
+                          $"{version?.Revision:0000}";
         }
         catch (Exception)
         {
