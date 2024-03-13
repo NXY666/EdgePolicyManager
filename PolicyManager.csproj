@@ -79,8 +79,8 @@
         <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240124002-experimental2" />
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240311000" />
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
         <Manifest Include="$(ApplicationManifest)" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="WinUIEx" Version="2.3.4" />
@@ -133,7 +133,7 @@
     <Target Name="RemovePublishFoldersWithMuiFiles" AfterTargets="GenerateNuspec;Publish">
         <ItemGroup>
             <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
+            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
             <!-- Create a list of keeping files. -->
             <KeepingFiles Include="@(KeepingLanguages->'$(PublishDir)%(Identity)\*.mui')" />
             <!-- Create a list of removing files. -->
@@ -147,7 +147,21 @@
     <Target Name="RemoveBuildFoldersWithMuiFiles" AfterTargets="Build">
         <ItemGroup>
             <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;zh-CN;zh-TW" />
+            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
+            <!-- Create a list of keeping files. -->
+            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
+            <!-- Create a list of removing files. -->
+            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)" />
+            <!-- Create a list of removing folders. -->
+            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
+        </ItemGroup>
+        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
+        <RemoveDir Directories="@(RemovingFolders)" />
+    </Target>
+    <Target Name="RemoveSinglePublishFoldersWithMuiFiles" BeforeTargets="GenerateSingleFileBundle" DependsOnTargets="PrepareForBundle">
+        <ItemGroup>
+            <!-- Create a list of the languages your need to keep.-->
+            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
             <!-- Create a list of keeping files. -->
             <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
             <!-- Create a list of removing files. -->
