@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://s11.ax1x.com/2023/12/29/piLDqKO.png" alt="Edge Policy Manager" width="60px"/>
+  <img src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/6d2a0952-2101-4906-b82d-58168b4b5f8c" alt="Edge Policy Manager" width="60px"/>
 </p>
 <h1 align="center">Edge 策略管理器</h1>
 <p align="center">
     <b>简体中文</b> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.en-US.md">English</a>
 </p>
 <p align="center">
-    <img alt="Edge策略管理器截图" src="https://s11.ax1x.com/2023/12/29/piL6mid.png"/>
+    <img alt="Edge策略管理器截图" src="https://github.com/NXY666/EdgePolicyManager/assets/62371554/230d697f-8a2a-4cdf-a88d-1c2f04a14592"/>
 </p>
 
 ## “策略”有什么用？
@@ -30,25 +30,25 @@ Edge 作为系统自带的浏览器，功能复杂且冗余。不仅如此，微
 
 > 支持在未配置的情况下展示通过文档推断的默认值。
 
-![策略浏览与配置截图](https://s11.ax1x.com/2024/01/12/pFCTYnI.png)
+![策略浏览与配置截图](https://github.com/NXY666/EdgePolicyManager/assets/62371554/63720df0-35d2-4db3-bc2e-e1789fdca361)
 
 ### 详细文档查询
 
 > 内容及其翻译由微软审核并[提供](https://www.microsoft.com/edge/business/download)。
 
-![详细文档查询截图](https://s11.ax1x.com/2024/01/12/pFCTtBt.png)
+![详细文档查询截图](https://github.com/NXY666/EdgePolicyManager/assets/62371554/97e5aaf9-a4a2-4db7-8c1d-4b30ad3e8004)
 
 ### 关键字模糊检索
 
 > 搜索结果根据相关度排序。
 
-![关键字模糊检索截图](https://s11.ax1x.com/2024/01/12/pFCTGjA.png)
+![关键字模糊检索截图](https://github.com/NXY666/EdgePolicyManager/assets/62371554/9bd48073-2259-4676-9b9d-3800fbe204fb)
 
 ### 导入与导出配置文件
 
 > 方便备份和共享。
 
-![导入与导出配置文件截图](https://s11.ax1x.com/2024/01/12/pFCT8cd.png)
+![导入与导出配置文件截图](https://github.com/NXY666/EdgePolicyManager/assets/62371554/7fc6e305-334c-4bf4-b185-bda08163638f)
 
 ### 注册表安全锁
 
