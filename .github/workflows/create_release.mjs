@@ -1,7 +1,7 @@
-﻿const fs = require('fs');
-const {execSync} = require('child_process');
-const github = require('@actions/github');
-const {Octokit} = require('@octokit/rest');
+﻿import fs from 'fs';
+import {execSync} from 'child_process';
+import github from '@actions/github';
+import {Octokit} from '@octokit/rest';
 
 function notice(msg) {
 	console.log(`* ${msg}`);
@@ -142,14 +142,18 @@ function retry(fn, retryCount = 0) {
 			assetsTable += `|${assetIcon} [${asset.name}](${asset.browser_download_url})|${fileSizeString(asset.size)}|\n`;
 		}
 
-		await retry(() => giteeO.repos.createRelease({
-			owner, repo,
-			tag_name: CONFIG === 'Debug' ? 'test' : `v${PUBLISH_VERSION}`,
-			target_commitish: CONFIG === 'Debug' ? 'test' : 'master',
-			name: CONFIG === 'Debug' ? `仅供测试 ${PUBLISH_VERSION}` : `发行版 ${PUBLISH_VERSION}`,
-			body: `## 更新日志\n\n概述：**${COMMIT_TITLE}**\n\n<details>\n\n${COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${PUBLISH_DATETIME}\n\n> 策略版本：${EDGE_POLICY_VERSION}\n\n${assetsTable}`,
-			prerelease: false
-		}));
+		if (CONFIG === 'Debug') {
+			await retry(() => giteeO.repos.getLatestRelease({owner, repo}));
+		} else {
+			await retry(() => giteeO.repos.createRelease({
+				owner, repo,
+				tag_name: `v${PUBLISH_VERSION}`,
+				target_commitish: 'master',
+				name: `发行版 ${PUBLISH_VERSION}`,
+				body: `## 更新日志\n\n概述：**${COMMIT_TITLE}**\n\n<details>\n\n${COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${PUBLISH_DATETIME}\n\n> 策略版本：${EDGE_POLICY_VERSION}\n\n${assetsTable}`,
+				prerelease: false
+			}));
+		}
 	}
 	notice('Gitee Release 发布完成。');
 })();

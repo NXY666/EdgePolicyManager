@@ -38,7 +38,7 @@ jobs:
       - name: 修改版本号
         run: |
           npm i fast-xml-parser
-          node .github/workflows/edit_version.js
+          node .github/workflows/edit_version.mjs
 
       - name: 克隆完整仓库
         run: |
@@ -71,4 +71,4 @@ jobs:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
           npm i @actions/github @octokit/rest
-          node .github/workflows/create_release.js
+          node .github/workflows/create_release.mjs

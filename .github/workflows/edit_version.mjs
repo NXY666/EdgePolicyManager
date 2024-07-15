@@ -1,5 +1,5 @@
-﻿const fs = require('fs');
-const {XMLParser, XMLBuilder} = require('fast-xml-parser');
+﻿import fs from 'fs';
+import {XMLParser, XMLBuilder} from 'fast-xml-parser';
 
 (async () => {
 	const {PUBLISH_VERSION, CONFIG} = process.env;
