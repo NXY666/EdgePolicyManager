@@ -130,47 +130,4 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     </PropertyGroup>
-    
-    <Target Name="RemovePublishFoldersWithMuiFiles" AfterTargets="GenerateNuspec;Publish">
-        <ItemGroup>
-            <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
-            <!-- Create a list of keeping files. -->
-            <KeepingFiles Include="@(KeepingLanguages->'$(PublishDir)%(Identity)\*.mui')" />
-            <!-- Create a list of removing files. -->
-            <RemovingFiles Include="$(PublishDir)*\*.mui" Exclude="@(KeepingFiles)" />
-            <!-- Create a list of removing folders. -->
-            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
-        </ItemGroup>
-        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
-        <RemoveDir Directories="@(RemovingFolders)" />
-    </Target>
-    <Target Name="RemoveBuildFoldersWithMuiFiles" AfterTargets="Build">
-        <ItemGroup>
-            <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
-            <!-- Create a list of keeping files. -->
-            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
-            <!-- Create a list of removing files. -->
-            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)" />
-            <!-- Create a list of removing folders. -->
-            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
-        </ItemGroup>
-        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
-        <RemoveDir Directories="@(RemovingFolders)" />
-    </Target>
-    <Target Name="RemoveSinglePublishFoldersWithMuiFiles" BeforeTargets="GenerateSingleFileBundle" DependsOnTargets="PrepareForBundle">
-        <ItemGroup>
-            <!-- Create a list of the languages your need to keep.-->
-            <KeepingLanguages Include="en-US;en-GB;zh-CN;zh-TW" />
-            <!-- Create a list of keeping files. -->
-            <KeepingFiles Include="@(KeepingLanguages->'$(OutDir)%(Identity)\*.mui')" />
-            <!-- Create a list of removing files. -->
-            <RemovingFiles Include="$(OutDir)*\*.mui" Exclude="@(KeepingFiles)" />
-            <!-- Create a list of removing folders. -->
-            <RemovingFolders Include="@(RemovingFiles->'%(RootDir)%(Directory)')" />
-        </ItemGroup>
-        <!-- Execute RemoveDir command and remove all folders in "RemovingFolders".-->
-        <RemoveDir Directories="@(RemovingFolders)" />
-    </Target>
 </Project>

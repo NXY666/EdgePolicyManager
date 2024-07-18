@@ -36,41 +36,23 @@ function retry(fn, retryCount = 0) {
 	await Promise.all(['x64', 'x86', 'arm64'].map((arch) => {
 		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`);
 		notice(`${arch} 架构软件包生成完成。`);
-		execSync(`7z a -tzip Publish-${arch}.zip ./bin/publish/win-${arch}/*`);
-		execSync(`7z a -t7z Publish-${arch}.7z ./bin/publish/win-${arch}/*`);
-		notice(`${arch} 架构软件包压缩完成。`);
 	}));
 
 	const files = [
 		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.zip',
-			path: 'Publish-x64.zip',
-			contentType: 'application/zip'
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.exe',
+			path: 'Publish-x64/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.7z',
-			path: 'Publish-x64.7z',
-			contentType: 'application/7z'
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.exe',
+			path: 'Publish-x86/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.zip',
-			path: 'Publish-x86.zip',
-			contentType: 'application/zip'
-		},
-		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.7z',
-			path: 'Publish-x86.7z',
-			contentType: 'application/7z'
-		},
-		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.zip',
-			path: 'Publish-arm64.zip',
-			contentType: 'application/zip'
-		},
-		{
-			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.7z',
-			path: 'Publish-arm64.7z',
-			contentType: 'application/7z'
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.exe',
+			path: 'Publish-arm64/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
 		}
 	];
 
