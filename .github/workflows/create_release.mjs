@@ -41,17 +41,17 @@ function retry(fn, retryCount = 0) {
 	const files = [
 		{
 			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64.exe',
-			path: 'Publish-x64/EdgePolicyManager.exe',
+			path: './bin/publish/win-x64/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
 			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86.exe',
-			path: 'Publish-x86/EdgePolicyManager.exe',
+			path: './bin/publish/win-x86/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
 			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.exe',
-			path: 'Publish-arm64/EdgePolicyManager.exe',
+			path: './bin/publish/win-arm64/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		}
 	];
