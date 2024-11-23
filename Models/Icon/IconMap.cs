@@ -4,4 +4,4 @@
 
 namespace PolicyManager.Models.Icon;
 
-public class IconMap : Dictionary<string, string>;
+public partial class IconMap : Dictionary<string, string>;

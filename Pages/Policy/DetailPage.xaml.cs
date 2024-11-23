@@ -14,7 +14,7 @@ using PolicyManager.Utils;
 
 namespace PolicyManager.Pages.Policy;
 
-public sealed class DetailPageModel : INotifyPropertyChanged, IDisposable
+public sealed partial class DetailPageModel : INotifyPropertyChanged, IDisposable
 {
     public delegate void SearchPolicyEventHandler(string keyword);
 
