@@ -13,14 +13,16 @@
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <PublishProfile>win-$(Platform).pubxml</PublishProfile>
         <UseWinUI>true</UseWinUI>
-        <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
         <EnableMsixTooling>true</EnableMsixTooling>
         <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
         <LangVersion>12</LangVersion>
         <PlatformTarget>AnyCPU</PlatformTarget>
-        <SelfContained>true</SelfContained>
-        <PublishTrimmed>true</PublishTrimmed>
-        <TrimMode>partial</TrimMode>
+        <SelfContained>false</SelfContained>
+        <WindowsAppSDKSelfContained>false</WindowsAppSDKSelfContained>
+        <WindowsAppSdkUndockedRegFreeWinRTInitialize>false</WindowsAppSdkUndockedRegFreeWinRTInitialize>
+        <WindowsPackageType>None</WindowsPackageType>
+        <PublishTrimmed>false</PublishTrimmed>
+        <PublishSingleFile>true</PublishSingleFile>
         <DebugType>embedded</DebugType>
         <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
