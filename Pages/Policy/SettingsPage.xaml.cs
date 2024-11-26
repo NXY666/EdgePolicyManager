@@ -1,8 +1,6 @@
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.CompilerServices;
 using Windows.Win32.UI.Shell;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -11,18 +9,11 @@ using PolicyManager.Utils;
 
 namespace PolicyManager.Pages.Policy;
 
-public sealed class SettingsPageModel : INotifyPropertyChanged
+public sealed class SettingsPageModel
 {
     public string PolicyType { get; init; }
 
     public string PolicyRegistryPath { init; get; }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
 }
 
 public sealed partial class SettingsPage
