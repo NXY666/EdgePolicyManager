@@ -30,6 +30,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <SupportedPlatform Include="Windows" />
+    </ItemGroup>
+    
+    <ItemGroup>
         <None Remove="StaticModels\Icon\IconMap.json" />
         <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
         <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
