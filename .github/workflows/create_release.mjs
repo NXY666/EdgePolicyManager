@@ -56,17 +56,17 @@ function retry(fn, retryCount = 0) {
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager(RuntimeRequired)-v${PUBLISH_VERSION}-x64.exe',
+			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-x64.exe',
 			path: './bin/publish/win-x64-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager(RuntimeRequired)-v${PUBLISH_VERSION}-x86.exe',
+			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-x86.exe',
 			path: './bin/publish/win-x86-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager(RuntimeRequired)-v${PUBLISH_VERSION}-arm64.exe',
+			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-arm64.exe',
 			path: './bin/publish/win-arm64-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		}
@@ -102,11 +102,11 @@ ${COMMIT_BODY}
 <hr>
 
 > [!NOTE]
-> 文件名中带有 RuntimeRequire 标记的版本可能需要在首次启动时根据引导下载并安装 .NET Runtime 和 Windows 应用 SDK 。
+> 带有 RuntimeRequire 标记的版本可能需要在首次启动时自动下载并安装 .NET Runtime 和 Windows 应用 SDK。
 >
-> 任何 Runtime 无需重复安装。请放心，它们均由微软开发并维护，且易于卸载。
+> 任何 Runtime 都无需重复安装，这些 Runtime 由微软开发和维护。
 >
-> 如果你需要长期使用，则建议选择此类版本，有助于节省流量，提高效率。
+> 如果你计划长期使用，建议选择此类版本，以便节省流量并提高效率。
 
 > 发布时间：${PUBLISH_DATETIME}
 
