@@ -1,5 +1,6 @@
 ﻿import fs from 'fs';
 import {execSync} from 'child_process';
+import {promisify} from 'util';
 import github from '@actions/github';
 import {Octokit} from '@octokit/rest';
 
@@ -32,10 +33,15 @@ function retry(fn, retryCount = 0) {
 
 	const owner = github.context.repo.owner;
 	const repo = github.context.repo.repo;
+	
+	execSync("dotnet restore");
+	notice(`还原完成。`);
 
-	await Promise.all(['x64', 'x86', 'arm64'].map((arch) => {
-		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`);
-		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}-lite.pubxml`);
+	await Promise.all(['x64', 'x86', 'arm64'].map(async (arch) => {
+		await Promise.all([
+			promisify(execSync)(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`),
+			promisify(execSync)(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}-lite.pubxml`)
+		]);
 		notice(`${arch} 架构软件包生成完成。`);
 	}));
 
