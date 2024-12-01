@@ -1,6 +1,5 @@
 ﻿import fs from 'fs';
 import {execSync} from 'child_process';
-import {promisify} from 'util';
 import github from '@actions/github';
 import {Octokit} from '@octokit/rest';
 
@@ -105,7 +104,7 @@ ${COMMIT_BODY}
 
 <hr>
 
-[!NOTE]
+> [!NOTE]
 > 带有 no-runtime 标记的版本可能在首次启动时需要下载并安装 .NET Runtime 和 Windows 应用 SDK。
 >
 > 不带 no-runtime 标记的版本已包含 .NET Runtime 和 Windows 应用 SDK，因此可以直接运行。
