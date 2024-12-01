@@ -117,247 +117,328 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BooleanContent.StatusSwitch.OffContent" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
-  <data name="BooleanContent.StatusSwitch.OnContent" xml:space="preserve">
+  <data name="RegistryUtil.ShowValue.EnabledText" xml:space="preserve">
     <value>Enabled</value>
-  </data>
-  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="DetailPage.DefaultLevelComboBoxItem.Content" xml:space="preserve">
-    <value>Default</value>
-  </data>
-  <data name="DetailPage.DescriptionButton.Content" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="DetailPage.DescriptionSettingsCard.Header" xml:space="preserve">
-    <value>Document</value>
-  </data>
-  <data name="DetailPage.DynamicRefreshSettingsCard.Header" xml:space="preserve">
-    <value>Dynamic Refresh</value>
-  </data>
-  <data name="DetailPage.LevelSettingsCard.Header" xml:space="preserve">
-    <value>Level</value>
-  </data>
-  <data name="DetailPage.MandatoryLevelComboBoxItem.Content" xml:space="preserve">
-    <value>Mandatory</value>
-  </data>
-  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogCancelButtonText" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogCopyButtonText" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogSearchButtonText" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogTitle" xml:space="preserve">
-    <value>Policy anchor</value>
-  </data>
-  <data name="DetailPage.RecommendedLevelComboBoxItem.Content" xml:space="preserve">
-    <value>Recommended</value>
-  </data>
-  <data name="DetailPage.StatusSettingsCard.Header" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="DetailPage.SupportVersionSettingsCard.Header" xml:space="preserve">
-    <value>Support Version</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>en_US</value>
-  </data>
-  <data name="MainWindow.Title" xml:space="preserve">
-    <value>Edge Policy Manager</value>
-  </data>
-  <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
-    <value>All Files</value>
-  </data>
-  <data name="OpenFilePicker.Title" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
-    <value>Unconfigured</value>
-  </data>
-  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
-    <value>All Policies</value>
-  </data>
-  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
-    <value>All</value>
-  </data>
-  <data name="PolicyPage.AutoSuggestBox.PlaceholderText" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="PolicyPage.ConfiguredNavigate.ConfiguredPolicyName" xml:space="preserve">
-    <value>Configured Policies</value>
-  </data>
-  <data name="PolicyPage.ConfiguredNavigationItem.Content" xml:space="preserve">
-    <value>Configured</value>
-  </data>
-  <data name="PolicyPage.Name" xml:space="preserve">
-    <value>Policy</value>
-  </data>
-  <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
-    <value>Search Results for "{0}"</value>
-  </data>
-  <data name="RegistryUtil.ShowValue.DefaultText" xml:space="preserve">
-    <value> (Default)</value>
+    <comment>已同步</comment>
   </data>
   <data name="RegistryUtil.ShowValue.DisabledText" xml:space="preserve">
     <value>Disabled</value>
+    <comment>已同步</comment>
   </data>
-  <data name="RegistryUtil.ShowValue.EnabledText" xml:space="preserve">
+  <data name="BooleanContent.StatusSwitch.OffContent" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="BooleanContent.StatusSwitch.OnContent" xml:space="preserve">
     <value>Enabled</value>
-  </data>
-  <data name="RegistryUtil.ShowValue.RecommendedText" xml:space="preserve">
-    <value> (Recommend)</value>
-  </data>
-  <data name="RegistryUtil.ShowValue.UnconfiguredText" xml:space="preserve">
-    <value>Unconfigured</value>
-  </data>
-  <data name="RegistryUtil.ShowValue.UnsupportedText" xml:space="preserve">
-    <value>Unsupported</value>
-  </data>
-  <data name="SaveFilePicker.FileFilter.AllFiles" xml:space="preserve">
-    <value>All Files</value>
-  </data>
-  <data name="SaveFilePicker.FileName" xml:space="preserve">
-    <value>Document</value>
-  </data>
-  <data name="SaveFilePicker.Title" xml:space="preserve">
-    <value>Save As</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SavePicker.PolicyConfig" xml:space="preserve">
-    <value>Policy Config</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SavePicker.Title" xml:space="preserve">
-    <value>Export Policy</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
-    <value>The policy config has been successfully exported.</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.SecondaryButtonText" xml:space="preserve">
-    <value>Open Folder</value>
-  </data>
-  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
-    <value>Export Successful</value>
-  </data>
-  <data name="SettingsPage.ImpAndExpSettings.ExportButton.Content" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="SettingsPage.ImpAndExpSettings.ImportButton.Content" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
-    <value>It is not recommended to import untrusted configuration files</value>
-  </data>
-  <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
-    <value>Import and export policy config</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Content" xml:space="preserve">
-    <value>Please check if the format and type of the policy config file are correct.</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.FailDialog.PrimaryButtonText" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Title" xml:space="preserve">
-    <value>Import Failed</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.PolicyConfig" xml:space="preserve">
-    <value>Policy Config</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.Title" xml:space="preserve">
-    <value>Import Policy</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
-    <value>The policy config has been successfully imported.</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
-    <value>Import Successful</value>
-  </data>
-  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
-    <value>Microsoft Edge appears to be closed, would you like to launch it now?</value>
-  </data>
-  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
-    <value>Are you ready?</value>
-  </data>
-  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
-    <value>Restart</value>
-  </data>
-  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
-    <value>Please ensure to save your work before restart</value>
-  </data>
-  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
-    <value>Restart Microsoft Edge</value>
-  </data>
-  <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <comment>已同步</comment>
   </data>
   <data name="UnsupportedContent.TextBlock.Text" xml:space="preserve">
     <value>Not Available</value>
+    <comment>已同步</comment>
   </data>
-  <data name="WelcomePage.DownloadButton.Content" xml:space="preserve">
-    <value>Download</value>
+  <data name="RegistryUtil.ShowValue.DefaultText" xml:space="preserve">
+    <value> (Default)</value>
+    <comment>已同步</comment>
   </data>
-  <data name="WelcomePage.FeedbackButton.Content" xml:space="preserve">
-    <value>Feedback</value>
+  <data name="DetailPage.DefaultLevelComboBoxItem.Content" xml:space="preserve">
+    <value>Default</value>
+    <comment>已同步</comment>
   </data>
-  <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
-    <value>Github Repo</value>
+  <data name="DetailPage.DescriptionButton.Content" xml:space="preserve">
+    <value>View</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.DescriptionSettingsCard.Header" xml:space="preserve">
+    <value>Document</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.DynamicRefreshSettingsCard.Header" xml:space="preserve">
+    <value>Dynamic Refresh</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.LevelSettingsCard.Header" xml:space="preserve">
+    <value>Level</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.MandatoryLevelComboBoxItem.Content" xml:space="preserve">
+    <value>Mandatory</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.RecommendedLevelComboBoxItem.Content" xml:space="preserve">
+    <value>Recommended</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.StatusSettingsCard.Header" xml:space="preserve">
+    <value>Status</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.SupportVersionSettingsCard.Header" xml:space="preserve">
+    <value>Support Version</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AutoSuggestBox.PlaceholderText" xml:space="preserve">
+    <value>Search</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.SearchPolicy.SearchResultName" xml:space="preserve">
+    <value>Search Results for "{0}"</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogCancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogCopyButtonText" xml:space="preserve">
+    <value>Copy</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogSearchButtonText" xml:space="preserve">
+    <value>Search</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.MarkdownTextBlock_OnLinkClicked.DialogTitle" xml:space="preserve">
+    <value>Policy anchor</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>en_GB</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyContent.UnconfiguredTextBlock.Text" xml:space="preserve">
+    <value>Unconfigured</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="RegistryUtil.ShowValue.UnconfiguredText" xml:space="preserve">
+    <value>Unconfigured</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="RegistryUtil.ShowValue.UnsupportedText" xml:space="preserve">
+    <value>Unsupported</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.Name" xml:space="preserve">
+    <value>Policy</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.Name" xml:space="preserve">
     <value>Welcome</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.TitleTextBlock.Text" xml:space="preserve">
     <value>Edge Policy Manager</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.ConfiguredNavigationItem.Content" xml:space="preserve">
+    <value>Configured</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.ConfiguredNavigate.ConfiguredPolicyName" xml:space="preserve">
+    <value>Configured Policies</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="MainWindow.Title" xml:space="preserve">
+    <value>Edge Policy Manager</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Description" xml:space="preserve">
+    <value>It is not recommended to import untrusted configuration files</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettingsCard.Header" xml:space="preserve">
+    <value>Import and export policy config</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.TitleTextBlock.Text" xml:space="preserve">
+    <value>Settings</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="OpenFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>All Files</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="OpenFilePicker.Title" xml:space="preserve">
+    <value>Open</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SaveFilePicker.FileFilter.AllFiles" xml:space="preserve">
+    <value>All Files</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SaveFilePicker.FileName" xml:space="preserve">
+    <value>Document</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SaveFilePicker.Title" xml:space="preserve">
+    <value>Save As</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.PolicyConfig" xml:space="preserve">
+    <value>Policy Config</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SavePicker.Title" xml:space="preserve">
+    <value>Export Policy</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>The policy config has been successfully exported.</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Open Folder</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ExportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>Export Successful</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ExportButton.Content" xml:space="preserve">
+    <value>Export</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImpAndExpSettings.ImportButton.Content" xml:space="preserve">
+    <value>Import</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Content" xml:space="preserve">
+    <value>Please check if the format and type of the policy config file are correct.</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.FailDialog.Title" xml:space="preserve">
+    <value>Import Failed</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.PolicyConfig" xml:space="preserve">
+    <value>Policy Config</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.OpenPicker.Title" xml:space="preserve">
+    <value>Import Policy</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Content" xml:space="preserve">
+    <value>The policy config has been successfully imported.</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.ImportButton_OnClick.SuccessDialog.Title" xml:space="preserve">
+    <value>Import Successful</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.FeedbackButton.Content" xml:space="preserve">
+    <value>Feedback</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.GithubButtonText.Text" xml:space="preserve">
+    <value>Github Repo</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AllNavigate.AllPolicyName" xml:space="preserve">
+    <value>All Policies</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="PolicyPage.AllNavigationItem.Content" xml:space="preserve">
+    <value>All</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.DownloadButton.Content" xml:space="preserve">
+    <value>Download</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton.Content" xml:space="preserve">
     <value>Version Info</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="RegistryUtil.ShowValue.RecommendedText" xml:space="preserve">
+    <value> (Recommend)</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CloseButtonText" xml:space="preserve">
     <value>OK</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentCompatibleVersionKey" xml:space="preserve">
     <value>Current Compatible Version</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.CurrentVersionKey" xml:space="preserve">
     <value>Current Version</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.EdgeVersionKey" xml:space="preserve">
     <value>Edge Version</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.GettingValueText" xml:space="preserve">
     <value>Loading……</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestCompatibleVersionKey" xml:space="preserve">
     <value>Latest Compatible Version</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.LatestVersionKey" xml:space="preserve">
     <value>Latest Version</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyCompatibilityTitle" xml:space="preserve">
     <value>Policy Compatibility</value>
-  </data>
-  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyManagerTitle" xml:space="preserve">
-    <value>Policy Manager</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.Title" xml:space="preserve">
     <value>Version Information</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.PolicyManagerTitle" xml:space="preserve">
+    <value>Policy Manager</value>
+    <comment>已同步</comment>
   </data>
   <data name="WelcomePage.VersionButton_OnClick.VersionInfoDialog.UnknownText" xml:space="preserve">
     <value>Unknown</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="DetailPage.CopyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Copy</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Content" xml:space="preserve">
+    <value>Microsoft Edge appears to be closed, would you like to launch it now?</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartButton_OnClick.ConfirmDialog.Title" xml:space="preserve">
+    <value>Are you ready?</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettings.RestartButton.Content" xml:space="preserve">
+    <value>Restart</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Description" xml:space="preserve">
+    <value>Please ensure to save your work before restart</value>
+    <comment>已同步</comment>
+  </data>
+  <data name="SettingsPage.RestartEdgeSettingsCard.Header" xml:space="preserve">
+    <value>Restart Microsoft Edge</value>
+    <comment>已同步</comment>
   </data>
 </root>
