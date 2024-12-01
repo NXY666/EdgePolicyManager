@@ -33,7 +33,7 @@ function retry(fn, retryCount = 0) {
 
 	const owner = github.context.repo.owner;
 	const repo = github.context.repo.repo;
-	
+
 	execSync("dotnet restore");
 	notice(`还原完成。`);
 
@@ -62,17 +62,17 @@ function retry(fn, retryCount = 0) {
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-x64.exe',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64-no-runtime.exe',
 			path: './bin/publish/win-x64-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-x86.exe',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86-no-runtime.exe',
 			path: './bin/publish/win-x86-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		},
 		{
-			name: 'EdgePolicyManager-RuntimeRequired-v${PUBLISH_VERSION}-arm64.exe',
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64-no-runtime.exe',
 			path: './bin/publish/win-arm64-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		}
@@ -107,12 +107,14 @@ ${COMMIT_BODY}
 
 <hr>
 
-> [!NOTE]
-> 带有 RuntimeRequire 标记的版本可能需要在首次启动时自动下载并安装 .NET Runtime 和 Windows 应用 SDK。
+[!NOTE]
+> 带有 no-runtime 标记的版本可能在首次启动时需要下载并安装 .NET Runtime 和 Windows 应用 SDK。
 >
-> 任何 Runtime 都无需重复安装，这些 Runtime 由微软开发和维护。
+> 不带 no-runtime 标记的版本已包含 .NET Runtime 和 Windows 应用 SDK，因此可以直接运行。
 >
-> 如果你计划长期使用，建议选择此类版本，以便节省流量并提高效率。
+> 若你计划长期使用本软件，建议选择带有 no-runtime 标记的版本，以便节省流量。
+>
+> 反之，如果不希望安装额外的软件，或因某些原因无法完成安装，请选择不带 no-runtime 标记的版本。
 
 > 发布时间：${PUBLISH_DATETIME}
 
