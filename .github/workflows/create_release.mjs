@@ -38,10 +38,8 @@ function retry(fn, retryCount = 0) {
 	notice(`还原完成。`);
 
 	await Promise.all(['x64', 'x86', 'arm64'].map(async (arch) => {
-		await Promise.all([
-			promisify(execSync)(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`),
-			promisify(execSync)(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}-lite.pubxml`)
-		]);
+		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`);
+		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}-lite.pubxml`);
 		notice(`${arch} 架构软件包生成完成。`);
 	}));
 
