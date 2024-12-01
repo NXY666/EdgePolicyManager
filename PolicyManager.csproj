@@ -25,6 +25,7 @@
         <DebugType>embedded</DebugType>
         <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
         <Version>0.0.0.0</Version>
     </PropertyGroup>
 
