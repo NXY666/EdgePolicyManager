@@ -34,49 +34,14 @@
     </ItemGroup>
     
     <ItemGroup>
-        <None Remove="StaticModels\Icon\IconMap.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\Edge\en-US\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json" />
-        <None Remove="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json" />
-        <None Remove="StaticModels\Policy\SUPPORT_VERSION" />
+		<None Remove="StaticModels\**" />
+		<None Remove="README.*" />
+		<None Remove="Local\**" />
+		<None Remove="node_modules\**" />
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="StaticModels\Icon\IconMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\en-US\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-CN\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeUpdate\zh-TW\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\en-US\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-CN\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\EdgeWebview\zh-TW\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\en-US\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-CN\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyDetailMap.json" />
-        <EmbeddedResource Include="StaticModels\Policy\Edge\zh-TW\PolicyMenuList.json" />
-        <EmbeddedResource Include="StaticModels\Policy\SUPPORT_VERSION" />
+        <EmbeddedResource Include="StaticModels\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -95,25 +60,13 @@
         <PackageReference Include="WinUIEx" Version="2.5.0" />
     </ItemGroup>
     <ItemGroup>
-        <Content Update="Assets\icon.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Update="Assets\msedge.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Update="Assets\msedgeupdate.ico">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Update="Assets\msedgewebview2.ico">
+        <Content Update="Assets\**">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
-    <ItemGroup>
-      <None Update="README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-    </ItemGroup>
+    <PropertyGroup Label="Globals">
+      <WebView2EnableCsWinRTProjection>False</WebView2EnableCsWinRTProjection>
+    </PropertyGroup>
 
     <!-- 
       Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
