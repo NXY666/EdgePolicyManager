@@ -38,7 +38,6 @@ jobs:
 
       - name: 修改版本号
         run: |
-          npm i fast-xml-parser
           node .github/workflows/edit_version.mjs
 
       - name: 克隆完整仓库
