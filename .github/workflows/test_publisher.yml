@@ -71,5 +71,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
-          npm i @actions/github @octokit/rest
+          npm i -g @actions/github @octokit/rest
+          npm link @actions/github @octokit/rest
           node .github/workflows/create_release.mjs
