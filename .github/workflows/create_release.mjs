@@ -105,7 +105,7 @@ ${COMMIT_BODY}
 <hr>
 
 > [!NOTE]
-> 带有 no-runtime 标记的版本可能在首次启动时需要下载并安装 .NET Runtime 和 Windows 应用 SDK。
+> 带有 no-runtime 标记的版本在首次启动时可能需要下载并安装 .NET Runtime 和 Windows 应用 SDK。
 >
 > 不带 no-runtime 标记的版本已包含 .NET Runtime 和 Windows 应用 SDK，因此可以直接运行。
 >
