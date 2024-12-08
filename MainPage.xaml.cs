@@ -13,7 +13,7 @@ public class GoPageParameter
     public Dictionary<string, object> Parameters { get; init; }
 }
 
-public class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
+public partial class MainPageModel(MainPage mainPage) : INotifyPropertyChanged
 {
     private string _activePageName;
     

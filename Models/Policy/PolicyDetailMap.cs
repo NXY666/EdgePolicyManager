@@ -5,7 +5,7 @@
 
 namespace PolicyManager.Models.Policy;
 
-public class PolicyDetailMap : Dictionary<string, PolicyDetail>;
+public partial class PolicyDetailMap : Dictionary<string, PolicyDetail>;
 
 public class PolicyDetail
 {

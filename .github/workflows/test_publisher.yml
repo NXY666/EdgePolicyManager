@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 20.x ]
+        dotnet-version: [ 8.0.x ]
     env:
       CONFIG: Debug
 
@@ -37,7 +38,6 @@ jobs:
 
       - name: 修改版本号
         run: |
-          npm i fast-xml-parser
           node .github/workflows/edit_version.mjs
 
       - name: 克隆完整仓库
@@ -63,12 +63,14 @@ jobs:
       - name: 安装 .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: ${{ matrix.dotnet-version }}
+          cache: true
           
       - name: 发布软件包
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
-          npm i @actions/github @octokit/rest
+          npm i -g @actions/github @octokit/rest
+          npm link @actions/github @octokit/rest
           node .github/workflows/create_release.mjs

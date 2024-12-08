@@ -33,8 +33,12 @@ function retry(fn, retryCount = 0) {
 	const owner = github.context.repo.owner;
 	const repo = github.context.repo.repo;
 
-	await Promise.all(['x64', 'x86', 'arm64'].map((arch) => {
+	execSync("dotnet restore");
+	notice(`还原完成。`);
+
+	await Promise.all(['x64', 'x86', 'arm64'].map(async (arch) => {
 		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}.pubxml`);
+		execSync(`dotnet publish -p:Platform=${arch} -p:PublishProfile=Properties/PublishProfiles/win-${arch}-lite.pubxml`);
 		notice(`${arch} 架构软件包生成完成。`);
 	}));
 
@@ -52,6 +56,21 @@ function retry(fn, retryCount = 0) {
 		{
 			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64.exe',
 			path: './bin/publish/win-arm64/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
+		},
+		{
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x64-no-runtime.exe',
+			path: './bin/publish/win-x64-lite/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
+		},
+		{
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-x86-no-runtime.exe',
+			path: './bin/publish/win-x86-lite/EdgePolicyManager.exe',
+			contentType: 'application/octet-stream'
+		},
+		{
+			name: 'EdgePolicyManager-v${PUBLISH_VERSION}-arm64-no-runtime.exe',
+			path: './bin/publish/win-arm64-lite/EdgePolicyManager.exe',
 			contentType: 'application/octet-stream'
 		}
 	];
@@ -73,7 +92,30 @@ function retry(fn, retryCount = 0) {
 			owner, repo,
 			tag_name: `v${PUBLISH_VERSION}`,
 			name: CONFIG === 'Debug' ? `TestOnly ${PUBLISH_VERSION}` : `Release ${PUBLISH_VERSION}`,
-			body: `## 更新日志\n\n概述：**${COMMIT_TITLE}**\n\n<details>\n\n${COMMIT_BODY}\n\n</details>\n\n<hr>\n\n> 发布时间：${PUBLISH_DATETIME}\n\n> 策略版本：${EDGE_POLICY_VERSION}`,
+			body: `## 更新日志
+
+概述：**${COMMIT_TITLE}**
+
+<details>
+
+${COMMIT_BODY}
+
+</details>
+
+<hr>
+
+> [!NOTE]
+> 带有 no-runtime 标记的版本在首次启动时可能需要下载并安装 .NET Runtime 和 Windows 应用 SDK。
+>
+> 不带 no-runtime 标记的版本已包含 .NET Runtime 和 Windows 应用 SDK，因此可以直接运行。
+>
+> 若你计划长期使用本软件，建议选择带有 no-runtime 标记的版本，以便节省流量。
+>
+> 反之，如果不希望安装额外的软件，或因某些原因无法完成安装，请选择不带 no-runtime 标记的版本。
+
+> 发布时间：${PUBLISH_DATETIME}
+
+> 策略版本：${EDGE_POLICY_VERSION}`,
 			draft: CONFIG === 'Debug',
 			prerelease: false
 		});

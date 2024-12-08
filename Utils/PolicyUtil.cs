@@ -338,7 +338,7 @@ public class PolicyManager(PolicyDetail policyDetail) : IPolicyManager
     public bool UsingPolicyCustomValue => PolicyLevel != 0;
 }
 
-public sealed class NotifyPolicyManager(IPolicyManager policyManager) : INotifyPropertyChanged, IPolicyManager
+public sealed partial class NotifyPolicyManager(IPolicyManager policyManager) : INotifyPropertyChanged, IPolicyManager
 {
     public event PropertyChangedEventHandler PropertyChanged;
     

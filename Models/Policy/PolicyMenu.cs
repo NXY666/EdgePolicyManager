@@ -6,7 +6,7 @@
 
 namespace PolicyManager.Models.Policy;
 
-public class PolicyMenu : List<PolicyMenuItem>;
+public partial class PolicyMenu : List<PolicyMenuItem>;
 
 public class PolicyMenuItem
 {
