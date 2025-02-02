@@ -1,4 +1,4 @@
-﻿name: Test Publisher
+﻿name: Publisher
 
 on:
   push:
