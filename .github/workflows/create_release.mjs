@@ -163,7 +163,7 @@ ${COMMIT_BODY}
 		let assetsTable = "|附件|大小|\n|---|---|\n",
 			assetIcon = "![asset icon](data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20width%3D%2216%22%3E%3Cpath%20d%3D%22m8.878.392%205.25%203.045c.54.314.872.89.872%201.514v6.098a1.75%201.75%200%200%201-.872%201.514l-5.25%203.045a1.75%201.75%200%200%201-1.756%200l-5.25-3.045A1.75%201.75%200%200%201%201%2011.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75%201.75%200%200%201%201.756%200ZM7.875%201.69l-4.63%202.685L8%207.133l4.755-2.758-4.63-2.685a.248.248%200%200%200-.25%200ZM2.5%205.677v5.372c0%20.09.047.171.125.216l4.625%202.683V8.432Zm6.25%208.271%204.625-2.683a.25.25%200%200%200%20.125-.216V5.677L8.75%208.432Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E)";
 		for (const asset of releaseInfo.data.assets) {
-			assetsTable += `|${assetIcon} [${asset.name}](${asset.browser_download_url})|${fileSizeString(asset.size)}|\n`;
+			assetsTable += `|[${asset.name}](${asset.browser_download_url})|${fileSizeString(asset.size)}|\n`;
 		}
 
 		if (CONFIG === 'Debug') {
