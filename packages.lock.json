@@ -118,11 +118,11 @@
       },
       "WinUIEx": {
         "type": "Direct",
-        "requested": "[2.5.1, )",
-        "resolved": "2.5.1",
-        "contentHash": "ihW4bA2quKbwWBOl5Uu80jBZagc4cT4E6CdExmvSZ05Qwz0jgoGyZuSTKcU9Uz7lZlQij3KxNor0dGXNUyIV9Q==",
+        "requested": "[2.6.0, )",
+        "resolved": "2.6.0",
+        "contentHash": "er1HUhOAQAGYnVaGUyoL1Bw/h6aLc46YboFeO6HavSUTHqV4SVRjc1YlhMC5RbRqpfuh6yhoLLoD5acI14GQcw==",
         "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.6.240829007"
+          "Microsoft.WindowsAppSDK": "1.7.250310001"
         }
       },
       "ColorCode.Core": {
